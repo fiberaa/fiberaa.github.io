@@ -209,7 +209,7 @@ function setupVideoReels() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const updateState = (video) => {
-    const tile = video.closest(".video-tile");
+    const tile = video.closest(".video-tile, .chain-media");
     const state = tile?.querySelector(".video-tile-state");
     const isPlaying = !video.paused && !video.ended;
     tile?.classList.toggle("is-playing", isPlaying);

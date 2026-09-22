@@ -52,10 +52,10 @@
 <body>
   <nav class="outline-panel" aria-label="Page outline">
     <a href="#top" class="outline-link is-active">Top</a>
-    <a href="#tasks" class="outline-link">Real World</a>
+    <a href="#tasks" class="outline-link">Demos</a>
     <a href="#contributions" class="outline-link">Contributions</a>
     <a href="#method" class="outline-link">Method</a>
-    <a href="#results" class="outline-link">Results</a>
+    <a href="#results" class="outline-link">Evals</a>
     <a href="#abstract" class="outline-link">Abstract</a>
     <a href="#citation" class="outline-link">Citation</a>
   </nav>
@@ -298,13 +298,17 @@
     <section class="section is-soft" id="tasks">
       <div class="container is-max-desktop">
         <div class="has-text-centered reveal">
-          <p class="section-kicker">Real-world demonstrations</p>
-          <h2 class="title section-heading">One policy, diverse real-world skills</h2>
+          <p class="section-kicker">Demonstrations</p>
+          <h2 class="title section-heading">Real world and simulation</h2>
           <p class="section-intro">
-            Interaction experts, latent projectors, and the unified planner are trained entirely in
-            simulation and deployed with onboard depth perception. Browse real-world
-            examples of each behavior.
+            Browse skills on the real robot and whole-body skill chaining in MuJoCo.
           </p>
+        </div>
+
+        <div class="demo-split-heading reveal">
+          <p class="section-kicker">Real world</p>
+          <h3>On-robot skills</h3>
+          <p>Interaction experts, latent projectors, and the unified planner are trained entirely in simulation and deployed with onboard depth perception.</p>
         </div>
 
         <div class="single-policy-note reveal">
@@ -495,18 +499,52 @@
           </article>
         </div>
 
-        <p class="video-showcase-note reveal">26 muted, web-optimized demonstrations · Visible examples play automatically</p>
+        <p class="video-showcase-note reveal">26 muted, web-optimized real-world demonstrations · Visible examples play automatically</p>
+
+        <section class="simulation-chains reveal" aria-labelledby="simulation-chains-heading">
+          <div class="simulation-chains-heading">
+            <div>
+              <p class="section-kicker">Simulation · MuJoCo</p>
+              <h3 id="simulation-chains-heading">Skill chaining</h3>
+              <p>Open the door, pick up the box, and carry it back through the doorway. Sky cam with an FPV inset shows each rollout at 2× speed.</p>
+            </div>
+            <span class="demo-count">2 examples · 2× speed</span>
+          </div>
+
+          <div class="chain-examples">
+            <article class="chain-example" aria-labelledby="simulation-chain-1-heading">
+              <h4 id="simulation-chain-1-heading"><span>01</span> Door → pickup → return</h4>
+              <div class="chain-media">
+                <video class="chain-sky" data-src="static/videos/simulation/chain_1_sky_fpv_2x.mp4" poster="static/videos/simulation/chain_1_sky_fpv.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause skill chain one, sky cam with FPV inset"></video>
+                <span class="chain-play-state video-tile-state">Paused</span>
+                <span class="chain-sky-label">Sky cam</span>
+                <span class="chain-fpv-label">FPV</span>
+              </div>
+            </article>
+
+            <article class="chain-example" aria-labelledby="simulation-chain-2-heading">
+              <h4 id="simulation-chain-2-heading"><span>02</span> Door → pickup → return</h4>
+              <div class="chain-media">
+                <video class="chain-sky" data-src="static/videos/simulation/chain_2_sky_fpv_2x.mp4" poster="static/videos/simulation/chain_2_sky_fpv.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause skill chain two, sky cam with FPV inset"></video>
+                <span class="chain-play-state video-tile-state">Paused</span>
+                <span class="chain-sky-label">Sky cam</span>
+                <span class="chain-fpv-label">FPV</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
       </div>
     </section>
 
     <section class="section" id="results">
       <div class="container results-container">
-        <div class="has-text-centered reveal">
-          <p class="section-kicker">Simulation results</p>
-          <h2 class="title section-heading">Closed-loop latent planning wins</h2>
+        <div class="has-text-centered simulation-quant-heading reveal">
+          <p class="section-kicker">Quantitative evaluation</p>
+          <h2 class="title section-heading">FIBER improves simulation success</h2>
           <p class="section-intro">
-            A unified perceptive planner is evaluated against replay, tracking, and planning
-            baselines under broad task randomization.
+            Across randomized pickup, door opening, and grasping, FIBER is evaluated against
+            replay, tracking, and planning baselines.
           </p>
         </div>
 
@@ -522,7 +560,7 @@
           <article class="fiber-result reveal">
             <span class="result-eyebrow">FIBER · unified perceptive policy</span>
             <strong>42.0%</strong>
-            <p>Mean simulation success with closed-loop latent replanning.</p>
+            <p>Mean simulation success across pickup, door opening, and grasping.</p>
           </article>
           <aside class="baseline-results reveal" aria-label="Baseline results">
             <span class="result-eyebrow">Baselines</span>
