@@ -429,22 +429,36 @@ a {
 }
 
 .title-sub,
-.anonymous-authors,
-.anonymous-note,
+.publication-authors,
+.publication-affiliations,
+.publication-note,
 .hero-summary {
   text-shadow: 0 2px 20px rgba(1, 5, 12, 0.82);
 }
 
-.anonymous-authors {
+.publication-authors {
   color: #d7e4f5;
   font-size: 1.08rem;
   font-weight: 600;
   margin: 1rem 0 0.25rem;
 }
 
-.anonymous-note {
+.publication-affiliations,
+.publication-note {
   color: #8fa5bf;
   font-size: 0.86rem;
+  margin-bottom: 0.35rem;
+}
+
+.publication-affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  justify-content: center;
+}
+
+.publication-note {
+  font-size: 0.76rem;
   margin-bottom: 1rem;
 }
 

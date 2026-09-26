@@ -1,12 +1,9 @@
 # FIBER project page
 
-Anonymous static project page for FIBER.
+Public project page for FIBER, with author names and affiliations from the paper.
 
-The site intentionally contains:
-
-- no author, institution, account, or analytics identifiers;
-- no copied project videos, PDFs, model files, or other heavyweight assets;
-- no build-time dependencies.
+Published at https://fiberaa.github.io/. The static site includes demonstration
+videos, uses no analytics, and has no build-time dependencies.
 
 Serve locally with:
 
@@ -15,4 +12,3 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
-
