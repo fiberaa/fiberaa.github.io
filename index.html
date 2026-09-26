@@ -603,7 +603,15 @@
                 <td>100.0 ± 0.0</td><td>90.8 ± 0.5</td><td>89.3 ± 0.2</td><td>97.9 ± 0.8</td><td>97.0 ± 0.8</td><td>95.4</td>
               </tr>
               <tr>
-                <td><strong>Ours &ndash; LPP</strong><sup>†</sup></td>
+                <td>LPP w/ SONIC<sup>†</sup></td>
+                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>83.1 ± 0.7</td><td>88.1 ± 0.6</td><td>5.1 ± 0.7</td><td>29.4</td>
+              </tr>
+              <tr>
+                <td>LPP w/ Fixed-γ BFM<sup>†</sup></td>
+                <td>75.4 ± 0.2</td><td>81.9 ± 1.3</td><td>61.8 ± 1.9</td><td>75.6 ± 0.7</td><td>69.3 ± 1.2</td><td>68.8</td>
+              </tr>
+              <tr>
+                <td><strong>LPP w/ AH-BFM</strong><sup>†</sup></td>
                 <td>81.9 ± 0.9</td><td>87.4 ± 2.4</td><td>83.5 ± 1.8</td><td>97.3 ± 0.4</td><td>52.9 ± 2.1</td><td>72.8</td>
               </tr>
 
@@ -621,7 +629,7 @@
                 <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.4 ± 0.0</td><td class="second">5.6 ± 0.5</td><td class="best">13.9 ± 0.5</td><td class="second">4.8</td>
               </tr>
               <tr>
-                <td><strong>Ours &ndash; LPP Replay</strong></td>
+                <td><strong>LPP Replay</strong></td>
                 <td class="best">11.2 ± 0.8</td><td class="best">17.7 ± 1.2</td><td class="best">12.2 ± 0.9</td><td class="best">49.5 ± 0.6</td><td>11.3 ± 1.1</td><td class="best">11.6</td>
               </tr>
 
@@ -633,6 +641,10 @@
               <tr>
                 <td>LessMimic</td>
                 <td class="second">38.3 ± 0.0</td><td>28.5 ± 0.0</td><td>—</td><td>—</td><td>—</td><td>—</td>
+              </tr>
+              <tr>
+                <td>Action Planner</td>
+                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0</td>
               </tr>
               <tr>
                 <td>Kinematic Planner</td>
@@ -649,6 +661,7 @@
           Success rates in percent. “With approach” includes the approach phase; “without” starts near interaction.
           <sup>†</sup> Task-specific policy. <sup>*</sup> Uses privileged object states instead of egocentric observations.
           Mean uses with-approach settings.
+          Action Planner predicts low-level action trajectories directly instead of BFM latents.
         </p>
 
         <div class="analysis-block reveal">
