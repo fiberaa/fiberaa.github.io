@@ -437,10 +437,17 @@ a {
 }
 
 .publication-authors {
-  color: #d7e4f5;
+  color: #fff;
   font-size: 1.08rem;
   font-weight: 600;
   margin: 1rem 0 0.25rem;
+}
+
+.publication-authors a,
+.publication-authors a:visited,
+.publication-authors a:hover,
+.publication-authors a:focus {
+  color: #fff;
 }
 
 .publication-affiliations,
@@ -2047,3 +2054,84 @@ a {
     text-align: left;
   }
 }
+
+/* Simulation comparison: all primary tasks visible together. */
+.success-chart { background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 12px 38px rgba(30,52,83,.07); margin: 2.1rem 0 0; padding: 1.6rem; }
+.success-chart-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.success-chart-header h3 { font-size: 1.2rem; font-weight: 800; color: #17233a; }
+.success-chart-header p { font-size: .8rem; color: #596a80; margin-top: .3rem; }
+.chart-legend { display: flex; align-items: center; gap: .5rem; color: #315eea; font-size: .8rem; font-weight: 700; }
+.chart-legend i { background: #4f7cff; width: 12px; height: 12px; border-radius: 3px; }
+.task-chart-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+.task-chart h4 { font-weight: 800; color: #17233a; font-size: .95rem; margin-bottom: .5rem; }
+.task-chart-axis { display: flex; justify-content: space-between; font-size: .65rem; color: #7b8a9e; margin-bottom: .6rem; }
+.task-bar-row { padding: .5rem 0; }
+.task-bar-label { display: flex; justify-content: space-between; align-items: baseline; gap: .4rem; margin-bottom: .3rem; color: #506077; font-size: .72rem; }
+.task-bar-label strong { color: inherit; font-size: .72rem; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; }
+.task-bar-track { position: relative; height: 15px; background: repeating-linear-gradient(to right,#edf1f6 0,#edf1f6 1px,transparent 1px,transparent 50%); border-right: 1px solid #edf1f6; }
+.task-bar-fill { display: block; height: 100%; background: #aab9cb; border-radius: 0 3px 3px 0; }
+.task-bar-error { position: absolute; top: 6px; height: 3px; background: #34445b; min-width: 1px; }
+.task-bar-error::before, .task-bar-error::after { content: ''; position: absolute; top: -3px; height: 9px; width: 1px; background: #34445b; }
+.task-bar-error::before { left: 0; } .task-bar-error::after { right: 0; }
+.task-bar-row.is-fiber { background: #f0f4ff; border-radius: 6px; margin: 0 -.4rem; padding: .5rem .4rem; }
+.task-bar-row.is-fiber .task-bar-fill { background: #4f7cff; }
+.task-bar-row.is-fiber .task-bar-label { color: #315eea; font-weight: 800; }
+.success-chart figcaption { color: #687990; font-size: .75rem; margin-top: 1.2rem; }
+@media (min-width: 701px) and (max-width: 1000px) { .task-chart-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) { .success-chart { padding: 1rem; } .task-chart-grid { grid-template-columns: 1fr; gap: 1.5rem; } .task-bar-label, .task-bar-label strong { font-size: .8rem; } }
+
+.task-chart-method-group { margin-top: .9rem; }
+.task-chart-method-group h5 { min-height: 2.5em; color: #687990; font-size: .62rem; font-weight: 800; letter-spacing: .04em; line-height: 1.3; text-transform: uppercase; padding-bottom: .4rem; border-bottom: 1px solid #e6ecf4; margin-bottom: .3rem; }
+
+.fiber-playground-shell { position: relative; height: 720px; background: #0e1725; border-radius: 18px; overflow: hidden; border: 1px solid #26394e; margin-top: 2rem; box-shadow: 0 18px 50px rgba(10,25,45,.15); }
+.fiber-playground-shell iframe { border: 0; width: 100%; height: 100%; }
+.fiber-playground-cover { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; color: #fff; background: radial-gradient(ellipse at 60% 30%,#263c5b,#0e1725 70%); }
+.fiber-playground-cover[hidden] { display: none; }
+.fiber-playground-cover span { color: #9cbcff; font-size: .8rem; letter-spacing: .08em; }
+.fiber-playground-cover h3 { color: #fff; font-size: clamp(1.8rem,4vw,3rem); font-weight: 800; margin: 1rem 0; letter-spacing: -.04em; }
+.fiber-playground-cover p { color: #a8bcd5; font-size: .9rem; }
+.fiber-playground-cover button { background: #4f7cff; color: #fff; padding: .9rem 1.3rem; border: 0; border-radius: 10px; font: inherit; font-weight: 700; cursor: pointer; margin: 1.5rem 0 1rem; }
+.fiber-playground-cover small { color: #7892b3; max-width: 390px; font-size: .72rem; }
+.fiber-playground-links { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .75rem; margin-top: .8rem; color: #687990; }
+@media(max-width:850px) { .fiber-playground-shell { height: 850px; } }
+
+
+/* Animated FIBER overview. */
+.fiber-overview { border:1px solid #dce4ef; border-radius:22px; background:#fff; padding:2rem; margin:2.5rem 0; box-shadow:0 12px 36px rgba(30,48,70,.045); }
+.fiber-overview-header { margin-bottom:1.75rem; }
+.fiber-overview-header .section-kicker { margin-bottom:.5rem; }
+.fiber-overview-header h3 { font-size:clamp(1.3rem,2.6vw,1.9rem); font-weight:750; color:#20364d; letter-spacing:-.035em; line-height:1.3; max-width:47rem; }
+.fiber-overview-answer { font-size:clamp(1.5rem,3vw,2.15rem); font-weight:750; color:#527faf; letter-spacing:-.035em; margin-top:.5rem; }
+.fiber-mini-legend { display:flex; gap:.55rem; font-size:.58rem; color:#7b8da1; }
+.fiber-mini-legend span::before { content:''; display:inline-block; width:12px; border-top:2px dashed #42576e; vertical-align:middle; margin-right:3px; }
+.fiber-mini-legend span:last-child::before { border-top-style:solid; border-color:#bd8157; }
+.fiber-state-feedback { display:flex; align-items:center; color:#7896b3; gap:.6rem; margin-top:.7rem; }
+.fiber-state-feedback svg { width:85px; height:20px; }
+.fiber-policy { white-space:nowrap; }
+.fiber-overview-controls { display:flex; gap:.5rem; margin-top:1.2rem; align-items:center; }
+.fiber-overview-controls button { font-family:inherit; font-size:.76rem; font-weight:650; padding:.55rem .85rem; border-radius:20px; border:1px solid #e2e9f1; background:#f5f8fc; color:#6c8198; cursor:pointer; }
+.fiber-overview button:focus-visible { outline:2px solid #527faf; outline-offset:3px; }
+.fiber-overview-description { color:#526c85; margin-top:.9rem; }
+.fiber-overview figcaption { font-size:.69rem; color:#8596a7; line-height:1.65; border-top:1px solid #e8eef5; padding-top:.8rem; margin-top:.6rem; }
+@media(max-width:800px) { .fiber-overview { padding:1.2rem; } }
+
+
+/* A physical workspace and a persistent view of projection, training, and execution. */
+.fiber-workbench {background:#faf9f6;border:1px solid #e9e5de;border-radius:12px;overflow:hidden;}
+.fiber-workbench-heading {display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.35rem 1.5rem 0;}
+.fiber-workbench-heading > span:first-child {font-size:1rem;font-weight:650;color:#293d4a;}
+.fiber-schematic-label {font-size:.65rem;color:#94958e;white-space:nowrap;}
+.fiber-workbench svg {width:100%;height:auto;display:block;}
+.fiber-workbench-detail {font-size:.85rem;line-height:1.7;color:#65717a;margin:0 1.5rem 1.3rem;max-width:720px;min-height:3.4em;}
+.fiber-workbench svg text {font-family:inherit;}
+@media(max-width:600px) {.fiber-workbench-heading{padding:1rem 1rem 0;align-items:flex-start;} .fiber-workbench-heading > span:first-child{font-size:.86rem;} .fiber-schematic-label{display:none;} .fiber-workbench-detail{font-size:.78rem;margin:0 1rem 1rem;min-height:6.8em;} .fiber-workbench svg{margin:.7rem 0;}}
+.fiber-film-controls { display:flex; gap:1rem; align-items:center; margin-top:1rem; }
+.fiber-film-controls button { border:1px solid #dce5ef; border-radius:20px; background:#f4f7fb; color:#486988; padding:.5rem 1rem; cursor:pointer; font:inherit; font-size:.8rem; }
+.fiber-film-controls input { flex:1; min-width:0; accent-color:#527faf; cursor:ew-resize; }
+.fiber-film-chapters { display:flex; justify-content:space-between; gap:.4rem; margin:.8rem 0; flex-wrap:wrap; }
+.fiber-film-chapters button { border:0; border-bottom:2px solid transparent; background:none; font:inherit; font-size:.72rem; color:#8596a7; padding:.4rem .1rem; cursor:pointer; }
+.fiber-film-chapters button[aria-current=true] { color:#486988; border-color:#527faf; }
+@media(max-width:600px) { .fiber-film-chapters {justify-content:flex-start;gap:.35rem .8rem;} }
+/* SVG motion is controlled explicitly; global reduced-motion transition rules
+   must not create fresh CSS transitions for every attribute update. */
+.fiber-workbench svg, .fiber-workbench svg * { transition: none !important; }

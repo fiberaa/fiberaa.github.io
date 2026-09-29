@@ -1,0 +1,1899 @@
+[
+  {
+    "warm": true,
+    "trace": [
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "walk",
+          "phase": "approach_door",
+          "simTime": 7.039999999999938,
+          "plannerMs": 0.05999999999949068,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "walk",
+          "goal": [
+            0.7882816292276638,
+            -0.691349327203167
+          ],
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": 0,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [
+            {
+              "kind": "navigation_goal",
+              "x": 0.7882816292276638,
+              "y": -0.691349327203167,
+              "z": 0.75,
+              "yaw": 1.5951047942281336
+            }
+          ],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": true,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Facing the door before reaching for the handle."
+        },
+        "root": [
+          0.6961201775221568,
+          -0.8321075208255343,
+          0.7890305553784709,
+          0.9963764018574354,
+          -0.002481320989670505,
+          0.0007701497571547423,
+          0.08501362089176605
+        ],
+        "hinge": 5.787280678951433e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "walk",
+          "phase": "settle_door",
+          "simTime": 7.999999999999917,
+          "plannerMs": 0.07999999999992724,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "walk",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": 0,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": true,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Settling the stance before opening the door."
+        },
+        "root": [
+          0.7028532574894818,
+          -0.8536215238978782,
+          0.7889304686902507,
+          0.9985781737092323,
+          -0.009283017830968836,
+          0.004511585994403006,
+          0.052298204207214115
+        ],
+        "hinge": 5.7818315476706535e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 8.41999999999991,
+          "plannerMs": 573.8400000000001,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          0.6984624409114365,
+          -0.8251153196985042,
+          0.7196094524380021,
+          0.9936174528191146,
+          0.007770211737955234,
+          -0.013615314948227819,
+          0.11170767413951743
+        ],
+        "hinge": 5.780673090844585e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 9.139999999999894,
+          "plannerMs": 573.8400000000001,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          0.7370319232810711,
+          -0.7566610087932196,
+          0.7533028605611644,
+          0.9892166819816605,
+          -0.006604869122720843,
+          -0.013739718506923777,
+          0.14566383191587423
+        ],
+        "hinge": 5.780672702082403e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 9.939999999999877,
+          "plannerMs": 467.28000000000065,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          0.8378622451874664,
+          -0.5499124480321095,
+          0.7366989745652902,
+          0.9700094401916265,
+          -0.004750892827397496,
+          -0.006980828885097765,
+          0.24292052812503756
+        ],
+        "hinge": 5.780672301230843e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 10.459999999999866,
+          "plannerMs": 469.41999999999825,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          0.9202068807511513,
+          -0.39756859270803097,
+          0.737825407006295,
+          0.9663572273266223,
+          0.0000539676478942214,
+          -0.015035838098932325,
+          0.2567637627348497
+        ],
+        "hinge": 5.7806722999696715e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 11.139999999999851,
+          "plannerMs": 469.41999999999825,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.0234282987063985,
+          -0.2792660720203276,
+          0.7398682937121481,
+          0.9766728771955059,
+          0.007431365704862375,
+          0.012958707010793392,
+          0.2142123658125802
+        ],
+        "hinge": 5.7806722983110765e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 11.959999999999834,
+          "plannerMs": 455.5400000000009,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 0,
+            "rightFrames": 0,
+            "leftImpulseNs": 0,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.0193664683570844,
+          -0.28505027118413395,
+          0.7458915939965384,
+          0.9867502727806405,
+          -0.0005362785841545113,
+          0.016780237967045666,
+          0.1613754479045129
+        ],
+        "hinge": 5.780672296310989e-25
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 12.479999999999823,
+          "plannerMs": 482.3000000000029,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 9,
+            "rightFrames": 0,
+            "leftImpulseNs": 2.9105681842864484,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.0478409589984627,
+          -0.26965321753894583,
+          0.7392138251845889,
+          0.9905808080132323,
+          -0.01679631640353639,
+          0.016941042433369448,
+          0.13483526108698773
+        ],
+        "hinge": 0.0030319309239479975
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 13.139999999999809,
+          "plannerMs": 482.3000000000029,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 42,
+            "rightFrames": 0,
+            "leftImpulseNs": 24.219274605557572,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.0417756425447153,
+          -0.27830943808275665,
+          0.7185241356792286,
+          0.9806101899539515,
+          -0.0028033798026147433,
+          -0.011053526690314551,
+          0.19563643824161334
+        ],
+        "hinge": 0.07333342184079536
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 13.839999999999794,
+          "plannerMs": 602.3600000000006,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.0226435823430655,
+          -0.2971346067346536,
+          0.7231300832019152,
+          0.9820638584458834,
+          0.005068008720100144,
+          0.0010404336343649734,
+          0.18847761331216334
+        ],
+        "hinge": 0.18445460869702188
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 14.359999999999783,
+          "plannerMs": 477,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.023007620731729,
+          -0.2684919855439904,
+          0.7102572542194502,
+          0.9883895337845506,
+          0.0033380564906701506,
+          -0.007393532196865378,
+          0.15172449560198942
+        ],
+        "hinge": 0.19942021416879369
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 15.139999999999766,
+          "plannerMs": 477,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.1177559411125975,
+          -0.22595312321548164,
+          0.7288003136427,
+          0.9576601488127159,
+          0.004900958936666593,
+          0.0070826109033270395,
+          0.28777223041895494
+        ],
+        "hinge": 0.39483269729551507
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "open_door",
+          "simTime": 15.85999999999975,
+          "plannerMs": 472.4599999999991,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": false,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "FIBER is interacting with the door."
+        },
+        "root": [
+          1.270477384378565,
+          -0.156467074832888,
+          0.7247915386332885,
+          0.9886082574357797,
+          -0.008078407842635077,
+          0.014883870738078587,
+          0.1495557523078654
+        ],
+        "hinge": 0.7921834809172499
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "walk",
+          "phase": "cross_door",
+          "simTime": 16.37999999999974,
+          "plannerMs": 0.059999999997671694,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "walk",
+          "goal": [
+            2.3,
+            -0.15
+          ],
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": 0,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [
+            {
+              "kind": "navigation_goal",
+              "x": 2.3,
+              "y": -0.15,
+              "z": 0.75,
+              "yaw": 1.5951047942281336
+            }
+          ],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": true,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Walk through the opened doorway."
+        },
+        "root": [
+          1.4371888648687121,
+          -0.20193668521726166,
+          0.7011628320052617,
+          0.9979492073828927,
+          0.0003662200984870966,
+          0.023529312327209985,
+          0.05952828594966809
+        ],
+        "hinge": 0.9587246186952183
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "walk",
+          "phase": "cross_door",
+          "simTime": 17.35999999999972,
+          "plannerMs": 0.06000000000130967,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "walk",
+          "goal": [
+            2.3,
+            -0.15
+          ],
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": 0,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [
+            {
+              "kind": "navigation_goal",
+              "x": 2.3,
+              "y": -0.15,
+              "z": 0.75,
+              "yaw": 1.5951047942281336
+            }
+          ],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": true,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Walk through the opened doorway."
+        },
+        "root": [
+          1.8290944295564093,
+          -0.20333353839525006,
+          0.7905782764901235,
+          0.995960327728066,
+          0.026069117427493824,
+          -0.0310431895107623,
+          0.080123324277968
+        ],
+        "hinge": 1.1425858845155483
+      },
+      {
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "busy": true,
+          "running": true,
+          "sceneName": "door",
+          "mode": "walk",
+          "phase": "complete",
+          "simTime": 18.339999999999698,
+          "plannerMs": 0.040000000000873115,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "walk",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "doorHandContactStats": {
+            "leftFrames": 55,
+            "rightFrames": 0,
+            "leftImpulseNs": 26.38835631825439,
+            "rightImpulseNs": 0
+          },
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "pickupLayout": "ground",
+          "pickupSpawn": null,
+          "goalRevision": 4,
+          "goalYaw": null,
+          "goalHeight": 0.75,
+          "filteredHeight": 0.75,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "wasm",
+          "actorBackend": "webgpu",
+          "build": "2026-09-29-student-1hz-threads-door-align",
+          "plannerModel": "v27-distill2000",
+          "plannerThreads": 4,
+          "crossOriginIsolated": true,
+          "planningHz": 1,
+          "rtc": {
+            "enabled": false
+          },
+          "browserPreset": "standard",
+          "locomotionOverride": true,
+          "locomotionBank": {
+            "source": "mujoco_rollout",
+            "z_radius": 16,
+            "calibrated": true,
+            "source_checkpoint": "BFM-0.5-75275",
+            "actor_z_dim": 256,
+            "control_profile": "bfm05_xl",
+            "turn_left_for_positive_error": true,
+            "actor_onnx_sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+          },
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door-student-1",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Door opened and crossed. Choose another task."
+        },
+        "root": [
+          2.0932517955290018,
+          -0.15803945525601465,
+          0.7903872418209734,
+          0.9987525011208861,
+          -0.00025420731174081724,
+          -0.011611903887178329,
+          0.04856480795322187
+        ],
+        "hinge": 1.4652162933811679
+      }
+    ],
+    "events": [
+      {
+        "type": "reset",
+        "simTime": 0
+      },
+      {
+        "type": "run",
+        "simTime": 0,
+        "command": "walk"
+      },
+      {
+        "type": "phase",
+        "phase": "walk",
+        "command": "walk",
+        "simTime": 1.0000000000000004,
+        "root": [
+          0.13891714509609487,
+          -0.6066952887442524,
+          0.7908279671017386,
+          0.9999163516719668,
+          -0.0008411785398049326,
+          -0.004354450208701725,
+          0.012149931731021841
+        ]
+      },
+      {
+        "type": "phase",
+        "phase": "walk",
+        "command": "walk",
+        "simTime": 3.000000000000002,
+        "root": [
+          0.9049406295236598,
+          -0.6068271532910432,
+          0.7890563660824348,
+          0.9922623528059615,
+          -0.00503227943854682,
+          -0.029572715004493665,
+          0.12048051251092032
+        ]
+      },
+      {
+        "type": "phase",
+        "phase": "walk",
+        "command": "walk",
+        "simTime": 3.000000000000002,
+        "root": [
+          0.9049406295236598,
+          -0.6068271532910432,
+          0.7890563660824348,
+          0.9922623528059615,
+          -0.00503227943854682,
+          -0.029572715004493665,
+          0.12048051251092032
+        ]
+      },
+      {
+        "type": "phase",
+        "phase": "walk",
+        "command": "walk",
+        "simTime": 3.000000000000002,
+        "root": [
+          0.9049406295236598,
+          -0.6068271532910432,
+          0.7890563660824348,
+          0.9922623528059615,
+          -0.00503227943854682,
+          -0.029572715004493665,
+          0.12048051251092032
+        ]
+      },
+      {
+        "type": "phase",
+        "phase": "goal_reached",
+        "command": "walk",
+        "simTime": 4.839999999999985,
+        "root": [
+          0.7891418507479789,
+          -0.6922212131173601,
+          0.7869938196398693,
+          0.7390819742512288,
+          0.010189542164797342,
+          -0.03149571804176379,
+          0.6728016262706347
+        ]
+      },
+      {
+        "type": "command",
+        "simTime": 6.059999999999959,
+        "requested": "door",
+        "previous": "walk"
+      },
+      {
+        "type": "phase",
+        "phase": "approach_door",
+        "command": "walk",
+        "simTime": 6.059999999999959,
+        "root": [
+          0.7882816292276638,
+          -0.691349327203167,
+          0.7901700997984782,
+          0.7333138632809468,
+          0.006236353404563873,
+          -0.012114284068106863,
+          0.6797537274172936
+        ]
+      },
+      {
+        "type": "run",
+        "simTime": 6.059999999999959,
+        "command": "walk"
+      },
+      {
+        "type": "phase",
+        "phase": "settle_door",
+        "command": "walk",
+        "simTime": 7.119999999999936,
+        "root": [
+          0.6987095287366085,
+          -0.8430784144789774,
+          0.789095135224355,
+          0.9968332904617401,
+          -0.005765505490766258,
+          0.003108002147032117,
+          0.07924954445491236
+        ]
+      },
+      {
+        "type": "phase",
+        "phase": "open_door",
+        "command": "open_door",
+        "simTime": 8.139999999999915,
+        "root": [
+          0.7034950912936638,
+          -0.8539209687936854,
+          0.7888842430632885,
+          0.9986171017215322,
+          -0.009440780341599835,
+          0.005761232548590694,
+          0.051396147864884174
+        ]
+      },
+      {
+        "type": "plan",
+        "simTime": 8.139999999999915,
+        "requestSimTime": 8.139999999999915,
+        "command": "open_door",
+        "droppedState": true,
+        "noiseRow": 0,
+        "sampler": "door-student-1",
+        "milliseconds": 573.8400000000001,
+        "conditionMs": 188.0599999999995,
+        "solverMs": 382.5599999999995,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 9.139999999999894,
+        "requestSimTime": 9.139999999999894,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 1,
+        "sampler": "door-student-1",
+        "milliseconds": 467.28000000000065,
+        "conditionMs": 163.10000000000036,
+        "solverMs": 303.7999999999993,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 10.139999999999873,
+        "requestSimTime": 10.139999999999873,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 2,
+        "sampler": "door-student-1",
+        "milliseconds": 469.41999999999825,
+        "conditionMs": 164.7599999999984,
+        "solverMs": 304.3000000000011,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 11.139999999999851,
+        "requestSimTime": 11.139999999999851,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 3,
+        "sampler": "door-student-1",
+        "milliseconds": 455.5400000000009,
+        "conditionMs": 152.34000000000015,
+        "solverMs": 302.96000000000095,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 12.13999999999983,
+        "requestSimTime": 12.13999999999983,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 4,
+        "sampler": "door-student-1",
+        "milliseconds": 482.3000000000029,
+        "conditionMs": 162.91999999999825,
+        "solverMs": 318.96000000000276,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 13.139999999999809,
+        "requestSimTime": 13.139999999999809,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 5,
+        "sampler": "door-student-1",
+        "milliseconds": 602.3600000000006,
+        "conditionMs": 209.05999999999767,
+        "solverMs": 392.880000000001,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 14.139999999999787,
+        "requestSimTime": 14.139999999999787,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 6,
+        "sampler": "door-student-1",
+        "milliseconds": 477,
+        "conditionMs": 166.5,
+        "solverMs": 310.09999999999854,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 15.139999999999766,
+        "requestSimTime": 15.139999999999766,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 7,
+        "sampler": "door-student-1",
+        "milliseconds": 472.4599999999991,
+        "conditionMs": 163.23999999999796,
+        "solverMs": 308.9200000000019,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "plan",
+        "simTime": 16.139999999999745,
+        "requestSimTime": 16.139999999999745,
+        "command": "open_door",
+        "droppedState": false,
+        "noiseRow": 8,
+        "sampler": "door-student-1",
+        "milliseconds": 466.7000000000007,
+        "conditionMs": 162.4399999999987,
+        "solverMs": 303.90000000000146,
+        "wasmThreads": 4,
+        "solverSteps": 3,
+        "controlsPerPlan": 50
+      },
+      {
+        "type": "phase",
+        "phase": "cross_door",
+        "command": "walk",
+        "simTime": 16.35999999999974,
+        "root": [
+          1.4352949001008033,
+          -0.20148073034697625,
+          0.702795687021808,
+          0.9979809964745315,
+          0.001005129689908785,
+          0.023659320841832247,
+          0.0589334958008736
+        ]
+      },
+      {
+        "type": "phase",
+        "phase": "complete",
+        "command": "walk",
+        "simTime": 17.999999999999705,
+        "root": [
+          2.1002578536692798,
+          -0.14811149610176844,
+          0.7938298541842861,
+          0.9991344634545528,
+          -0.012306804379252186,
+          -0.009782532439425822,
+          0.03851192753452946
+        ]
+      }
+    ],
+    "timings": [
+      {
+        "total": 573.7399999999998,
+        "worker": 570.619999999999,
+        "condition": 188.0599999999995,
+        "steps": 3
+      },
+      {
+        "total": 467.2600000000002,
+        "worker": 466.89999999999964,
+        "condition": 163.10000000000036,
+        "steps": 3
+      },
+      {
+        "total": 469.41999999999825,
+        "worker": 469.0599999999995,
+        "condition": 164.7599999999984,
+        "steps": 3
+      },
+      {
+        "total": 455.5400000000009,
+        "worker": 455.3000000000011,
+        "condition": 152.34000000000015,
+        "steps": 3
+      },
+      {
+        "total": 482.2800000000025,
+        "worker": 481.880000000001,
+        "condition": 162.91999999999825,
+        "steps": 3
+      },
+      {
+        "total": 602.3400000000001,
+        "worker": 601.9399999999987,
+        "condition": 209.05999999999767,
+        "steps": 3
+      },
+      {
+        "total": 477,
+        "worker": 476.59999999999854,
+        "condition": 166.5,
+        "steps": 3
+      },
+      {
+        "total": 472.4599999999991,
+        "worker": 472.15999999999985,
+        "condition": 163.23999999999796,
+        "steps": 3
+      },
+      {
+        "total": 466.7000000000007,
+        "worker": 466.34000000000015,
+        "condition": 162.4399999999987,
+        "steps": 3
+      }
+    ]
+  }
+]

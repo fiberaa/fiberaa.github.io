@@ -30,14 +30,15 @@
   <script>document.documentElement.classList.add("js");</script>
   <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <script defer src="static/js/fiber-overview.js?v=7"></script>
 
   <script type="application/ld+json">
   {
@@ -61,6 +62,7 @@
     <a href="#tasks" class="outline-link">Demos</a>
     <a href="#contributions" class="outline-link">Contributions</a>
     <a href="#method" class="outline-link">Method</a>
+    <a href="#interactive" class="outline-link">Playground</a>
     <a href="#results" class="outline-link">Evals</a>
     <a href="#abstract" class="outline-link">Abstract</a>
     <a href="#citation" class="outline-link">Citation</a>
@@ -100,7 +102,7 @@
             <span class="title-main">FIBER</span>
             <span class="title-sub">Action&#8209;Aligned Latent Planning for Versatile Humanoid Loco&#8209;Manipulation</span>
           </h1>
-          <p class="publication-authors">Yutang Lin<sup>1</sup>, Guanya Shi<sup>†,1,2</sup>, C. Karen Liu<sup>†,1,3</sup></p>
+          <p class="publication-authors"><a href="https://yutang-lin.github.io/">Yutang Lin</a><sup>1</sup>, <a href="https://www.gshi.me/">Guanya Shi</a><sup>†,1,2</sup>, <a href="https://cs.stanford.edu/~karenliu">C. Karen Liu</a><sup>†,1,3</sup></p>
           <p class="publication-affiliations"><span><sup>1</sup> Amazon FAR</span><span><sup>2</sup> Carnegie Mellon University</span><span><sup>3</sup> Stanford University</span></p>
           <p class="publication-note"><sup>†</sup> Amazon FAR Team Co-Lead</p>
           <p class="hero-summary">
@@ -208,8 +210,8 @@
             width="76"
             height="76"
           >
-          <p class="section-kicker">Key idea</p>
-          <h2 class="title section-heading">One latent interface for multiple skills</h2>
+          <p class="section-kicker">Contributions</p>
+          <h2 class="title section-heading">Latent policy projection of heterogeneous experts</h2>
           <p class="section-intro">
             FIBER represents independently acquired interaction experts in the shared executable
             latent space of a frozen BFM and jointly learns their execution with one perceptive planner.
@@ -219,7 +221,7 @@
         <div class="contribution-grid">
           <article class="contribution-card reveal">
             <span class="card-index">01</span>
-            <h3>Unified representation and learning framework</h3>
+            <h3>Modular acquisition and unified control</h3>
             <p>
               FIBER represents independently acquired interaction experts in a shared executable
               latent space of a frozen BFM and jointly learns their execution with a unified
@@ -237,7 +239,7 @@
           </article>
           <article class="contribution-card reveal">
             <span class="card-index">03</span>
-            <h3>Adaptive-horizon BFM and SF-guided acquisition</h3>
+            <h3>Adaptive-horizon BFM and SF-guided expert acquisition</h3>
             <p>
               Multi-γ forward-backward learning yields AH-BFM, balancing precise local control with
               temporally extended behavioral structure, while successor-feature-guided acquisition
@@ -252,12 +254,29 @@
       <div class="container method-container">
         <div class="has-text-centered reveal">
           <p class="section-kicker">Method</p>
-          <h2 class="title section-heading">From experts to one offline planner</h2>
+          <h2 class="title section-heading">FIBER overview</h2>
           <p class="section-intro">
             Experts are projected independently, collected in a shared executable representation,
             and merged into one perception-conditioned latent planning dataset.
           </p>
         </div>
+
+        <figure class="fiber-overview reveal" id="action-alignment" aria-labelledby="fiber-overview-title">
+          <header class="fiber-overview-header"><p class="section-kicker">FIBER overview</p>
+            <h3 id="fiber-overview-title">What should we plan for humanoid whole-body intelligence?</h3>
+            <p class="fiber-overview-answer">Action-aligned latents.</p>
+          </header>
+          <div class="fiber-workbench">
+            <div class="fiber-workbench-heading"><span data-fiber-phase>Heterogeneous skill acquisition</span><span class="fiber-schematic-label">Schematic illustration</span></div>
+            <svg data-fiber-world viewBox="0 0 900 380" role="img" aria-label="Humanoid experts perform physical skills. A learned projector produces latent commands whose frozen BFM actions match expert actions at the same state. Collected latent rollouts train a planner for execution."></svg>
+            <p class="fiber-workbench-detail" data-fiber-detail></p>
+          </div>
+          <div class="fiber-film-controls"><button type="button" data-fiber-play>Pause</button><input data-fiber-time type="range" min="0" max="1000" value="0" aria-label="Scrub through the FIBER pipeline"><button type="button" data-fiber-replay>Replay</button></div>
+          <div class="fiber-film-chapters" aria-label="Jump to a part of the pipeline">
+            <button data-fiber-jump="0">Experts</button><button data-fiber-jump="1">Action alignment</button><button data-fiber-jump="2">Latent rollouts</button><button data-fiber-jump="3">Offline training</button><button data-fiber-jump="4">Planning</button><button data-fiber-jump="5">Execution</button>
+          </div>
+          <figcaption>Illustration of FIBER. Humanoid artwork, action components, and latent coordinates are illustrative, not recorded model outputs.</figcaption>
+        </figure>
 
         <figure class="paper-figure pipeline-figure reveal">
           <img src="static/images/pipeline.webp" width="2200" height="1055" alt="FIBER pipeline: heterogeneous expert acquisition, action-aligned latent policy projection, adaptive-horizon BFM, and unified latent planning." loading="lazy">
@@ -270,7 +289,7 @@
         <div class="method-copy-grid">
           <article class="method-copy reveal">
             <span class="method-copy-index">A</span>
-            <h3>Heterogeneous expert acquisition</h3>
+            <h3>Heterogeneous skill acquisition</h3>
             <p>
               Interaction experts come from motion imitation, task-specific reward shaping, or
               successor-feature-guided reuse of native whole-body behaviors.
@@ -278,10 +297,10 @@
           </article>
           <article class="method-copy reveal">
             <span class="method-copy-index">B</span>
-            <h3>Action-aligned LPP</h3>
+            <h3>Action-aligned latent policy projection</h3>
             <p>
               LPP identifies latent commands through the expert actions they induce over a local
-              horizon, with behavioral anchoring reducing ambiguity among action-equivalent latents.
+              horizon, with semantic regularization reducing ambiguity among action-equivalent latents.
             </p>
           </article>
           <article class="method-copy reveal">
@@ -295,7 +314,7 @@
         </div>
 
         <div class="feedback-banner reveal">
-          <strong>Two feedback timescales.</strong>
+          <strong>Latent planning and high-frequency state feedback.</strong>
           The planner updates lower-rate latent trajectories from perception, while the frozen BFM
           maps each latent and live robot state to high-rate actions.
         </div>
@@ -319,7 +338,7 @@
         </div>
 
         <div class="single-policy-note reveal">
-          <strong>One policy. Onboard depth only. Autonomous.</strong>
+          <strong>Unified perceptive planner · onboard depth · conditional steering</strong>
         </div>
 
         <div class="video-reels">
@@ -353,7 +372,7 @@
               <div>
                 <span class="demo-index">02 · Grasping</span>
                 <h3>Lower-platform objects</h3>
-                <p>Whole-body lowering and object acquisition around a low support.</p>
+                <p>Grasping objects from lower supports.</p>
               </div>
               <span class="demo-count">3 examples</span>
             </header>
@@ -544,6 +563,27 @@
       </div>
     </section>
 
+    <section class="section" id="interactive">
+      <div class="container results-container">
+        <div class="has-text-centered reveal">
+          <p class="section-kicker">Interactive playground</p>
+          <h2 class="title section-heading">Try FIBER in live simulation.</h2>
+          <p class="section-intro">Explore the scene, choose an interaction, and watch FIBER plan and act in a live MuJoCo simulation.</p>
+        </div>
+        <div class="fiber-playground-shell reveal">
+          <iframe id="fiber-playground" title="FIBER interactive MuJoCo playground" allow="fullscreen" allowfullscreen></iframe>
+          <div class="fiber-playground-cover" id="fiber-playground-cover">
+            <span>FIBER · live simulation</span>
+            <h3>Pick up. Carry. Open doors.</h3>
+            <p>Drag to explore · click to set a goal · view the current prompt</p>
+            <button type="button" id="launch-fiber-playground">Launch the playground ↗</button>
+            <small>About 677 MB of inference models load on first launch. Desktop Chrome with WebGPU recommended.</small>
+          </div>
+        </div>
+        <p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
+      </div>
+    </section>
+
     <section class="section" id="results">
       <div class="container results-container">
         <div class="has-text-centered simulation-quant-heading reveal">
@@ -586,86 +626,13 @@
           FIBER is the proposed unified policy; LPP Replay and the kinematic planner are comparison baselines.
         </div>
 
-        <div class="results-table-wrap reveal">
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th rowspan="2">Method</th>
-                <th colspan="2">Pickup Box</th>
-                <th colspan="2">Open Door</th>
-                <th rowspan="2">Grasp Object</th>
-                <th rowspan="2">Mean</th>
-              </tr>
-              <tr>
-                <th>with approach</th>
-                <th>without</th>
-                <th>with approach</th>
-                <th>without</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="group-row"><td colspan="7">Task-specific policies</td></tr>
-              <tr>
-                <td>Expert Policy<sup>†</sup></td>
-                <td>100.0 ± 0.0</td><td>90.8 ± 0.5</td><td>89.3 ± 0.2</td><td>97.9 ± 0.8</td><td>97.0 ± 0.8</td><td>95.4</td>
-              </tr>
-              <tr>
-                <td>LPP w/ SONIC<sup>†</sup></td>
-                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>83.1 ± 0.7</td><td>88.1 ± 0.6</td><td>5.1 ± 0.7</td><td>29.4</td>
-              </tr>
-              <tr>
-                <td>LPP w/ Fixed-γ BFM<sup>†</sup></td>
-                <td>75.4 ± 0.2</td><td>81.9 ± 1.3</td><td>61.8 ± 1.9</td><td>75.6 ± 0.7</td><td>69.3 ± 1.2</td><td>68.8</td>
-              </tr>
-              <tr>
-                <td><strong>LPP w/ AH-BFM</strong><sup>†</sup></td>
-                <td>81.9 ± 0.9</td><td>87.4 ± 2.4</td><td>83.5 ± 1.8</td><td>97.3 ± 0.4</td><td>52.9 ± 2.1</td><td>72.8</td>
-              </tr>
-
-              <tr class="group-row"><td colspan="7">Reference-prompted execution</td></tr>
-              <tr>
-                <td>SONIC</td>
-                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.4 ± 0.0</td><td>3.1 ± 0.0</td><td class="second">12.1 ± 0.0</td><td>4.2</td>
-              </tr>
-              <tr>
-                <td>FALCON</td>
-                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.4 ± 0.0</td><td>2.7 ± 0.0</td><td>11.9 ± 0.3</td><td>4.1</td>
-              </tr>
-              <tr>
-                <td>B(s) Tracking</td>
-                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.4 ± 0.0</td><td class="second">5.6 ± 0.5</td><td class="best">13.9 ± 0.5</td><td class="second">4.8</td>
-              </tr>
-              <tr>
-                <td><strong>LPP Replay</strong></td>
-                <td class="best">11.2 ± 0.8</td><td class="best">17.7 ± 1.2</td><td class="best">12.2 ± 0.9</td><td class="best">49.5 ± 0.6</td><td>11.3 ± 1.1</td><td class="best">11.6</td>
-              </tr>
-
-              <tr class="group-row"><td colspan="7">Perceptive planning</td></tr>
-              <tr>
-                <td>OmniContact<sup>*</sup></td>
-                <td>29.9 ± 0.2</td><td class="best">49.6 ± 0.0</td><td>—</td><td>—</td><td>—</td><td>—</td>
-              </tr>
-              <tr>
-                <td>LessMimic</td>
-                <td class="second">38.3 ± 0.0</td><td>28.5 ± 0.0</td><td>—</td><td>—</td><td>—</td><td>—</td>
-              </tr>
-              <tr>
-                <td>Action Planner</td>
-                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0</td>
-              </tr>
-              <tr>
-                <td>Kinematic Planner</td>
-                <td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td>0.0 ± 0.0</td><td class="second">10.6 ± 0.5</td><td class="second">3.5</td>
-              </tr>
-              <tr class="ours-row">
-                <td><strong>Ours &ndash; FIBER</strong></td>
-                <td class="best">42.1 ± 0.6</td><td class="second">44.1 ± 1.0</td><td class="best">53.5 ± 4.8</td><td class="best">51.2 ± 1.0</td><td class="best">30.3 ± 2.3</td><td class="best">42.0</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <figure class="success-chart reveal" aria-labelledby="success-chart-title">
+          <div class="success-chart-header"><div><h3 id="success-chart-title">Simulation success across tasks</h3><p>Success rate (%) · with approach · higher is better</p></div><span class="chart-legend"><i></i> FIBER · ours</span></div>
+          <div class="task-chart-grid"><section class="task-chart"><h4>Pickup box</h4><div class="task-chart-axis" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div><div class="task-chart-method-group"><h5>Task-specific policies</h5><div class="task-bar-row" aria-label="Expert Policy†: 100.0 ± 0.0 percent" title="Expert Policy†: 100.0 ± 0.0 percent"><div class="task-bar-label"><span>Expert Policy<sup>†</sup></span><strong>100.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:100.0%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ SONIC†: 0.0 ± 0.0 percent" title="LPP w/ SONIC†: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>LPP w/ SONIC<sup>†</sup></span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ Fixed-γ BFM†: 75.4 ± 0.2 percent" title="LPP w/ Fixed-γ BFM†: 75.4 ± 0.2 percent"><div class="task-bar-label"><span>LPP w/ Fixed-γ BFM<sup>†</sup></span><strong>75.4%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:75.4%"></span><span class="task-bar-error" style="left:75.2%;width:0.4000000000000057%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ AH-BFM†: 81.9 ± 0.9 percent" title="LPP w/ AH-BFM†: 81.9 ± 0.9 percent"><div class="task-bar-label"><span><strong>LPP w/ AH-BFM</strong><sup>†</sup></span><strong>81.9%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:81.9%"></span><span class="task-bar-error" style="left:81.0%;width:1.8000000000000114%"></span></div></div></div><div class="task-chart-method-group"><h5>Reference-prompted execution</h5><div class="task-bar-row" aria-label="SONIC: 0.0 ± 0.0 percent" title="SONIC: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>SONIC</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="FALCON: 0.0 ± 0.0 percent" title="FALCON: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>FALCON</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="B(s) Tracking: 0.0 ± 0.0 percent" title="B(s) Tracking: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>B(s) Tracking</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="LPP Replay: 11.2 ± 0.8 percent" title="LPP Replay: 11.2 ± 0.8 percent"><div class="task-bar-label"><span><strong>LPP Replay</strong></span><strong>11.2%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:11.2%"></span><span class="task-bar-error" style="left:10.399999999999999%;width:1.6000000000000014%"></span></div></div></div><div class="task-chart-method-group"><h5>Perceptive planning</h5><div class="task-bar-row" aria-label="OmniContact*: 29.9 ± 0.2 percent" title="OmniContact*: 29.9 ± 0.2 percent"><div class="task-bar-label"><span>OmniContact<sup>*</sup></span><strong>29.9%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:29.9%"></span><span class="task-bar-error" style="left:29.7%;width:0.3999999999999986%"></span></div></div><div class="task-bar-row" aria-label="LessMimic: 38.3 ± 0.0 percent" title="LessMimic: 38.3 ± 0.0 percent"><div class="task-bar-label"><span>LessMimic</span><strong>38.3%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:38.3%"></span></div></div><div class="task-bar-row" aria-label="Action Planner: 0.0 ± 0.0 percent" title="Action Planner: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>Action Planner</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="Kinematic Planner: 0.0 ± 0.0 percent" title="Kinematic Planner: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>Kinematic Planner</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row is-fiber" aria-label="FIBER · ours: 42.1 ± 0.6 percent" title="FIBER · ours: 42.1 ± 0.6 percent"><div class="task-bar-label"><span><strong>FIBER · ours</strong></span><strong>42.1%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:42.1%"></span><span class="task-bar-error" style="left:41.5%;width:1.2000000000000028%"></span></div></div></div></section><section class="task-chart"><h4>Open door</h4><div class="task-chart-axis" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div><div class="task-chart-method-group"><h5>Task-specific policies</h5><div class="task-bar-row" aria-label="Expert Policy†: 89.3 ± 0.2 percent" title="Expert Policy†: 89.3 ± 0.2 percent"><div class="task-bar-label"><span>Expert Policy<sup>†</sup></span><strong>89.3%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:89.3%"></span><span class="task-bar-error" style="left:89.1%;width:0.4000000000000057%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ SONIC†: 83.1 ± 0.7 percent" title="LPP w/ SONIC†: 83.1 ± 0.7 percent"><div class="task-bar-label"><span>LPP w/ SONIC<sup>†</sup></span><strong>83.1%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:83.1%"></span><span class="task-bar-error" style="left:82.39999999999999%;width:1.4000000000000057%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ Fixed-γ BFM†: 61.8 ± 1.9 percent" title="LPP w/ Fixed-γ BFM†: 61.8 ± 1.9 percent"><div class="task-bar-label"><span>LPP w/ Fixed-γ BFM<sup>†</sup></span><strong>61.8%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:61.8%"></span><span class="task-bar-error" style="left:59.9%;width:3.799999999999997%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ AH-BFM†: 83.5 ± 1.8 percent" title="LPP w/ AH-BFM†: 83.5 ± 1.8 percent"><div class="task-bar-label"><span><strong>LPP w/ AH-BFM</strong><sup>†</sup></span><strong>83.5%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:83.5%"></span><span class="task-bar-error" style="left:81.7%;width:3.5999999999999943%"></span></div></div></div><div class="task-chart-method-group"><h5>Reference-prompted execution</h5><div class="task-bar-row" aria-label="SONIC: 0.4 ± 0.0 percent" title="SONIC: 0.4 ± 0.0 percent"><div class="task-bar-label"><span>SONIC</span><strong>0.4%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.4%"></span></div></div><div class="task-bar-row" aria-label="FALCON: 0.4 ± 0.0 percent" title="FALCON: 0.4 ± 0.0 percent"><div class="task-bar-label"><span>FALCON</span><strong>0.4%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.4%"></span></div></div><div class="task-bar-row" aria-label="B(s) Tracking: 0.4 ± 0.0 percent" title="B(s) Tracking: 0.4 ± 0.0 percent"><div class="task-bar-label"><span>B(s) Tracking</span><strong>0.4%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.4%"></span></div></div><div class="task-bar-row" aria-label="LPP Replay: 12.2 ± 0.9 percent" title="LPP Replay: 12.2 ± 0.9 percent"><div class="task-bar-label"><span><strong>LPP Replay</strong></span><strong>12.2%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:12.2%"></span><span class="task-bar-error" style="left:11.299999999999999%;width:1.8000000000000007%"></span></div></div></div><div class="task-chart-method-group"><h5>Perceptive planning</h5><div class="task-bar-row" aria-label="OmniContact*: —" title="OmniContact*: —"><div class="task-bar-label"><span>OmniContact<sup>*</sup></span><strong>Not reported</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0%"></span></div></div><div class="task-bar-row" aria-label="LessMimic: —" title="LessMimic: —"><div class="task-bar-label"><span>LessMimic</span><strong>Not reported</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0%"></span></div></div><div class="task-bar-row" aria-label="Action Planner: 0.0 ± 0.0 percent" title="Action Planner: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>Action Planner</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="Kinematic Planner: 0.0 ± 0.0 percent" title="Kinematic Planner: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>Kinematic Planner</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row is-fiber" aria-label="FIBER · ours: 53.5 ± 4.8 percent" title="FIBER · ours: 53.5 ± 4.8 percent"><div class="task-bar-label"><span><strong>FIBER · ours</strong></span><strong>53.5%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:53.5%"></span><span class="task-bar-error" style="left:48.7%;width:9.599999999999994%"></span></div></div></div></section><section class="task-chart"><h4>Grasp object</h4><div class="task-chart-axis" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div><div class="task-chart-method-group"><h5>Task-specific policies</h5><div class="task-bar-row" aria-label="Expert Policy†: 97.0 ± 0.8 percent" title="Expert Policy†: 97.0 ± 0.8 percent"><div class="task-bar-label"><span>Expert Policy<sup>†</sup></span><strong>97.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:97.0%"></span><span class="task-bar-error" style="left:96.2%;width:1.5999999999999943%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ SONIC†: 5.1 ± 0.7 percent" title="LPP w/ SONIC†: 5.1 ± 0.7 percent"><div class="task-bar-label"><span>LPP w/ SONIC<sup>†</sup></span><strong>5.1%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:5.1%"></span><span class="task-bar-error" style="left:4.3999999999999995%;width:1.4000000000000004%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ Fixed-γ BFM†: 69.3 ± 1.2 percent" title="LPP w/ Fixed-γ BFM†: 69.3 ± 1.2 percent"><div class="task-bar-label"><span>LPP w/ Fixed-γ BFM<sup>†</sup></span><strong>69.3%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:69.3%"></span><span class="task-bar-error" style="left:68.1%;width:2.4000000000000057%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ AH-BFM†: 52.9 ± 2.1 percent" title="LPP w/ AH-BFM†: 52.9 ± 2.1 percent"><div class="task-bar-label"><span><strong>LPP w/ AH-BFM</strong><sup>†</sup></span><strong>52.9%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:52.9%"></span><span class="task-bar-error" style="left:50.8%;width:4.200000000000003%"></span></div></div></div><div class="task-chart-method-group"><h5>Reference-prompted execution</h5><div class="task-bar-row" aria-label="SONIC: 12.1 ± 0.0 percent" title="SONIC: 12.1 ± 0.0 percent"><div class="task-bar-label"><span>SONIC</span><strong>12.1%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:12.1%"></span></div></div><div class="task-bar-row" aria-label="FALCON: 11.9 ± 0.3 percent" title="FALCON: 11.9 ± 0.3 percent"><div class="task-bar-label"><span>FALCON</span><strong>11.9%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:11.9%"></span><span class="task-bar-error" style="left:11.6%;width:0.6000000000000014%"></span></div></div><div class="task-bar-row" aria-label="B(s) Tracking: 13.9 ± 0.5 percent" title="B(s) Tracking: 13.9 ± 0.5 percent"><div class="task-bar-label"><span>B(s) Tracking</span><strong>13.9%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:13.9%"></span><span class="task-bar-error" style="left:13.4%;width:1.0%"></span></div></div><div class="task-bar-row" aria-label="LPP Replay: 11.3 ± 1.1 percent" title="LPP Replay: 11.3 ± 1.1 percent"><div class="task-bar-label"><span><strong>LPP Replay</strong></span><strong>11.3%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:11.3%"></span><span class="task-bar-error" style="left:10.200000000000001%;width:2.1999999999999993%"></span></div></div></div><div class="task-chart-method-group"><h5>Perceptive planning</h5><div class="task-bar-row" aria-label="OmniContact*: —" title="OmniContact*: —"><div class="task-bar-label"><span>OmniContact<sup>*</sup></span><strong>Not reported</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0%"></span></div></div><div class="task-bar-row" aria-label="LessMimic: —" title="LessMimic: —"><div class="task-bar-label"><span>LessMimic</span><strong>Not reported</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0%"></span></div></div><div class="task-bar-row" aria-label="Action Planner: 0.0 ± 0.0 percent" title="Action Planner: 0.0 ± 0.0 percent"><div class="task-bar-label"><span>Action Planner</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="Kinematic Planner: 10.6 ± 0.5 percent" title="Kinematic Planner: 10.6 ± 0.5 percent"><div class="task-bar-label"><span>Kinematic Planner</span><strong>10.6%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:10.6%"></span><span class="task-bar-error" style="left:10.1%;width:1.0%"></span></div></div><div class="task-bar-row is-fiber" aria-label="FIBER · ours: 30.3 ± 2.3 percent" title="FIBER · ours: 30.3 ± 2.3 percent"><div class="task-bar-label"><span><strong>FIBER · ours</strong></span><strong>30.3%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:30.3%"></span><span class="task-bar-error" style="left:28.0%;width:4.600000000000001%"></span></div></div></div></section><section class="task-chart"><h4>Mean · with approach</h4><div class="task-chart-axis" aria-hidden="true"><span>0</span><span>50</span><span>100%</span></div><div class="task-chart-method-group"><h5>Task-specific policies</h5><div class="task-bar-row" aria-label="Expert Policy†: 95.4 percent" title="Expert Policy†: 95.4 percent"><div class="task-bar-label"><span>Expert Policy<sup>†</sup></span><strong>95.4%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:95.4%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ SONIC†: 29.4 percent" title="LPP w/ SONIC†: 29.4 percent"><div class="task-bar-label"><span>LPP w/ SONIC<sup>†</sup></span><strong>29.4%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:29.4%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ Fixed-γ BFM†: 68.8 percent" title="LPP w/ Fixed-γ BFM†: 68.8 percent"><div class="task-bar-label"><span>LPP w/ Fixed-γ BFM<sup>†</sup></span><strong>68.8%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:68.8%"></span></div></div><div class="task-bar-row" aria-label="LPP w/ AH-BFM†: 72.8 percent" title="LPP w/ AH-BFM†: 72.8 percent"><div class="task-bar-label"><span><strong>LPP w/ AH-BFM</strong><sup>†</sup></span><strong>72.8%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:72.8%"></span></div></div></div><div class="task-chart-method-group"><h5>Reference-prompted execution</h5><div class="task-bar-row" aria-label="SONIC: 4.2 percent" title="SONIC: 4.2 percent"><div class="task-bar-label"><span>SONIC</span><strong>4.2%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:4.2%"></span></div></div><div class="task-bar-row" aria-label="FALCON: 4.1 percent" title="FALCON: 4.1 percent"><div class="task-bar-label"><span>FALCON</span><strong>4.1%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:4.1%"></span></div></div><div class="task-bar-row" aria-label="B(s) Tracking: 4.8 percent" title="B(s) Tracking: 4.8 percent"><div class="task-bar-label"><span>B(s) Tracking</span><strong>4.8%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:4.8%"></span></div></div><div class="task-bar-row" aria-label="LPP Replay: 11.6 percent" title="LPP Replay: 11.6 percent"><div class="task-bar-label"><span><strong>LPP Replay</strong></span><strong>11.6%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:11.6%"></span></div></div></div><div class="task-chart-method-group"><h5>Perceptive planning</h5><div class="task-bar-row" aria-label="OmniContact*: —" title="OmniContact*: —"><div class="task-bar-label"><span>OmniContact<sup>*</sup></span><strong>Not reported</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0%"></span></div></div><div class="task-bar-row" aria-label="LessMimic: —" title="LessMimic: —"><div class="task-bar-label"><span>LessMimic</span><strong>Not reported</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0%"></span></div></div><div class="task-bar-row" aria-label="Action Planner: 0.0 percent" title="Action Planner: 0.0 percent"><div class="task-bar-label"><span>Action Planner</span><strong>0.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:0.0%"></span></div></div><div class="task-bar-row" aria-label="Kinematic Planner: 3.5 percent" title="Kinematic Planner: 3.5 percent"><div class="task-bar-label"><span>Kinematic Planner</span><strong>3.5%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:3.5%"></span></div></div><div class="task-bar-row is-fiber" aria-label="FIBER · ours: 42.0 percent" title="FIBER · ours: 42.0 percent"><div class="task-bar-label"><span><strong>FIBER · ours</strong></span><strong>42.0%</strong></div><div class="task-bar-track"><span class="task-bar-fill" style="width:42.0%"></span></div></div></div></section></div>
+          <figcaption>Methods are grouped by evaluation setting, in the same order across all panels. Task-specific policies are shown separately from reference-prompted execution and perceptive planning. All panels use the same 0–100% scale. Pickup and door opening include approach; mean uses these settings and grasping. Whiskers show reported uncertainty. “Not reported” indicates a missing result.</figcaption>
+        </figure>
         <p class="table-note">
-          Success rates in percent. “With approach” includes the approach phase; “without” starts near interaction.
+          Success rates in percent. Pickup and door opening include the approach phase.
           <sup>†</sup> Task-specific policy. <sup>*</sup> Uses privileged object states instead of egocentric observations.
           Mean uses with-approach settings.
           Action Planner predicts low-level action trajectories directly instead of BFM latents.
@@ -674,7 +641,7 @@
         <div class="analysis-block reveal">
           <div class="analysis-copy">
             <p class="section-kicker">AH-BFM analysis</p>
-            <h3>One B(s), multiple successor horizons</h3>
+            <h3>Adaptive-horizon behavioral foundation model</h3>
             <p>
               A single backward representation B(s) is accumulated with different discount factors.
               Low γ produces a local successor feature, while high γ preserves information from

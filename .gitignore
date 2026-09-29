@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 _site/
+
+# Browser inference artifacts are prepared locally; publish separately after review.
+playground/models/

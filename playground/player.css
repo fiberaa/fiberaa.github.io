@@ -1,0 +1,586 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #e7edf7;
+  background: #0a0f17;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  color: #ced8e7;
+  background: #182231;
+  border: 1px solid #2a3648;
+  border-radius: 9px;
+  padding: 10px 14px;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+button:hover {
+  background: #23314a;
+  border-color: #5a7ba8;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #83a7ff;
+  outline-offset: 3px;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.5;
+}
+.primary {
+  background: #4f7cff;
+  color: #fff;
+  border-color: #4f7cff;
+  font-weight: 700;
+}
+header {
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid #222d3f;
+}
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.brand span {
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: #7f90a8;
+}
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+.header-actions button {
+  font-size: 0.75rem;
+  padding: 7px 10px;
+}
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  height: calc(100vh - 64px);
+  min-height: 620px;
+}
+.viewport {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 55% 30%, #25364b, #121b28 65%);
+}
+#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+.scene-top,
+.scene-bottom {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  font-size: 0.7rem;
+  color: #a9b9cf;
+}
+.scene-top {
+  top: 18px;
+}
+.scene-bottom {
+  bottom: 18px;
+}
+.live-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #0a1424c7;
+  border: 1px solid #3b4d6566;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.live-pill i {
+  width: 6px;
+  height: 6px;
+  background: #6bd4ae;
+  border-radius: 100%;
+}
+.fpv-label {
+  position: absolute;
+  right: 26px;
+  top: 66px;
+  font-size: 0.6rem;
+  padding: 5px 8px;
+  background: #09121ace;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 2;
+  display: none;
+}
+.controls {
+  padding: 25px 22px;
+  background: #0e1520;
+  border-left: 1px solid #263245;
+  overflow: auto;
+}
+.eyebrow {
+  font-size: 0.62rem;
+  color: #86a5d9;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+.controls h2 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 9px 0;
+}
+.intro {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #99a9bf;
+  margin-bottom: 20px;
+}
+.scene-switch {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+.scene-switch button {
+  flex: 1;
+  font-size: 0.72rem;
+  padding: 9px 5px;
+}
+.scene-switch button.active {
+  background: #20345a;
+  border-color: #4f7cff;
+  color: #fff;
+}
+.task-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+.task-actions button {
+  font-size: 0.72rem;
+  text-align: left;
+  line-height: 1.4;
+  padding: 11px 10px;
+}
+.chain-action {
+  grid-column: 1/-1;
+  color: #b9d0ff;
+}
+.status-card {
+  background: #151f2f;
+  border: 1px solid #2a3a53;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 22px 0 13px;
+}
+.status-label {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #7c92b3;
+}
+.status-card strong {
+  display: block;
+  color: #a9c3ff;
+  font-size: 0.95rem;
+  margin: 9px 0;
+  letter-spacing: 0.04em;
+}
+.status-card p {
+  font-size: 0.73rem;
+  line-height: 1.6;
+  color: #acbdd4;
+  margin: 0;
+}
+.status-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid #2a3a53;
+  padding-top: 10px;
+  margin-top: 12px;
+  font-size: 0.58rem;
+  color: #7b91b0;
+}
+.transport {
+  display: flex;
+  gap: 8px;
+}
+.transport button {
+  flex: 1;
+  font-size: 0.75rem;
+}
+.help {
+  font-size: 0.73rem;
+  color: #9cacc1;
+  margin: 20px 0;
+}
+.help summary {
+  cursor: pointer;
+}
+.help p {
+  line-height: 2.3;
+}
+kbd {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.62rem;
+  background: #223047;
+  border-radius: 4px;
+  padding: 0 5px;
+  margin: 0 2px;
+  color: #b2c1d6;
+}
+.footnote {
+  font-size: 0.64rem;
+  color: #687e9d;
+  line-height: 1.7;
+}
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #101a2bc9;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+}
+.loading[hidden] {
+  display: none;
+}
+.loading-card {
+  max-width: 430px;
+  margin: 24px;
+  text-align: left;
+}
+.loading h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  margin: 14px 0 22px;
+}
+.loading p {
+  color: #a6b7d1;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+.loading .primary {
+  margin-top: 10px;
+  padding: 13px 20px;
+}
+.loading .load-note {
+  font-size: 0.7rem;
+  max-width: 350px;
+  margin-top: 16px;
+}
+progress {
+  width: 100%;
+  height: 6px;
+  accent-color: #4f7cff;
+}
+.loading-card.is-error h1 {
+  font-size: 2rem;
+}
+.loading-card.is-error .load-note {
+  color: #ffb7ad;
+}
+.task-actions button.active {
+  border-color: #4f7cff;
+  background: #213456;
+}
+.task-actions button:disabled {
+  opacity: 0.45;
+}
+@media (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+  }
+  .viewport {
+    height: 65vh;
+    min-height: 400px;
+  }
+  .controls {
+    border-left: 0;
+    border-top: 1px solid #263245;
+  }
+  .task-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .chain-action {
+    grid-column: 1/-1;
+  }
+  .controls .status-card {
+    margin-top: 16px;
+  }
+  header {
+    padding: 0 14px;
+  }
+}
+@media (max-width: 500px) {
+  .header-actions button {
+    font-size: 0.62rem;
+  }
+  .task-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .viewport {
+    min-height: 360px;
+  }
+  .loading h1 {
+    font-size: 2.4rem;
+  }
+}
+
+.yaw-readout {
+  position: absolute;
+  left: 20px;
+  bottom: 52px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(9, 17, 29, 0.85);
+  color: white;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.setup-card,
+.waypoint-editor {
+  border: 1px solid #2b3c54;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 14px 0;
+  font-size: 0.72rem;
+}
+.setup-card label,
+.waypoint-editor label {
+  display: block;
+  color: #b4c3d8;
+  margin-bottom: 6px;
+}
+.setup-card select,
+.coordinate-inputs input {
+  color: white;
+  background: #162234;
+  border: 1px solid #3b5070;
+  border-radius: 6px;
+  width: 100%;
+  padding: 8px;
+  font: inherit;
+}
+.box-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 9px;
+}
+.box-targets button {
+  font-size: 0.65rem;
+  padding: 7px;
+  flex: 1;
+}
+.box-targets button.active,
+[data-task="walk"].active {
+  border-color: #72a1ff;
+  background: #263e68;
+}
+.editor-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.editor-heading span,
+.waypoint-editor p {
+  color: #91a8c6;
+  font-size: 0.66rem;
+  line-height: 1.6;
+}
+.coordinate-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.waypoint-editor input[type="range"] {
+  width: 100%;
+  accent-color: #74a6ff;
+  margin: 0 0 10px;
+}
+.waypoint-editor output {
+  float: right;
+  color: white;
+}
+
+[hidden] {
+  display: none !important;
+}
+main {
+  grid-template-columns: minmax(0, 1fr) 330px;
+}
+[data-task="walk"] {
+  grid-column: 1 / -1;
+  text-align: left;
+  background: linear-gradient(120deg, #263247, #1b2435);
+}
+.controls {
+  background: #101722;
+  padding: 24px 20px;
+}
+.setup-card,
+.waypoint-editor {
+  background: #131d2b;
+  border-color: #2a3547;
+  border-radius: 12px;
+}
+.box-targets button.active,
+[data-task="walk"].active {
+  border-color: #a89dcc;
+  background: #302e47;
+}
+.waypoint-editor input[type="range"] {
+  accent-color: #b6acdd;
+}
+.yaw-readout {
+  border: 1px solid #ffffff12;
+  color: #c8d4e6;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  font-size: 11px;
+}
+@media (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+[data-task="carry"] {
+  grid-column: 1 / -1;
+  text-align: left;
+}
+[data-task="carry"].active {
+  border-color: #a89dcc;
+  background: #302e47;
+}
+[data-task="carry"]:disabled {
+  cursor: default;
+}
+
+/* Object choices use quiet illustrated tiles, sharing one selected indicator. */
+.setup-card {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  margin: 20px 0;
+}
+.setup-card > label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8294ac;
+  margin-bottom: 12px;
+}
+.box-targets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 12px;
+}
+.box-targets button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 3px 12px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff03;
+  min-width: 0;
+}
+.box-targets button:hover {
+  background: #ffffff08;
+  border-color: transparent;
+}
+.box-targets button.active {
+  background: #ffffff07;
+  border-color: transparent;
+}
+.box-targets button.active::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  background: #b6acdd;
+  border-radius: 2px;
+}
+.box-targets svg {
+  width: 28px;
+  height: 39px;
+  margin-bottom: 3px;
+  filter: drop-shadow(0 4px 4px #0004);
+}
+.object-name {
+  color: #d7dfea;
+  font-size: 0.69rem;
+  font-weight: 550;
+}
+.object-surface {
+  color: #7e91aa;
+  font-size: 0.59rem;
+}
+.layout-options {
+  display: flex;
+  border-bottom: 1px solid #ffffff10;
+}
+.layout-options button {
+  flex: 1;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.68rem;
+  padding: 8px 4px 10px;
+  color: #8397b2;
+}
+.layout-options button:hover {
+  color: white;
+}
+.layout-options button.active {
+  color: #e1e6ee;
+  box-shadow: inset 0 -2px #9faed0;
+}

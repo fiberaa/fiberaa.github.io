@@ -1,0 +1,1781 @@
+{
+  "scope": "One fixed-default trial per case, not randomized success rate",
+  "student": "run 2 step-2000, 3 Euler steps, W8 weights / FP32 computations",
+  "actor": "FP32",
+  "chromium": {
+    "passed": 10,
+    "total": 13,
+    "trials": [
+      {
+        "id": "pickup-mixed-2",
+        "scene": "pickup",
+        "layout": "mixed",
+        "object": 1,
+        "pass": true,
+        "wallSeconds": 12.034,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.1200000000000014,
+          "plannerMs": 607.6000000238419,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.6288431274148577,
+          "heldFrames": 51,
+          "currentContactForce": 87.51309184353033,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          0.14805671703836573,
+          0.14929289332822274,
+          0.7696170634620961,
+          0.8320016058700099,
+          -0.05354932472931714,
+          0.12001628888577316,
+          0.5389822706294196
+        ],
+        "objectCenter": [
+          0.3438529400143129,
+          0.5155309392701215,
+          0.7361459941113387
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "mixed",
+          "arrival": "ep_0004",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 1,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-mixed-3",
+        "scene": "pickup",
+        "layout": "mixed",
+        "object": 2,
+        "pass": true,
+        "wallSeconds": 8.609,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.3800000000000017,
+          "plannerMs": 453.30000001192093,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.2881566050131842,
+          "heldFrames": 51,
+          "currentContactForce": 91.88216198351431,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          0.1005095126312158,
+          0.15677094436070785,
+          0.7844421807609083,
+          0.8381854933289694,
+          -0.013851570867662626,
+          0.02730564729093555,
+          0.5445251274123102
+        ],
+        "objectCenter": [
+          0.23559329054047196,
+          0.5693599849893674,
+          0.8438118127338081
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "mixed",
+          "arrival": "ep_0004",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 2,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0.55
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-ground-1",
+        "scene": "pickup",
+        "layout": "ground",
+        "object": 0,
+        "pass": true,
+        "wallSeconds": 6.781,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.1000000000000014,
+          "plannerMs": 473.19999998807907,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.6301202030160864,
+          "heldFrames": 51,
+          "currentContactForce": 120.7265281736101,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          0.1741405538629787,
+          0.15333942928360614,
+          0.7681313732761886,
+          0.8487021156114574,
+          -0.043566480179757144,
+          0.1217057472904467,
+          0.5128297883682812
+        ],
+        "objectCenter": [
+          0.3794357222153612,
+          0.5123025013097127,
+          0.7066889295999582
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "ground",
+          "arrival": "ep_0000",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 0,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-ground-2",
+        "scene": "pickup",
+        "layout": "ground",
+        "object": 1,
+        "pass": true,
+        "wallSeconds": 8.024,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.1000000000000014,
+          "plannerMs": 491.30000001192093,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.6301202030160864,
+          "heldFrames": 51,
+          "currentContactForce": 120.7265281736101,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          0.1741405538629787,
+          0.15333942928360614,
+          0.7681313732761886,
+          0.8487021156114574,
+          -0.043566480179757144,
+          0.1217057472904467,
+          0.5128297883682812
+        ],
+        "objectCenter": [
+          0.3794357222153612,
+          0.5123025013097127,
+          0.7066889295999582
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "ground",
+          "arrival": "ep_0000",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 1,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-ground-3",
+        "scene": "pickup",
+        "layout": "ground",
+        "object": 2,
+        "pass": true,
+        "wallSeconds": 8.125,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.1000000000000014,
+          "plannerMs": 467.10000002384186,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.6301202030160864,
+          "heldFrames": 51,
+          "currentContactForce": 120.7265281736101,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          0.1741405538629787,
+          0.15333942928360614,
+          0.7681313732761886,
+          0.8487021156114574,
+          -0.043566480179757144,
+          0.1217057472904467,
+          0.5128297883682812
+        ],
+        "objectCenter": [
+          0.3794357222153612,
+          0.5123025013097127,
+          0.7066889295999582
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "ground",
+          "arrival": "ep_0000",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 2,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-mixed-1",
+        "scene": "pickup",
+        "layout": "mixed",
+        "object": 0,
+        "pass": false,
+        "wallSeconds": 90.414,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "pickup",
+          "simTime": 35.019999999999875,
+          "plannerMs": 501.19999998807907,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.47158760532707233,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "This attempt did not reach its goal. Reset or choose a different task."
+        },
+        "root": [
+          0.17727827911270472,
+          0.1722103531679186,
+          0.7835786153965909,
+          0.8675949591254969,
+          -0.0064182540674066904,
+          0.00810471456899048,
+          0.4971640639834184
+        ],
+        "objectCenter": [
+          0.8800335661674717,
+          0.561604645003763,
+          0.08034119027765614
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "mixed",
+          "arrival": "ep_0004",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 0,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0.43958349
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-support-2",
+        "scene": "pickup",
+        "layout": "support",
+        "object": 1,
+        "pass": true,
+        "wallSeconds": 8.304,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.1800000000000015,
+          "plannerMs": 476.69999998807907,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.47160962420926367,
+          "heldFrames": 51,
+          "currentContactForce": 57.818502195657004,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          -0.06067509341760556,
+          0.25249397870782053,
+          0.7836580094208959,
+          0.8310793335134565,
+          -0.01361153299468963,
+          0.028564805699544858,
+          0.5552530229109152
+        ],
+        "objectCenter": [
+          0.026725559699598903,
+          0.597636430764579,
+          0.8383766330422239
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "support",
+          "arrival": "ep_0014",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 1,
+          "start": "Original held-out low-support arrival and geometry",
+          "support_height": 0.2561612910804472
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "pickup-support-3",
+        "scene": "pickup",
+        "layout": "support",
+        "object": 2,
+        "pass": true,
+        "wallSeconds": 7.799,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.3800000000000017,
+          "plannerMs": 458.19999998807907,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.2881566050131842,
+          "heldFrames": 51,
+          "currentContactForce": 91.88216198351431,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          0.1005095126312158,
+          0.15677094436070785,
+          0.7844421807609083,
+          0.8381854933289694,
+          -0.013851570867662626,
+          0.02730564729093555,
+          0.5445251274123102
+        ],
+        "objectCenter": [
+          0.23559329054047196,
+          0.5693599849893674,
+          0.8438118127338081
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "support",
+          "arrival": "ep_0004",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 2,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0.55
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "door",
+        "scene": "door",
+        "pass": true,
+        "wallSeconds": 23.414,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "complete",
+          "simTime": 9.399999999999888,
+          "plannerMs": 438.19999998807907,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Door opened and crossed. Choose another task or reset."
+        },
+        "root": [
+          1.8027378042100415,
+          -0.5143771902407439,
+          0.7414679599248142,
+          0.8878602087634013,
+          0.03737054037819685,
+          0.031163106385340405,
+          -0.4575331170602485
+        ],
+        "objectCenter": [],
+        "hinge": 0.834651023027857,
+        "sampler": "door"
+      },
+      {
+        "id": "pickup-support-1",
+        "scene": "pickup",
+        "layout": "support",
+        "object": 0,
+        "pass": false,
+        "wallSeconds": 86.454,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "pickup",
+          "simTime": 35.019999999999875,
+          "plannerMs": 429,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.47158760532707233,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "This attempt did not reach its goal. Reset or choose a different task."
+        },
+        "root": [
+          0.17727827911270472,
+          0.1722103531679186,
+          0.7835786153965909,
+          0.8675949591254969,
+          -0.0064182540674066904,
+          0.00810471456899048,
+          0.4971640639834184
+        ],
+        "objectCenter": [
+          0.8800335661674717,
+          0.561604645003763,
+          0.08034119027765614
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "support",
+          "arrival": "ep_0004",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 0,
+          "start": "Original arrival pose relative to selected box; one-object trial",
+          "support_height": 0.43958349
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "grasp-1",
+        "scene": "grasp",
+        "object": 0,
+        "label": "Tangerine",
+        "pass": true,
+        "wallSeconds": 21.817,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "grasp",
+          "mode": "grasp_table",
+          "phase": "grasp",
+          "simTime": 8.139999999999915,
+          "plannerMs": 565.4000000357628,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "grasp_table",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.30751150656396764,
+          "heldFrames": 51,
+          "currentContactForce": 13.541587409776014,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "grasp-15",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Object lifted and held with finger contact for one second. Reset to try again."
+        },
+        "root": [
+          0.09602542442887071,
+          0.5343034263599233,
+          0.7738365572735281,
+          0.6628097143901585,
+          0.018516764848851452,
+          -0.056476634863111747,
+          -0.7464253490096036
+        ],
+        "objectCenter": [
+          0.050267691704511404,
+          0.23048673254939164,
+          1.0030979328748517
+        ],
+        "hinge": null,
+        "provenance": {
+          "clip": "pickup_table__tangerine_4__001",
+          "start_frame": 34,
+          "grasp_onset_frame": 270,
+          "mass_kg": 0.1680736541748047,
+          "start": "neutral arms down, open fingers; one object on standardized tabletop"
+        },
+        "sampler": "grasp-15"
+      },
+      {
+        "id": "grasp-3",
+        "scene": "grasp",
+        "object": 2,
+        "label": "Cup",
+        "pass": true,
+        "wallSeconds": 28.97,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "grasp",
+          "mode": "grasp_table",
+          "phase": "grasp",
+          "simTime": 11.159999999999851,
+          "plannerMs": 499.5,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "grasp_table",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.3751992719861408,
+          "heldFrames": 51,
+          "currentContactForce": 11.665234604162809,
+          "contactFrames": 51,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "grasp-52",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "Object lifted and held with finger contact for one second. Reset to try again."
+        },
+        "root": [
+          -0.010486278587028282,
+          0.4383802419360951,
+          0.7693654638884669,
+          0.6867625484164285,
+          -0.07451626207296876,
+          -0.11822406755604276,
+          -0.7133215254215663
+        ],
+        "objectCenter": [
+          0.021762634415923954,
+          0.16523120918890094,
+          1.1058096728308053
+        ],
+        "hinge": null,
+        "provenance": {
+          "clip": "pickup_table__coffee_cup_4__002",
+          "start_frame": 16,
+          "grasp_onset_frame": 274,
+          "mass_kg": 0.019999999552965164,
+          "start": "neutral arms down, open fingers; one object on standardized tabletop"
+        },
+        "sampler": "grasp-52"
+      },
+      {
+        "id": "grasp-2",
+        "scene": "grasp",
+        "object": 1,
+        "label": "Water bottle",
+        "pass": false,
+        "wallSeconds": 79.148,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "grasp",
+          "mode": "grasp_table",
+          "phase": "grasp",
+          "simTime": 35.019999999999875,
+          "plannerMs": 393.69999998807907,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "grasp_table",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.00373901294763479,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "grasp-4",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+          "error": "This attempt did not reach its goal. Reset or choose a different task."
+        },
+        "root": [
+          -0.002940390791981101,
+          0.42246949909863335,
+          0.7738652371592808,
+          0.7338587109346487,
+          -0.031642465771526004,
+          -0.07607889684539329,
+          -0.6742863992399827
+        ],
+        "objectCenter": [
+          -0.14591221776448626,
+          0.2008806270377095,
+          0.682358651061177
+        ],
+        "hinge": null,
+        "provenance": {
+          "clip": "pickup_table__water_bottle_2__002",
+          "start_frame": 142,
+          "grasp_onset_frame": 276,
+          "mass_kg": 0.14488884806632996,
+          "start": "neutral arms down, open fingers; one object on standardized tabletop"
+        },
+        "sampler": "grasp-4"
+      }
+    ]
+  },
+  "webkit": {
+    "passed": 3,
+    "total": 5,
+    "trials": [
+      {
+        "id": "pickup-support-2",
+        "scene": "pickup",
+        "layout": "support",
+        "object": 1,
+        "pass": true,
+        "wallSeconds": 11.855,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "pickup",
+          "mode": "pickup",
+          "phase": "holding",
+          "simTime": 2.1800000000000015,
+          "plannerMs": 368,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "pickup",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": true,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.5146463921819407,
+          "heldFrames": 51,
+          "currentContactForce": 0,
+          "contactFrames": 49,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "pickup",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Box lifted and held for one second. Select Carry, then click and drag a floor waypoint."
+        },
+        "root": [
+          -0.06558329904910486,
+          0.25342923921083954,
+          0.7852406458682256,
+          0.8301443936502678,
+          -0.011902816141990954,
+          0.02828459838209813,
+          0.556703323282055
+        ],
+        "objectCenter": [
+          0.06752697212195267,
+          0.5976240812324983,
+          0.9070228920673593
+        ],
+        "hinge": null,
+        "provenance": {
+          "layout": "support",
+          "arrival": "ep_0014",
+          "object_mass_kg": 0.5,
+          "single_object": true,
+          "variant": 1,
+          "start": "Original held-out low-support arrival and geometry",
+          "support_height": 0.2561612910804472
+        },
+        "sampler": "pickup"
+      },
+      {
+        "id": "door",
+        "scene": "door",
+        "pass": true,
+        "wallSeconds": 22.564,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "door",
+          "mode": "open_door",
+          "phase": "complete",
+          "simTime": 12.319999999999826,
+          "plannerMs": 265,
+          "stateDropPlans": 1,
+          "stateDropPending": false,
+          "lastExecutedCommand": "open_door",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "door",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Door opened and crossed. Choose another task or reset."
+        },
+        "root": [
+          1.8195563427059491,
+          -0.5442782860192986,
+          0.716934959350776,
+          0.7666430259230569,
+          -0.0005487350494828392,
+          0.02759507862096666,
+          -0.6414800708746039
+        ],
+        "objectCenter": [],
+        "hinge": 1.1928498970588821,
+        "sampler": "door"
+      },
+      {
+        "id": "grasp-1",
+        "scene": "grasp",
+        "object": 0,
+        "label": "Tangerine",
+        "pass": true,
+        "wallSeconds": 14.571,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "grasp",
+          "mode": "grasp_table",
+          "phase": "grasp",
+          "simTime": 7.999999999999917,
+          "plannerMs": 264,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "grasp_table",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.185887123075696,
+          "heldFrames": 51,
+          "currentContactForce": 0,
+          "contactFrames": 45,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "grasp-15",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "Object lifted and held with finger contact for one second. Reset to try again."
+        },
+        "root": [
+          -0.006735418607411807,
+          0.5004904991956006,
+          0.7815547706875906,
+          0.7899448918160276,
+          -0.035121669150401526,
+          -0.08327981370736383,
+          -0.6064800152344024
+        ],
+        "objectCenter": [
+          -0.0028888035754815124,
+          0.11423528167608761,
+          0.8205351655777235
+        ],
+        "hinge": null,
+        "provenance": {
+          "clip": "pickup_table__tangerine_4__001",
+          "start_frame": 34,
+          "grasp_onset_frame": 270,
+          "mass_kg": 0.1680736541748047,
+          "start": "neutral arms down, open fingers; one object on standardized tabletop"
+        },
+        "sampler": "grasp-15"
+      },
+      {
+        "id": "grasp-2",
+        "scene": "grasp",
+        "object": 1,
+        "label": "Water bottle",
+        "pass": false,
+        "wallSeconds": 60.882,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "grasp",
+          "mode": "grasp_table",
+          "phase": "grasp",
+          "simTime": 35.019999999999875,
+          "plannerMs": 335,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "grasp_table",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.005159557249347579,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "grasp-4",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "This attempt did not reach its goal. Reset or choose a different task."
+        },
+        "root": [
+          -0.04109968645433973,
+          0.4423821916274881,
+          0.7691482849744635,
+          0.7355945385480807,
+          -0.058288907631184404,
+          -0.08348921502503757,
+          -0.6697257864827224
+        ],
+        "objectCenter": [
+          -0.0686858024411366,
+          0.3903071991522242,
+          0.03121165204892565
+        ],
+        "hinge": null,
+        "provenance": {
+          "clip": "pickup_table__water_bottle_2__002",
+          "start_frame": 142,
+          "grasp_onset_frame": 276,
+          "mass_kg": 0.14488884806632996,
+          "start": "neutral arms down, open fingers; one object on standardized tabletop"
+        },
+        "sampler": "grasp-4"
+      },
+      {
+        "id": "grasp-3",
+        "scene": "grasp",
+        "object": 2,
+        "label": "Cup",
+        "pass": false,
+        "wallSeconds": 60.983,
+        "errors": [],
+        "state": {
+          "ready": true,
+          "sceneLoading": false,
+          "running": false,
+          "sceneName": "grasp",
+          "mode": "grasp_table",
+          "phase": "grasp",
+          "simTime": 35.019999999999875,
+          "plannerMs": 329,
+          "stateDropPlans": 0,
+          "stateDropPending": false,
+          "lastExecutedCommand": "grasp_table",
+          "goal": null,
+          "walkSelected": false,
+          "navigationIntent": "walk",
+          "holdingBox": false,
+          "yawRate": 1.8,
+          "activeBox": 0,
+          "goalRevision": 0,
+          "goalYaw": null,
+          "maxLift": 0.0027320698875583638,
+          "heldFrames": 0,
+          "currentContactForce": 0,
+          "contactFrames": 0,
+          "conditionedWaypoints": [],
+          "backend": "webgpu",
+          "build": "2026-09-27-distill2000-3",
+          "plannerModel": "v27-distill2000",
+          "solverSteps": 3,
+          "plannerCheckpoint": "v27-distill2000-228000",
+          "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+          "precision": {
+            "actor": "FP32",
+            "planner": "W8A32"
+          },
+          "modelFiles": {
+            "models/actor.onnx": 135281319,
+            "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+            "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+            "models/v27-distill2000/planner.time.w8.onnx": 174468086
+          },
+          "modelBytes": 677125140,
+          "sampler": "grasp-52",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+          "error": "This attempt did not reach its goal. Reset or choose a different task."
+        },
+        "root": [
+          -0.07156837284185337,
+          0.4329892373987162,
+          0.7766457951866323,
+          0.7437901475899183,
+          -0.03285307128598785,
+          -0.08007422326600626,
+          -0.6627857955807377
+        ],
+        "objectCenter": [
+          0.033885676276276366,
+          0.10906110903331814,
+          0.6884003596243703
+        ],
+        "hinge": null,
+        "provenance": {
+          "clip": "pickup_table__coffee_cup_4__002",
+          "start_frame": 16,
+          "grasp_onset_frame": 274,
+          "mass_kg": 0.019999999552965164,
+          "start": "neutral arms down, open fingers; one object on standardized tabletop"
+        },
+        "sampler": "grasp-52"
+      }
+    ]
+  },
+  "webgpu_benchmark": [
+    {
+      "state": {
+        "ready": true,
+        "sceneLoading": false,
+        "running": false,
+        "sceneName": "grasp",
+        "mode": "grasp_table",
+        "phase": "grasp",
+        "simTime": 0.08,
+        "plannerMs": 870.3000000119209,
+        "stateDropPlans": 0,
+        "stateDropPending": false,
+        "lastExecutedCommand": "grasp_table",
+        "goal": null,
+        "walkSelected": false,
+        "navigationIntent": "walk",
+        "holdingBox": false,
+        "yawRate": 1.8,
+        "activeBox": 0,
+        "goalRevision": 0,
+        "goalYaw": null,
+        "maxLift": 0,
+        "heldFrames": 0,
+        "currentContactForce": 0,
+        "contactFrames": 0,
+        "conditionedWaypoints": [],
+        "backend": "webgpu",
+        "build": "2026-09-27-distill2000-3",
+        "plannerModel": "v27",
+        "solverSteps": 8,
+        "plannerCheckpoint": "v27-226000",
+        "plannerSHA256": "181a5e9d2c3fdad68c1192ef4ca70174d3b49bd16777c820a978f24aafef2c7d",
+        "precision": {
+          "actor": "FP32",
+          "planner": "W8A32"
+        },
+        "modelFiles": {
+          "models/actor.onnx": 135281319,
+          "models/v27/planner.condition.w8.onnx": 100216962,
+          "models/v27/planner.step.gpu.w8.onnx": 267158773,
+          "models/v27/planner.time.w8.onnx": 174468086
+        },
+        "modelBytes": 677125140,
+        "sampler": "grasp-15",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "error": "FIBER plans the body motion and Dex3 finger targets to lift the object."
+      },
+      "steps": 8,
+      "timing": [
+        {
+          "wallMs": 839,
+          "workerMs": 838.7999999523163,
+          "conditionMs": 62.59999996423721
+        },
+        {
+          "wallMs": 839.4000000357628,
+          "workerMs": 839.3000000119209,
+          "conditionMs": 52.39999997615814
+        },
+        {
+          "wallMs": 833.8000000119209,
+          "workerMs": 833.6000000238419,
+          "conditionMs": 52.700000047683716
+        },
+        {
+          "wallMs": 834.5999999642372,
+          "workerMs": 834.5,
+          "conditionMs": 50.19999998807907
+        },
+        {
+          "wallMs": 830.8000000119209,
+          "workerMs": 830.5999999642372,
+          "conditionMs": 52.5
+        },
+        {
+          "wallMs": 827.3000000119209,
+          "workerMs": 827.3000000119209,
+          "conditionMs": 52.89999997615814
+        },
+        {
+          "wallMs": 819.0999999642372,
+          "workerMs": 818.9000000357628,
+          "conditionMs": 49.80000001192093
+        }
+      ],
+      "finite": true
+    },
+    {
+      "state": {
+        "ready": true,
+        "sceneLoading": false,
+        "running": false,
+        "sceneName": "grasp",
+        "mode": "grasp_table",
+        "phase": "grasp",
+        "simTime": 0.06,
+        "plannerMs": 424.89999997615814,
+        "stateDropPlans": 0,
+        "stateDropPending": false,
+        "lastExecutedCommand": "grasp_table",
+        "goal": null,
+        "walkSelected": false,
+        "navigationIntent": "walk",
+        "holdingBox": false,
+        "yawRate": 1.8,
+        "activeBox": 0,
+        "goalRevision": 0,
+        "goalYaw": null,
+        "maxLift": 0,
+        "heldFrames": 0,
+        "currentContactForce": 0,
+        "contactFrames": 0,
+        "conditionedWaypoints": [],
+        "backend": "webgpu",
+        "build": "2026-09-27-distill2000-3",
+        "plannerModel": "v27-distill2000",
+        "solverSteps": 3,
+        "plannerCheckpoint": "v27-distill2000-228000",
+        "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+        "precision": {
+          "actor": "FP32",
+          "planner": "W8A32"
+        },
+        "modelFiles": {
+          "models/actor.onnx": 135281319,
+          "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+          "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+          "models/v27-distill2000/planner.time.w8.onnx": 174468086
+        },
+        "modelBytes": 677125140,
+        "sampler": "grasp-15",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "error": "FIBER plans the body motion and Dex3 finger targets to lift the object."
+      },
+      "steps": 3,
+      "timing": [
+        {
+          "wallMs": 403.5,
+          "workerMs": 403.10000002384186,
+          "conditionMs": 65.80000001192093
+        },
+        {
+          "wallMs": 392.39999997615814,
+          "workerMs": 392.30000001192093,
+          "conditionMs": 52.80000001192093
+        },
+        {
+          "wallMs": 392.69999998807907,
+          "workerMs": 392.5,
+          "conditionMs": 51.69999998807907
+        },
+        {
+          "wallMs": 393,
+          "workerMs": 392.9000000357628,
+          "conditionMs": 52.19999998807907
+        },
+        {
+          "wallMs": 390.9000000357628,
+          "workerMs": 390.9000000357628,
+          "conditionMs": 50.10000002384186
+        },
+        {
+          "wallMs": 389.39999997615814,
+          "workerMs": 389.19999998807907,
+          "conditionMs": 50.10000002384186
+        },
+        {
+          "wallMs": 388.69999998807907,
+          "workerMs": 388.5,
+          "conditionMs": 50.39999997615814
+        }
+      ],
+      "finite": true
+    }
+  ],
+  "wasm_benchmark": [
+    {
+      "state": {
+        "ready": true,
+        "sceneLoading": false,
+        "running": false,
+        "sceneName": "grasp",
+        "mode": "grasp_table",
+        "phase": "grasp",
+        "simTime": 0.08,
+        "plannerMs": 2912.2000000476837,
+        "stateDropPlans": 0,
+        "stateDropPending": false,
+        "lastExecutedCommand": "grasp_table",
+        "goal": null,
+        "walkSelected": false,
+        "navigationIntent": "walk",
+        "holdingBox": false,
+        "yawRate": 1.8,
+        "activeBox": 0,
+        "goalRevision": 0,
+        "goalYaw": null,
+        "maxLift": 0,
+        "heldFrames": 0,
+        "currentContactForce": 0,
+        "contactFrames": 0,
+        "conditionedWaypoints": [],
+        "backend": "wasm",
+        "build": "2026-09-27-distill2000-3",
+        "plannerModel": "v27",
+        "solverSteps": 8,
+        "plannerCheckpoint": "v27-226000",
+        "plannerSHA256": "181a5e9d2c3fdad68c1192ef4ca70174d3b49bd16777c820a978f24aafef2c7d",
+        "precision": {
+          "actor": "FP32",
+          "planner": "W8A32"
+        },
+        "modelFiles": {
+          "models/actor.onnx": 135281319,
+          "models/v27/planner.condition.w8.onnx": 100216962,
+          "models/v27/planner.step.gpu.w8.onnx": 267158773,
+          "models/v27/planner.time.w8.onnx": 174468086
+        },
+        "modelBytes": 677125140,
+        "sampler": "grasp-15",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "error": "FIBER plans the body motion and Dex3 finger targets to lift the object."
+      },
+      "steps": 8,
+      "timing": [
+        {
+          "wallMs": 2905.400000035763,
+          "workerMs": 2904.899999976158,
+          "conditionMs": 533.3999999761581
+        },
+        {
+          "wallMs": 2881.7999999523163,
+          "workerMs": 2878.100000023842,
+          "conditionMs": 505.80000001192093
+        },
+        {
+          "wallMs": 2895.2000000476837,
+          "workerMs": 2894.800000011921,
+          "conditionMs": 506.30000001192093
+        },
+        {
+          "wallMs": 2886.099999964237,
+          "workerMs": 2885.800000011921,
+          "conditionMs": 506.80000001192093
+        },
+        {
+          "wallMs": 2872.400000035763,
+          "workerMs": 2872.199999988079,
+          "conditionMs": 506.80000001192093
+        },
+        {
+          "wallMs": 2900,
+          "workerMs": 2899.800000011921,
+          "conditionMs": 506.9000000357628
+        },
+        {
+          "wallMs": 2884,
+          "workerMs": 2883.899999976158,
+          "conditionMs": 511.0999999642372
+        }
+      ],
+      "finite": true
+    },
+    {
+      "state": {
+        "ready": true,
+        "sceneLoading": false,
+        "running": false,
+        "sceneName": "grasp",
+        "mode": "grasp_table",
+        "phase": "grasp",
+        "simTime": 0.08,
+        "plannerMs": 1443.3999999761581,
+        "stateDropPlans": 0,
+        "stateDropPending": false,
+        "lastExecutedCommand": "grasp_table",
+        "goal": null,
+        "walkSelected": false,
+        "navigationIntent": "walk",
+        "holdingBox": false,
+        "yawRate": 1.8,
+        "activeBox": 0,
+        "goalRevision": 0,
+        "goalYaw": null,
+        "maxLift": 0,
+        "heldFrames": 0,
+        "currentContactForce": 0,
+        "contactFrames": 0,
+        "conditionedWaypoints": [],
+        "backend": "wasm",
+        "build": "2026-09-27-distill2000-3",
+        "plannerModel": "v27-distill2000",
+        "solverSteps": 3,
+        "plannerCheckpoint": "v27-distill2000-228000",
+        "plannerSHA256": "d8441d6cdaf24d01e7a0ceb9fd309c31c5e42881fb55f0d193504986df56a483",
+        "precision": {
+          "actor": "FP32",
+          "planner": "W8A32"
+        },
+        "modelFiles": {
+          "models/actor.onnx": 135281319,
+          "models/v27-distill2000/planner.condition.w8.onnx": 100216962,
+          "models/v27-distill2000/planner.step.gpu.w8.onnx": 267158773,
+          "models/v27-distill2000/planner.time.w8.onnx": 174468086
+        },
+        "modelBytes": 677125140,
+        "sampler": "grasp-15",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "error": "FIBER plans the body motion and Dex3 finger targets to lift the object."
+      },
+      "steps": 3,
+      "timing": [
+        {
+          "wallMs": 1427.8999999761581,
+          "workerMs": 1427.699999988079,
+          "conditionMs": 513.3000000119209
+        },
+        {
+          "wallMs": 1414.6000000238419,
+          "workerMs": 1414.300000011921,
+          "conditionMs": 508.5
+        },
+        {
+          "wallMs": 1414.699999988079,
+          "workerMs": 1414.3999999761581,
+          "conditionMs": 507.39999997615814
+        },
+        {
+          "wallMs": 1429.1000000238419,
+          "workerMs": 1425.300000011921,
+          "conditionMs": 509.0999999642372
+        },
+        {
+          "wallMs": 1410.699999988079,
+          "workerMs": 1410.3999999761581,
+          "conditionMs": 507.89999997615814
+        },
+        {
+          "wallMs": 1413.8999999761581,
+          "workerMs": 1413.7000000476837,
+          "conditionMs": 508
+        },
+        {
+          "wallMs": 1418.5,
+          "workerMs": 1418.4000000357628,
+          "conditionMs": 509.4000000357628
+        }
+      ],
+      "finite": true
+    }
+  ],
+  "benchmark_summary": {
+    "webgpu": {
+      "teacher8_ms": 830.8000000119209,
+      "student3_ms": 390.9000000357628,
+      "speedup": 2.1253517522023855,
+      "measurement": "median of five warmed plans, same captured inputs, separate sequential model sessions"
+    },
+    "wasm": {
+      "teacher8_ms": 2886.099999964237,
+      "student3_ms": 1414.699999988079,
+      "speedup": 2.0400791687202635,
+      "measurement": "median of five warmed plans, same captured inputs, separate sequential model sessions"
+    }
+  }
+}

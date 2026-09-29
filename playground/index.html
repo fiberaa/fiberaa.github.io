@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FIBER · Interactive playground</title>
+    <link rel="stylesheet" href="player.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+    <script
+      type="module"
+      src="player.js?v=20260929-student-1hz-threads-door-align"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="../#interactive" class="brand"
+        >FIBER<span> / playground</span></a
+      >
+      <div class="header-actions">
+        <button id="follow" aria-pressed="false">Follow camera</button
+        ><button id="fullscreen">Fullscreen</button>
+      </div>
+    </header>
+    <main>
+      <section
+        class="viewport"
+        id="viewport"
+        aria-label="Interactive MuJoCo scene"
+      >
+        <canvas
+          id="scene"
+          aria-label="Drag to orbit; click the box, then the floor to choose its destination"
+        ></canvas>
+        <div class="scene-top">
+          <span class="live-pill"><i></i> LIVE SIMULATION</span
+          ><span id="runtime">MuJoCo + FIBER</span>
+        </div>
+        <div class="yaw-readout" id="yaw-readout">
+          White · heading / Blue · planned waypoint
+        </div>
+        <div class="fpv-label">FPV · egocentric</div>
+        <div class="scene-bottom">
+          <span id="scene-hint">Drag to orbit · scroll to zoom</span
+          ><span id="sim-time">0.0 s</span>
+        </div>
+        <div class="loading" id="loading">
+          <div class="loading-card">
+            <span class="eyebrow">INTERACTIVE FIBER</span>
+            <h1>Give the humanoid<br />a goal.</h1>
+            <p>
+              Explore pickup, carrying, and door opening with the actual FIBER
+              policy.
+            </p>
+            <button id="launch" class="primary">Launch simulation ↗</button>
+            <p class="load-note" id="load-note">
+              Step-2000 student · 3 Euler steps. Planner: 542 MB across three
+              files, with W8 weights and FP32 computation. Actor: 135 MB, FP32.
+              Physics and inference run in this browser. Desktop Chrome with
+              WebGPU recommended.
+            </p>
+            <progress id="progress" max="1" value="0" hidden></progress>
+          </div>
+        </div>
+      </section>
+      <aside class="controls">
+        <span class="eyebrow">YOUR TASK</span>
+        <h2>Choose an interaction.</h2>
+        <p class="intro">Choose an object to lift, or place a walking goal.</p>
+        <div class="scene-switch" aria-label="Scene">
+          <button data-scene="pickup" class="active">Pickup</button
+          ><button data-scene="door">Door</button
+          ><button data-scene="grasp">Grasp</button>
+        </div>
+        <section id="pickup-settings" class="setup-card">
+          <label for="pickup-layout">Pickup setup</label>
+          <select id="pickup-layout" hidden>
+            <option value="ground">Ground</option>
+            <option value="support">Support</option>
+            <option value="throw">Throw</option>
+          </select>
+          <div class="layout-options" aria-label="Box mode">
+            <button data-layout="ground" class="active" aria-pressed="true">
+              Ground
+            </button>
+            <button data-layout="support" aria-pressed="false">Support</button>
+            <button data-layout="throw" aria-pressed="false">Throw</button>
+          </div>
+          <p id="box-mode-description">
+            One box. Select Pickup to lift it.
+          </p>
+          <div id="box-targets" class="box-targets" hidden></div>
+        </section>
+        <section id="object-settings" class="setup-card" hidden>
+          <label>Grasp target</label>
+          <div id="grasp-targets" class="box-targets"></div>
+        </section>
+        <div class="task-actions">
+          <button data-task="walk">Walk · place a waypoint</button
+          ><button data-task="carry" title="Place a carrying waypoint">
+            Carry · place a waypoint</button
+          ><button data-task="grasp">Grasp object</button
+          ><button data-task="pickup">Pick up the box</button
+          ><button data-task="door">Open the door</button
+          ><button data-task="chain" class="chain-action">
+            Door → pickup → return
+          </button>
+        </div>
+        <section
+          hidden
+          class="waypoint-editor"
+          aria-label="Live waypoint controls"
+        >
+          <div class="editor-heading">
+            <strong>Live waypoint</strong
+            ><span id="waypoint-mode">Select Walk to place a goal</span>
+          </div>
+          <div class="coordinate-inputs">
+            <label
+              >X · m<input
+                id="waypoint-x"
+                type="number"
+                step="0.05"
+                value="0"
+                disabled /></label
+            ><label
+              >Y · m<input
+                id="waypoint-y"
+                type="number"
+                step="0.05"
+                value="0"
+                disabled
+            /></label>
+          </div>
+          <label for="waypoint-height"
+            >Body height
+            <output id="waypoint-height-value">0.75 m</output></label
+          >
+          <input
+            id="waypoint-height"
+            type="range"
+            min="0.4"
+            max="1"
+            step="0.01"
+            value="0.75"
+            disabled
+          />
+          <label for="waypoint-yaw"
+            >Heading <output id="waypoint-yaw-value">0°</output></label
+          ><input
+            id="waypoint-yaw"
+            type="range"
+            min="-180"
+            max="180"
+            step="1"
+            value="0"
+            disabled
+          />
+          <label for="yaw-rate"
+            >Yaw rate <output id="yaw-rate-value">1.8 rad/s</output></label
+          ><input
+            id="yaw-rate"
+            type="range"
+            min="0.9"
+            max="3"
+            step="0.1"
+            value="1.8"
+          />
+          <p>
+            Walk: left-click to place, drag to face. Adjust these controls while
+            moving, including body height. Right-drag to orbit.
+          </p>
+        </section>
+        <div class="status-card" aria-live="polite">
+          <span class="status-label">CURRENT PROMPT</span
+          ><strong id="skill">No prompt selected</strong>
+          <p id="status">Choose a scene and launch the simulation.</p>
+          <div class="status-details">
+            <span id="planning">Depth-conditioned planning</span
+            ><span id="speed">—</span>
+          </div>
+        </div>
+        <div class="transport">
+          <button id="pause" disabled>Pause</button
+          ><button id="reset" disabled>Reset <kbd>R</kbd></button>
+        </div>
+        <details class="help">
+          <summary>Controls</summary>
+          <p>
+            <kbd>W</kbd><kbd>S</kbd> Forward / back<br /><kbd>A</kbd
+            ><kbd>D</kbd> Adjust waypoint<br /><kbd>Q</kbd><kbd>E</kbd> Turn ·
+            hold for continuous yaw<br /><kbd>R</kbd> Reset<br />White arrow ·
+            current heading<br />Blue arrows · conditioned yaw at 0.5 / 1.0 s<br />Walk:
+            left-click + drag · goal and heading<br />Right-drag · orbit
+            camera<br />Scroll · zoom<br />Select an object · choose Pickup or
+            Grasp<br />Walk while holding · carry to a goal
+          </p>
+          <button id="save-run-report" disabled>Save run report</button>
+        </details>
+        <p class="footnote">
+          Experimental simulation. Goals can fail; reset to try again.
+        </p>
+      </aside>
+    </main>
+  </body>
+</html>

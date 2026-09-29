@@ -343,3 +343,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   updateNavigation();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const launch = document.getElementById('launch-fiber-playground');
+  if (!launch) return;
+  launch.addEventListener('click', () => {
+    document.getElementById('fiber-playground').src = 'playground/?autostart=1';
+    document.getElementById('fiber-playground-cover').hidden = true;
+  }, { once: true });
+});
