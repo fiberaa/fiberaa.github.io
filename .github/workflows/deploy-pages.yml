@@ -39,7 +39,8 @@ jobs:
           rm -rf _site
           mkdir -p _site
           cp index.html _site/index.html
-          cp -R static _site/static
+          mkdir -p _site/static
+          rsync -a --exclude=videos/overview/fiber-overview.mp4 static/ _site/static/
           mkdir -p _site/playground
           rsync -a --exclude=models/ --exclude=ort-wasm-simd-threaded.wasm --exclude=ort-wasm-simd-threaded.mjs playground/ _site/playground/
           rm -rf _site/playground/models
