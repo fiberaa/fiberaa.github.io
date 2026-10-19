@@ -64,9 +64,9 @@
       <a href="#video" class="outline-link">Video</a>
       <a href="#real" class="outline-link">Real world</a>
       <a href="#method" class="outline-link">Method</a>
+      <a href="#interactive" class="outline-link">Playground</a>
       <a href="#simulation" class="outline-link">Simulation</a>
       <a href="#results" class="outline-link">Results</a>
-      <a href="#interactive" class="outline-link">Playground</a>
       <a href="#paper" class="outline-link">Paper</a>
     </nav>
   </header>
@@ -268,6 +268,30 @@
             planning while keeping the behavioral foundation model frozen downstream.
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="block" id="interactive" aria-labelledby="play-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="play-title">Interactive playground</h2></div>
+          <p>MuJoCo physics and the planner run in your browser. Pick a task, place a waypoint, and watch it act.</p>
+        </div>
+
+<div class="fiber-playground-shell reveal">
+          <iframe id="fiber-playground" title="FIBER interactive MuJoCo playground" allow="fullscreen" allowfullscreen></iframe>
+          <div class="fiber-playground-cover" id="fiber-playground-cover">
+            <div class="fiber-playground-cover-copy">
+              <h3>Try FIBER in your browser</h3>
+              <p>Give the latent planner a command and watch the frozen BFM carry it out in MuJoCo physics.</p>
+              <p class="fiber-playground-tasklist">Pick up a box, open a door, grasp an object, walk or carry to a waypoint, or chain door, pickup and return.</p>
+              <button type="button" id="launch-fiber-playground">Launch the playground</button>
+              <small class="fiber-playground-caveat">The web version runs a few-step distilled student planner (3 flow steps, INT8 weights, replanning at 1&nbsp;Hz) instead of the paper's planner (10 Heun steps at 5&nbsp;Hz), so success rates may be lower than reported.</small>
+              <small>About 677 MB of models load on first launch. Desktop Chrome with WebGPU recommended.</small>
+            </div>
+          </div>
+        </div>
+<p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
       </div>
     </section>
 
@@ -603,30 +627,6 @@
           </div>
           <p class="table-note">Multi-horizon BFM tracking and behavior embedding performance on 100STYLE.</p>
 
-      </div>
-    </section>
-
-    <section class="block" id="interactive" aria-labelledby="play-title">
-      <div class="page-width">
-        <div class="block-head reveal">
-          <div><h2 id="play-title">Interactive playground</h2></div>
-          <p>MuJoCo physics and the planner run in your browser. Pick a task, place a waypoint, and watch it act.</p>
-        </div>
-
-<div class="fiber-playground-shell reveal">
-          <iframe id="fiber-playground" title="FIBER interactive MuJoCo playground" allow="fullscreen" allowfullscreen></iframe>
-          <div class="fiber-playground-cover" id="fiber-playground-cover">
-            <div class="fiber-playground-cover-copy">
-              <h3>Try FIBER in your browser</h3>
-              <p>Give the latent planner a command and watch the frozen BFM carry it out in MuJoCo physics.</p>
-              <p class="fiber-playground-tasklist">Pick up a box, open a door, grasp an object, walk or carry to a waypoint, or chain door, pickup and return.</p>
-              <button type="button" id="launch-fiber-playground">Launch the playground</button>
-              <small class="fiber-playground-caveat">The web version runs a few-step distilled student planner (3 flow steps, INT8 weights, replanning at 1&nbsp;Hz) instead of the paper's planner (10 Heun steps at 5&nbsp;Hz), so success rates may be lower than reported.</small>
-              <small>About 677 MB of models load on first launch. Desktop Chrome with WebGPU recommended.</small>
-            </div>
-          </div>
-        </div>
-<p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
       </div>
     </section>
 
