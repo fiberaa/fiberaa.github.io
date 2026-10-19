@@ -171,8 +171,8 @@ Apple Metal WebGPU, compact v27 planner, FP32 controller, MuJoCo 3.14.0:
 
 Planning took 0.866–0.873 seconds in these tests. These validate the fixed
 demo starts and sampler seeds, not a general success rate or arbitrary goals.
-The full door–pickup–return chain still uses a separate experimental scene
-and has not been revalidated by these standalone-task checks.
+The experimental door–pickup–return chain is not offered in the public UI;
+these checks cover standalone tasks.
 
 The browser previously used MuJoCo 3.3.8 while the native runner used 3.14.0.
 Grasp outcomes changed when using the older native engine too. Matching

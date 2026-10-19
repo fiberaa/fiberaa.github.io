@@ -38,7 +38,7 @@
   <link crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-  <script defer src="static/js/index.js?v=5"></script>
+  <script defer src="static/js/index.js?v=6"></script>
 
   <script type="application/ld+json">
   {
@@ -107,8 +107,8 @@
         </div>
 
         <figure class="demo-video reveal">
-          <video controls preload="metadata" playsinline poster="static/videos/fiber_demo.jpg" src="static/videos/fiber_demo.mp4?v=chain-end-v2-20261020" aria-label="FIBER overview video"></video>
-          <figcaption>Overview video, 3:03. Real-world and simulated rollouts, including a complete door-to-box skill chain.</figcaption>
+          <video controls preload="metadata" playsinline poster="static/videos/FIBER_demo.jpg" src="static/videos/FIBER_demo.mp4?v=20261020" aria-label="FIBER overview video"></video>
+          <figcaption>Overview video, 3:01. Real-world and simulated rollouts, including a complete door-to-box skill chain.</figcaption>
         </figure>
 
         <div class="tldr reveal">
@@ -495,14 +495,14 @@
             <div class="fiber-playground-cover-copy">
               <h3>Try FIBER in your browser</h3>
               <p>Give the latent planner a command and watch the frozen BFM carry it out in MuJoCo physics.</p>
-              <p class="fiber-playground-tasklist">Pick up a box, open a door, grasp an object, walk or carry to a waypoint, or chain door, pickup and return.</p>
+              <p class="fiber-playground-tasklist">Pick up a box, open a door, grasp an object, or walk and carry to a waypoint.</p>
               <button type="button" id="launch-fiber-playground">Launch the playground</button>
               <small class="fiber-playground-caveat">The web version runs a few-step distilled student planner (3 flow steps, INT8 weights, replanning at 1&nbsp;Hz) instead of the paper's planner (10 Heun steps at 5&nbsp;Hz), so success rates may be lower than reported.</small>
               <small>About 677 MB of models load on first launch. Desktop Chrome with WebGPU recommended.</small>
             </div>
           </div>
         </div>
-<p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
+<p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/?v=20261020" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
       </div>
     </section>
 
