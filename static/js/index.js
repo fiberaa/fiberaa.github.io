@@ -209,7 +209,8 @@ function setupVideoReels() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const updateState = (video) => {
-    const tile = video.closest(".video-tile, .chain-media");
+    const tile = video.closest(".video-tile, .chain-media, .sim-media, .ov-player");
+    if (video.closest("[data-view-pane]")?.hidden) return;
     const state = tile?.querySelector(".video-tile-state");
     const isPlaying = !video.paused && !video.ended;
     tile?.classList.toggle("is-playing", isPlaying);
@@ -276,7 +277,163 @@ function setupVideoReels() {
   }
 }
 
+function setupOverviewChapters() {
+  const video = document.querySelector("[data-ov-video]");
+  const buttons = Array.from(document.querySelectorAll("[data-ov-seek]"));
+  if (!video || !buttons.length) return;
+  const sync = () => {
+    const t = video.currentTime || 0;
+    buttons.forEach((b) => {
+      const a = Number(b.dataset.ovSeek), e = Number(b.dataset.ovEnd);
+      const p = Math.max(0, Math.min(1, (t - a) / (e - a)));
+      b.classList.toggle("is-active", t >= a && t < e);
+      b.style.setProperty("--ov-progress", `${(t >= a ? p : 0) * 100}%`);
+    });
+  };
+  // smooth the fill: drive it with requestAnimationFrame while playing (timeupdate only fires ~4 Hz)
+  let raf = 0;
+  const tick = () => { sync(); raf = (video.paused || video.ended) ? 0 : requestAnimationFrame(tick); };
+  const start = () => { if (!raf) raf = requestAnimationFrame(tick); };
+  const stop = () => { if (raf) cancelAnimationFrame(raf); raf = 0; sync(); };
+  video.addEventListener("play", start);
+  video.addEventListener("playing", start);
+  video.addEventListener("pause", stop);
+  video.addEventListener("ended", stop);
+  video.addEventListener("timeupdate", sync);   // keep synced while paused/scrubbing
+  buttons.forEach((b) =>
+    b.addEventListener("click", () => {
+      loadDeferredVideo(video);
+      const seek = () => { video.currentTime = Number(b.dataset.ovSeek); sync(); };
+      if (video.readyState >= 1) seek(); else video.addEventListener("loadedmetadata", seek, { once: true });
+      video.dataset.userPaused = "false";
+      video.play().catch(() => {});
+    }),
+  );
+  sync();
+}
+
+function setupSiteChrome() {
+  const header = document.getElementById("site-header");
+  const hero = document.getElementById("top");
+  const stage = hero?.querySelector(".hero-stage");
+  const wall = document.getElementById("hero-wall");
+  const toggle = document.getElementById("playback-toggle");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // hero wall: portrait or landscape source, fades in once it can play
+  if (wall) {
+    const pick = () => (window.matchMedia("(max-aspect-ratio: 1/1)").matches ? wall.dataset.portrait : wall.dataset.landscape);
+    wall.src = pick();
+    wall.addEventListener("canplay", () => wall.classList.add("is-ready"), { once: true });
+    if (!reduced) wall.play().catch(() => {});
+  }
+  // staggered reveals inside grids
+  document.querySelectorAll(".contribution-grid, .video-reels, .sim-grid, .result-summary, .paper-grid").forEach((grid) => {
+    Array.from(grid.children).forEach((child, i) => {
+      child.classList.add("reveal");
+      child.style.setProperty("--reveal-delay", `${Math.min(i, 6) * 0.07}s`);
+    });
+  });
+  const onScroll = () => {
+    const y = window.scrollY;
+    const heroH = hero ? hero.offsetHeight : 0;
+    const vh = window.innerHeight;
+    // hero dissolve: copy rises and fades while a white veil rises inside the sticky stage, so the
+    // stage is already page-white at the bottom when it scrolls away (no seam with the next section)
+    const p = Math.max(0, Math.min(1, y / Math.max(1, heroH - vh)));
+    if (stage && !reduced) {
+      const ease = (u) => u * u * (3 - 2 * u);
+      stage.style.setProperty("--hero-copy", String(Math.max(0, 1 - 1.15 * p)));
+      stage.style.setProperty("--hero-shift", `${-p * 70}px`);
+      stage.style.setProperty("--hero-bright", String(0.72 - 0.2 * p));
+      stage.style.setProperty("--hero-scale", String(1 + 0.05 * p));
+      stage.style.setProperty("--hero-out", String(ease(p)));
+    } else if (stage) {
+      stage.style.setProperty("--hero-out", "0");
+    }
+    if (header) {
+      const inHero = y < heroH - Math.max(70, 0.4 * vh);   // light once the header is over the veil
+      header.classList.toggle("is-scrolled", inHero && y > 24);
+      header.classList.toggle("is-light", !inHero);
+    }
+    if (toggle) toggle.classList.toggle("is-visible", y > heroH * 0.6);
+    if (wall && !reduced) {
+      if (y > heroH + 200 && !wall.paused) wall.pause();
+      else if (y <= heroH && wall.paused && !document.body.classList.contains("videos-paused")) wall.play().catch(() => {});
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+  // one switch for every video on the page
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const paused = !document.body.classList.contains("videos-paused");
+      document.body.classList.toggle("videos-paused", paused);
+      toggle.setAttribute("aria-pressed", String(paused));
+      toggle.textContent = paused ? "Play videos" : "Pause videos";
+      document.querySelectorAll("video").forEach((v) => {
+        if (paused) { v.dataset.userPaused = "true"; v.pause(); }
+        else {
+          v.dataset.userPaused = "false";
+          const r = v.getBoundingClientRect();
+          if (r.bottom > 0 && r.top < window.innerHeight && v.offsetParent !== null) v.play().catch(() => {});
+        }
+      });
+    });
+  }
+}
+
+function setupViewSwitches() {
+  document.querySelectorAll(".sim-wide").forEach((fig) => {
+    const buttons = Array.from(fig.querySelectorAll("[data-view]"));
+    if (!buttons.length) return;
+    const panes = Array.from(fig.querySelectorAll("[data-view-pane]"));
+    buttons.forEach((b) => b.addEventListener("click", () => {
+      const cur = panes.find((p) => !p.hidden)?.querySelector("video");
+      const t = cur ? cur.currentTime : 0;
+      buttons.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      panes.forEach((p) => {
+        const on = p.dataset.viewPane === b.dataset.view; p.hidden = !on;
+        const v = p.querySelector("video");
+        if (!v) return;
+        if (on) { loadDeferredVideo(v); const go = () => { v.currentTime = t; v.play().catch(() => {}); }; v.readyState >= 1 ? go() : v.addEventListener("loadedmetadata", go, { once: true }); }
+        else v.pause();
+      });
+    }));
+  });
+}
+
+function setupSimTabs() {
+  const tabs = Array.from(document.querySelectorAll("[data-sim-tab]"));
+  if (!tabs.length) return;
+  const select = (tab, focus) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.querySelector(`[data-sim-panel="${t.dataset.simTab}"]`);
+      if (!panel) return;
+      panel.hidden = !on;
+      if (!on) panel.querySelectorAll("video").forEach((v) => v.pause());
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (event) => {
+      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+      if (!step) return;
+      event.preventDefault();
+      select(tabs[(i + step + tabs.length) % tabs.length], true);
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  setupSiteChrome();
+  setupSimTabs();
+  setupViewSwitches();
+  setupOverviewChapters();
   const topButton = document.querySelector(".scroll-to-top");
   const navLinks = Array.from(document.querySelectorAll(".outline-link"));
   const sections = navLinks
@@ -288,9 +445,11 @@ document.addEventListener("DOMContentLoaded", () => {
       topButton.classList.toggle("is-visible", window.scrollY > 420);
     }
 
-    let activeId = sections[0]?.id;
+    // sections are reordered visually with CSS `order`, so pick by on-screen position
+    let activeId = sections[0]?.id, best = -Infinity;
     for (const section of sections) {
-      if (section.getBoundingClientRect().top <= 180) activeId = section.id;
+      const top = section.getBoundingClientRect().top;
+      if (top <= 180 && top > best) { best = top; activeId = section.id; }
     }
     navLinks.forEach((link) => {
       link.classList.toggle("is-active", link.getAttribute("href") === `#${activeId}`);

@@ -32,6 +32,23 @@ const solverSteps = stepOverride
     ? [4, 8, 16]
     : [3];
 const controlsPerPlan = 50; // 50 Hz actor × one second between planner calls.
+// Optional user-supplied local model: role -> File. When present, model bytes
+// are read from these files instead of fetched from the server, so a large
+// full-precision checkpoint can be tested without shipping it in the repo.
+let localModel = null;
+let plannerTeacherLike = useTeacher; // full-precision local models plan multi-step
+let effectiveSolverSteps = solverSteps;
+const localRole = (name) => {
+  const n = (name || "").split("/").pop().toLowerCase();
+  if (/planner_meta\.json$/.test(n)) return "planner_meta";
+  if (/actor_meta\.json$/.test(n)) return "actor_meta";
+  if (/planner\.condition.*\.onnx$/.test(n)) return "condition";
+  if (/planner\.time.*\.onnx$/.test(n)) return "time";
+  if (/planner\.step(\.gpu)?.*\.onnx$/.test(n)) return "step";
+  if (/^actor\.onnx$/.test(n)) return "actor";
+  return null;
+};
+const localFileFor = (url) => (localModel ? localModel.get(localRole(url)) : null);
 const $ = (s) => document.querySelector(s),
   sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const canvas = $("#scene"),
@@ -41,8 +58,36 @@ renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
 renderer.outputEncoding = THREE.sRGBEncoding;
 renderer.shadowMap.enabled = true;
 const world = new THREE.Scene();
-world.background = new THREE.Color("#182436");
-world.fog = new THREE.Fog("#182436", 15, 40);
+// Studio palette shared with the website's simulation renders (sRGB hex -> linear).
+const studio = (hex) => new THREE.Color(hex).convertSRGBToLinear();
+const STUDIO = {
+  sky: studio(0xe8e9ec),
+  floor: studio(0xdcdee2),
+  box: studio(0xc47f55),
+  support: studio(0xd9dce1),
+  wall: studio(0xeeeef0),
+  door: studio(0x62769a),
+  frame: studio(0x3d4a5c),
+  handle: studio(0x2a2d33),
+  object: studio(0xe5782f),
+  goal: studio(0x4f7cff),
+  goalFill: studio(0xa9bdff),
+};
+function studioColor(name) {
+  const n = (name || "").toLowerCase();
+  if (!n || n === "floor" || /_link|collider/.test(n)) return null;
+  if (/handle|strike|bolt/.test(n)) return STUDIO.handle;
+  if (n.includes("box") && !n.includes("support")) return STUDIO.box;
+  if (/support|table|pedestal|platform/.test(n)) return STUDIO.support;
+  if (/wall|lintel/.test(n)) return STUDIO.wall;
+  if (n.includes("frame")) return STUDIO.frame;
+  if (/door|panel/.test(n)) return STUDIO.door;
+  if (n === "grasp_object") return STUDIO.object;
+  return null;
+}
+// The clear colour is written without output encoding, fog is blended in linear space: give each its own form.
+world.background = new THREE.Color(0xe8e9ec);
+world.fog = new THREE.Fog(STUDIO.sky, 15, 40);
 const camera = new THREE.PerspectiveCamera(43, 1, 0.05, 80);
 camera.up.set(0, 0, 1);
 camera.position.set(-3.5, -5, 3.6);
@@ -52,8 +97,8 @@ orbit.enableDamping = true;
 orbit.maxDistance = 20;
 orbit.minDistance = 1.3;
 orbit.maxPolarAngle = Math.PI * 0.49;
-world.add(new THREE.HemisphereLight(0xe8f1ff, 0x41556c, 1.1));
-const sunlight = new THREE.DirectionalLight(0xffffff, 1.3);
+world.add(new THREE.HemisphereLight(0xffffff, 0x9aa3b0, 0.5));
+const sunlight = new THREE.DirectionalLight(0xffffff, 0.62);
 sunlight.position.set(-3, -4, 9);
 sunlight.castShadow = true;
 sunlight.shadow.mapSize.set(2048, 2048);
@@ -69,18 +114,30 @@ sunlight.shadow.bias = -0.00015;
 world.add(sunlight);
 const floor = new THREE.Mesh(
   new THREE.PlaneGeometry(100, 100),
-  new THREE.MeshStandardMaterial({ color: 0x354558, roughness: 0.95 }),
+  new THREE.MeshStandardMaterial({ color: STUDIO.floor, roughness: 1 }),
 );
 floor.position.z = 0;
 floor.receiveShadow = true;
 world.add(floor);
-const grid = new THREE.GridHelper(30, 60, 0x435166, 0x354457);
+const grid = new THREE.GridHelper(30, 60, studio(0xc9cdd4), studio(0xd2d5db));
 grid.rotation.x = Math.PI / 2;
 grid.position.z = 0.001;
 world.add(grid);
 const marker = new THREE.Mesh(
-  new THREE.RingGeometry(0.18, 0.23, 40),
-  new THREE.MeshBasicMaterial({ color: 0xb6acff, side: THREE.DoubleSide }),
+  new THREE.RingGeometry(0.2, 0.235, 48),
+  new THREE.MeshBasicMaterial({ color: STUDIO.goal, side: THREE.DoubleSide }),
+);
+marker.add(
+  new THREE.Mesh(
+    new THREE.CircleGeometry(0.2, 48),
+    new THREE.MeshBasicMaterial({
+      color: STUDIO.goalFill,
+      transparent: true,
+      opacity: 0.35,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+    }),
+  ),
 );
 marker.position.z = 0.008;
 marker.visible = false;
@@ -88,7 +145,7 @@ world.add(marker);
 const heightStem = new THREE.Line(
   new THREE.BufferGeometry(),
   new THREE.LineBasicMaterial({
-    color: 0xb6acff,
+    color: STUDIO.goal,
     transparent: true,
     opacity: 0.55,
   }),
@@ -101,10 +158,10 @@ waypointGuide.visible = false;
 world.add(waypointGuide);
 const waypointPath = new THREE.Line(
   new THREE.BufferGeometry(),
-  new THREE.LineBasicMaterial({ color: 0x8eabd2 }),
+  new THREE.LineBasicMaterial({ color: studio(0x8aa4e8) }),
 );
 waypointGuide.add(waypointPath);
-const waypointViews = [0xa8c6e9, 0xb6acff].map((color, i) => {
+const waypointViews = [studio(0x86a2ff), STUDIO.goal].map((color, i) => {
   const dot = new THREE.Mesh(
     new THREE.SphereGeometry(0.045, 12, 8),
     new THREE.MeshBasicMaterial({ color }),
@@ -199,7 +256,7 @@ const targetArrow = new THREE.ArrowHelper(
   new THREE.Vector3(1, 0, 0),
   new THREE.Vector3(),
   0.55,
-  0xb6acff,
+  STUDIO.goal,
   0.13,
   0.075,
 );
@@ -368,7 +425,7 @@ async function selectObject(index, initializing = false) {
   });
   for (const g of geoms)
     g.mesh.material.emissive?.setHex(
-      g.mesh.userData.boxIndex === index ? 0x171329 : 0,
+      g.mesh.userData.boxIndex === index ? 0x180b04 : 0,
     );
   status(
     "OBJECT SELECTED",
@@ -465,7 +522,7 @@ let mj,
   lastAction = new Float32Array(29),
   lastLatent,
   selected = false,
-  follow = false,
+  follow = true,
   running = false,
   ready = false,
   busy = false,
@@ -509,6 +566,34 @@ function resize() {
 }
 new ResizeObserver(resize).observe(viewport);
 resize();
+// Supports are thin mocap slabs in the physics scene; draw them standing on the
+// floor (legs under a table, a pedestal under a small support). Visual only:
+// hidden from the planner's depth render, which must match the physics scene.
+const decorMeshes = new Set();
+function addSupportLegs(mesh) {
+  const [hx, hy, hz] = mesh.userData.size,
+    height = mesh.position.z - hz;
+  mesh.userData.legs = true;
+  if (height < 0.02) return;
+  const parts =
+    hx > 0.3 || hy > 0.3
+      ? [-1, 1].flatMap((sx) =>
+          [-1, 1].map((sy) => [
+            0.036,
+            0.036,
+            sx * (hx - 0.06),
+            sy * (hy - 0.06),
+          ]),
+        )
+      : [[hx * 2, hy * 2, 0, 0]];
+  for (const [w, d, x, y] of parts) {
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(w, d, height), mesh.material);
+    leg.position.set(x, y, -hz - height / 2);
+    leg.castShadow = leg.receiveShadow = true;
+    mesh.add(leg);
+    decorMeshes.add(leg);
+  }
+}
 function pose() {
   if (!data) return;
   needsRender = true;
@@ -538,9 +623,11 @@ function pose() {
     );
     mesh.position.setFromMatrixPosition(m4);
     mesh.quaternion.setFromRotationMatrix(m4);
+    if (mesh.userData.support && !mesh.userData.legs && mesh.position.z > 0.08)
+      addSupportLegs(mesh);
   }
   const yaw = rootYaw();
-  headingArrow.visible = ready;
+  headingArrow.visible = false; // direction arrow hidden (heading stays in the readout)
   headingArrow.position.set(data.qpos[0], data.qpos[1], 0.035);
   headingArrow.setDirection(new THREE.Vector3(Math.cos(yaw), Math.sin(yaw), 0));
   $("#yaw-readout").textContent =
@@ -663,6 +750,8 @@ function animate() {
 }
 animate();
 async function json(url) {
+  const local = localFileFor(url);
+  if (local) return JSON.parse(await local.text());
   const r = await fetch(url);
   if (!r.ok) throw new Error(`Could not load ${url} (${r.status})`);
   return r.json();
@@ -671,6 +760,15 @@ const loadedModelFiles = {};
 let runEvents = [];
 let loadedModelBytes = 0;
 async function buffer(url, label) {
+  const local = localFileFor(url);
+  if (local) {
+    const bytes = await local.arrayBuffer();
+    loadedModelFiles[url] = bytes.byteLength;
+    loadedModelBytes += bytes.byteLength;
+    $("#load-note").textContent =
+      `${label} · ${(bytes.byteLength / 1048576).toFixed(0)} MiB · local file · total ${(loadedModelBytes / 1048576).toFixed(0)} MiB`;
+    return bytes;
+  }
   const r = await fetch(url);
   if (!r.ok) throw new Error(`${label} is not available (${r.status}).`);
   const total = Number(r.headers.get("content-length")),
@@ -820,7 +918,10 @@ async function scene(
   data = nextData;
   for (const { mesh } of geoms) {
     world.remove(mesh);
-    mesh.geometry.dispose();
+    mesh.traverse((o) => {
+      o.geometry?.dispose();
+      decorMeshes.delete(o);
+    });
     mesh.material.dispose();
   }
   geoms = [];
@@ -862,14 +963,43 @@ async function scene(
           vn = model.mesh_vertnum[mid] * 3,
           fa = model.mesh_faceadr[mid] * 3,
           fn = model.mesh_facenum[mid] * 3;
-        geometry.setAttribute(
-          "position",
-          new THREE.Float32BufferAttribute(
-            new Float32Array(model.mesh_vert.slice(va, va + vn)),
-            3,
-          ),
-        );
-        geometry.setIndex(Array.from(model.mesh_face.slice(fa, fa + fn)));
+        if (
+          g.name === "grasp_object" &&
+          nextConfig.object_texture &&
+          model.mesh_texcoordnum[mid] > 0
+        ) {
+          // Textured object: per-corner positions and UVs (mesh_facetexcoord), so the
+          // object's own scan texture can be drawn. Physics uses the same vertices.
+          const ta = model.mesh_texcoordadr[mid] * 2,
+            face = model.mesh_face,
+            ftex = model.mesh_facetexcoord,
+            vert = model.mesh_vert,
+            tex = model.mesh_texcoord,
+            corners = fn,
+            pos = new Float32Array(corners * 3),
+            uv = new Float32Array(corners * 2);
+          for (let c = 0; c < corners; c++) {
+            const vi = va + face[fa + c] * 3,
+              ti = ta + ftex[fa + c] * 2;
+            pos[c * 3] = vert[vi];
+            pos[c * 3 + 1] = vert[vi + 1];
+            pos[c * 3 + 2] = vert[vi + 2];
+            uv[c * 2] = tex[ti];
+            uv[c * 2 + 1] = tex[ti + 1];
+          }
+          geometry.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+          geometry.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
+          geometry.userData.texture = `models/scenes/${name}/${nextConfig.object_texture}`;
+        } else {
+          geometry.setAttribute(
+            "position",
+            new THREE.Float32BufferAttribute(
+              new Float32Array(model.mesh_vert.slice(va, va + vn)),
+              3,
+            ),
+          );
+          geometry.setIndex(Array.from(model.mesh_face.slice(fa, fa + fn)));
+        }
         geometry.computeVertexNormals();
         break;
       default:
@@ -881,14 +1011,25 @@ async function scene(
           ? Array.from(model.mat_rgba.slice(mat * 4, mat * 4 + 4))
           : g.rgba;
     if (rgba[3] < 0.01) continue;
+    const textureUrl = geometry.userData.texture;
     const mesh = new THREE.Mesh(
       geometry,
-      new THREE.MeshStandardMaterial({
-        color: new THREE.Color(...rgba.slice(0, 3)),
-        roughness: 0.6,
-        metalness: 0.16,
-      }),
+      textureUrl
+        ? new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.75, metalness: 0 })
+        : new THREE.MeshStandardMaterial({
+            color: studioColor(g.name) || new THREE.Color(...rgba.slice(0, 3)),
+            roughness: studioColor(g.name) ? 0.85 : 0.6,
+            metalness: studioColor(g.name) ? 0 : 0.16,
+          }),
     );
+    if (textureUrl)
+      new THREE.TextureLoader().load(textureUrl, (map) => {
+        map.encoding = THREE.sRGBEncoding;
+        map.flipY = false;
+        mesh.material.map = map;
+        mesh.material.needsUpdate = true;
+        needsRender = true;
+      });
     mesh.castShadow = true;
     mesh.receiveShadow = true;
     mesh.userData.boxIndex = nextConfig.boxes
@@ -897,6 +1038,8 @@ async function scene(
         ? 0
         : -1;
     mesh.userData.box = mesh.userData.boxIndex >= 0;
+    mesh.userData.support = g.type === 6 && /support/.test(g.name || "");
+    mesh.userData.size = g.size;
     world.add(mesh);
     geoms.push({ id: g.id, mesh });
   }
@@ -912,8 +1055,8 @@ async function scene(
     const shape = name === "grasp" ? ["fruit", "bottle", "cup"][index] : "box";
     const color =
       name === "grasp"
-        ? ["#e9a958", "#78bac7", "#aa9ac6"][index]
-        : ["#cfb795", "#88b4c8", "#ab9fc6"][index];
+        ? ["#e5782f", "#e98a45", "#d9692a"][index]
+        : ["#c47f55", "#b8754c", "#cf8c62"][index];
     const artwork =
       shape === "bottle"
         ? '<path d="M12 5h8v5l3 5v20q0 3-3 3h-8q-3 0-3-3V15l3-5z" fill="currentColor"/><path d="M12 6h8M10 20h12M10 29h12" stroke="white" stroke-opacity=".35" fill="none"/>'
@@ -1285,6 +1428,7 @@ function depth() {
     headingVisible = headingArrow.visible;
   waypointGuide.visible = headingArrow.visible = false;
   grid.visible = false;
+  for (const m of decorMeshes) m.visible = false;
   const old = world.overrideMaterial,
     background = world.background,
     fog = world.fog;
@@ -1301,6 +1445,7 @@ function depth() {
   world.background = background;
   world.fog = fog;
   grid.visible = true;
+  for (const m of decorMeshes) m.visible = true;
   waypointGuide.visible = guideVisible;
   headingArrow.visible = headingVisible;
   throwGuide.visible = throwVisible;
@@ -1447,7 +1592,7 @@ async function plan(version) {
   const stepsForPlan =
     stepOverride ??
     (mode === "grasp_table" ? sceneConfig.grasp_solver_steps : undefined) ??
-    (useTeacher
+    (plannerTeacherLike
       ? walkSelected && task !== "turn" && mode === "walk"
         ? 4
         : 8
@@ -2126,7 +2271,7 @@ async function launch() {
     backend =
       backendPreference === "webgpu" && navigator.gpu
         ? "webgpu"
-        : backendPreference === "wasm" || !useTeacher
+        : backendPreference === "wasm" || !plannerTeacherLike
           ? "wasm"
           : navigator.gpu
             ? "webgpu"
@@ -2181,7 +2326,7 @@ async function launch() {
       timeBuffer,
       options,
       backend === "webgpu",
-      solverSteps,
+      effectiveSolverSteps,
     );
     $("#load-note").textContent = "Warming the planner and depth camera…";
     const c = meta.config;
@@ -2438,7 +2583,7 @@ const throwGuide = new THREE.ArrowHelper(
   new THREE.Vector3(1, 0, 0),
   new THREE.Vector3(),
   1,
-  0xc6a9ff,
+  STUDIO.goal,
   0.16,
   0.08,
 );
@@ -2641,6 +2786,57 @@ $("#pickup-layout").onchange = async (e) => {
   if (mj) await scene("pickup");
   if (resume) run();
 };
+
+// Local full-precision model: picking files only STAGES them; the user must
+// click Apply (enabled only when the full planner set is present) to switch.
+// Nothing is applied by default, so the built-in quantized model always loads.
+const REQUIRED_ROLES = ["condition", "time", "step", "planner_meta"];
+let stagedModel = null;
+const localInput = $("#local-model-input");
+const applyBtn = $("#local-model-apply");
+const clearBtn = $("#local-model-clear");
+const localStatus = $("#local-model-status");
+const modelChoice = $("#model-choice");
+if (localInput)
+  localInput.addEventListener("change", () => {
+    const map = new Map();
+    for (const f of [...localInput.files]) {
+      const role = localRole(f.webkitRelativePath || f.name);
+      if (role && !map.has(role)) map.set(role, f);
+    }
+    const missing = REQUIRED_ROLES.filter((r) => !map.has(r));
+    stagedModel = missing.length ? null : map;
+    if (applyBtn) applyBtn.disabled = !stagedModel;
+    if (localStatus)
+      localStatus.textContent = !map.size
+        ? "No planner ONNX / meta files found in that folder."
+        : missing.length
+          ? `Missing ${missing.join(", ")} — pick the full planner export folder.`
+          : `Ready to apply: ${[...map.keys()].join(", ")}.`;
+  });
+if (applyBtn)
+  applyBtn.onclick = () => {
+    if (!stagedModel) return;
+    localModel = stagedModel;
+    if (clearBtn) clearBtn.hidden = false;
+    if (modelChoice)
+      modelChoice.innerHTML =
+        "<b>Local full-precision model</b> will be used when you launch.";
+    if (localStatus)
+      localStatus.textContent = `Applied local model (${[...localModel.keys()].join(", ")}). Click Launch.`;
+    if (ready)
+      localStatus.textContent +=
+        " Reload the page to switch models after launching.";
+  };
+if (clearBtn)
+  clearBtn.onclick = () => {
+    localModel = null;
+    clearBtn.hidden = true;
+    if (modelChoice)
+      modelChoice.textContent =
+        "Using the built-in model: a few-step distilled student planner with INT8 weights (loads automatically). It is smaller and faster than the paper's planner but may perform worse.";
+    if (localStatus) localStatus.textContent = "Reverted to the built-in model.";
+  };
 
 if (new URLSearchParams(location.search).has("autostart")) launch();
 

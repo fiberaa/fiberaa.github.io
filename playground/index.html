@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>FIBER · Interactive playground</title>
-    <link rel="stylesheet" href="player.css" />
+    <link rel="stylesheet" href="player.css?v=20261007-studio-palette" />
     <script type="importmap">
       { "imports": { "three": "./vendor/three.module.js" } }
     </script>
     <script
       type="module"
-      src="player.js?v=20260929-student-1hz-threads-door-align"
+      src="player.js?v=20261007-studio-palette"
     ></script>
   </head>
   <body>
@@ -19,7 +19,7 @@
         >FIBER<span> / playground</span></a
       >
       <div class="header-actions">
-        <button id="follow" aria-pressed="false">Follow camera</button
+        <button id="follow" aria-pressed="true">Follow camera</button
         ><button id="fullscreen">Fullscreen</button>
       </div>
     </header>
@@ -61,6 +61,28 @@
               WebGPU recommended.
             </p>
             <progress id="progress" max="1" value="0" hidden></progress>
+            <p class="load-default-note" id="model-choice">
+              Using the built-in model: a few-step distilled student planner with INT8 weights (loads automatically). It is smaller and faster than the paper's planner but may perform worse.
+            </p>
+            <details id="local-model" class="local-model">
+              <summary>Advanced: use a local full-precision model</summary>
+              <p class="local-model-hint">
+                The playground runs the built-in quantized model by default.
+                Optionally point this at an exported model folder containing the
+                <code>planner.condition</code>, <code>planner.time</code> and
+                <code>planner.step.gpu</code> ONNX files plus
+                <code>planner_meta.json</code>, then click <b>Apply</b> to switch.
+                Files are read locally in your browser and never uploaded. For the
+                full-precision teacher, also open this page with
+                <code>?planner=teacher</code> (8 Euler steps).
+              </p>
+              <input type="file" id="local-model-input" webkitdirectory directory multiple />
+              <div class="local-model-actions">
+                <button type="button" id="local-model-apply" disabled>Apply local model</button>
+                <button type="button" id="local-model-clear" hidden>Use default</button>
+              </div>
+              <span id="local-model-status"></span>
+            </details>
           </div>
         </div>
       </section>
@@ -199,7 +221,9 @@
           <button id="save-run-report" disabled>Save run report</button>
         </details>
         <p class="footnote">
-          Experimental simulation. Goals can fail; reset to try again.
+          Experimental simulation with a few-step distilled student planner
+          (INT8), which may perform worse than the paper's planner. Goals can
+          fail; reset to try again.
         </p>
       </aside>
     </main>

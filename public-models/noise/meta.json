@@ -1,0 +1,1 @@
+{"pickup": {"seed": 42, "plans": 100, "body_width": 5120, "hand_width": 140}, "door": {"seed": 42, "plans": 100, "body_width": 5120, "hand_width": 140}, "grasp": {"seed": 43, "plans": 100, "body_width": 5120, "hand_width": 140}}

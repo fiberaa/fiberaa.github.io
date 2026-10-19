@@ -1,0 +1,2023 @@
+[
+  {
+    "path": "actor.onnx",
+    "parts": [
+      "actor.onnx.part000",
+      "actor.onnx.part001"
+    ],
+    "size": 135281319,
+    "sha256": "93b4e4becefb3a9f6096c1316ca287950a114c8e119cf74f311b90f04a20f9da"
+  },
+  {
+    "path": "actor_meta.json",
+    "parts": [
+      "actor_meta.json"
+    ],
+    "size": 993,
+    "sha256": "e22d70c4da69c6840e9fc23487275c062dfebe6d93fca5f7358b54dd99d759d1"
+  },
+  {
+    "path": "locomotion/z_bank.json",
+    "parts": [
+      "locomotion/z_bank.json"
+    ],
+    "size": 46097,
+    "sha256": "a97b5c47f534f17be4a0793d330c2c0e09b90c39eef4fd23a9d729b10b57b7e7"
+  },
+  {
+    "path": "noise/door-student-1.f32",
+    "parts": [
+      "noise/door-student-1.f32"
+    ],
+    "size": 673280,
+    "sha256": "067a826ce4df18d84f76c9815cf4d10ac0bca62ee4bfe6b4a8d046aee5b46559"
+  },
+  {
+    "path": "noise/door.f32",
+    "parts": [
+      "noise/door.f32"
+    ],
+    "size": 2104000,
+    "sha256": "fedab206dec5a9a38e837de7b79315bdd40eaa7c5140da594ea53c06a152568f"
+  },
+  {
+    "path": "noise/grasp-13.f32",
+    "parts": [
+      "noise/grasp-13.f32"
+    ],
+    "size": 2104000,
+    "sha256": "968e7a169dcce3905cc795c3d36e530834090cc0fe3508cbb6f1adfe8f621187"
+  },
+  {
+    "path": "noise/grasp-14.f32",
+    "parts": [
+      "noise/grasp-14.f32"
+    ],
+    "size": 2104000,
+    "sha256": "9d0f0268a2ff03092ee9b78afb7df167f7840cf093f976a952ac69676e81c3f3"
+  },
+  {
+    "path": "noise/grasp-15.f32",
+    "parts": [
+      "noise/grasp-15.f32"
+    ],
+    "size": 2104000,
+    "sha256": "d261aeb86a32a19d7f02dc0ba9e9dce9934770a4197f7f058434aef4d3430d78"
+  },
+  {
+    "path": "noise/grasp-21.f32",
+    "parts": [
+      "noise/grasp-21.f32"
+    ],
+    "size": 2104000,
+    "sha256": "bf0207b108ee36286e91a8fd32a0541f7759bc1217c0943bf79cc4cf1033ba2e"
+  },
+  {
+    "path": "noise/grasp-37.f32",
+    "parts": [
+      "noise/grasp-37.f32"
+    ],
+    "size": 2104000,
+    "sha256": "393cbfdc76c36435c3224a2fe1671342c33a27c74f049322854172860431068f"
+  },
+  {
+    "path": "noise/grasp-4.f32",
+    "parts": [
+      "noise/grasp-4.f32"
+    ],
+    "size": 2104000,
+    "sha256": "dcf4b01edc540e91c40cbdff8222f1e9d852444db107d928474a83cc5d88e6d2"
+  },
+  {
+    "path": "noise/grasp-42.f32",
+    "parts": [
+      "noise/grasp-42.f32"
+    ],
+    "size": 2104000,
+    "sha256": "9b5e896aaf8cb0fabb00618807e12f503195aef0b6e6a6c6e6cee539134faf76"
+  },
+  {
+    "path": "noise/grasp-49.f32",
+    "parts": [
+      "noise/grasp-49.f32"
+    ],
+    "size": 2104000,
+    "sha256": "683b646a8535a8f958f383b05370aa2077aa8e394b2049a26b3f90ed6f55a1f6"
+  },
+  {
+    "path": "noise/grasp-5.f32",
+    "parts": [
+      "noise/grasp-5.f32"
+    ],
+    "size": 2104000,
+    "sha256": "ac369c2b96a3812c0658725a60acd091d19d098f342ef8e3f15e65c086b471cc"
+  },
+  {
+    "path": "noise/grasp-52.f32",
+    "parts": [
+      "noise/grasp-52.f32"
+    ],
+    "size": 2104000,
+    "sha256": "dd7264412e4c069e86b06be41e84f096fdaf9789f7d485b6bb72fc4179c062cc"
+  },
+  {
+    "path": "noise/grasp-57.f32",
+    "parts": [
+      "noise/grasp-57.f32"
+    ],
+    "size": 2104000,
+    "sha256": "44a86feebc4e2f84f69ffc7054d72eaae7b1335c57f8b2e5b8f3faa89cb46e69"
+  },
+  {
+    "path": "noise/grasp-9.f32",
+    "parts": [
+      "noise/grasp-9.f32"
+    ],
+    "size": 2104000,
+    "sha256": "c4691e1521726ca7e8e90ebb06463514b9d28398234de3b4aa8a4605ab7a22c7"
+  },
+  {
+    "path": "noise/grasp-student-0.f32",
+    "parts": [
+      "noise/grasp-student-0.f32"
+    ],
+    "size": 673280,
+    "sha256": "3e407adf1547d1a9b12147dc247136dbbe0fc89a3583a927337d16f1b55ff70c"
+  },
+  {
+    "path": "noise/grasp-student-1.f32",
+    "parts": [
+      "noise/grasp-student-1.f32"
+    ],
+    "size": 673280,
+    "sha256": "067a826ce4df18d84f76c9815cf4d10ac0bca62ee4bfe6b4a8d046aee5b46559"
+  },
+  {
+    "path": "noise/grasp-student-10.f32",
+    "parts": [
+      "noise/grasp-student-10.f32"
+    ],
+    "size": 673280,
+    "sha256": "9ab3c3356115cd0b1dbce68fb43095c2b1c11e76afbf0927ac558a730d07b4c1"
+  },
+  {
+    "path": "noise/grasp-student-12.f32",
+    "parts": [
+      "noise/grasp-student-12.f32"
+    ],
+    "size": 673280,
+    "sha256": "c9207f7a45b263272ac659efa4215b46a20eac59acecb4f29a4535f1a04544e8"
+  },
+  {
+    "path": "noise/grasp-student-13.f32",
+    "parts": [
+      "noise/grasp-student-13.f32"
+    ],
+    "size": 673280,
+    "sha256": "040b38b6d9a74c07482d8776c8319d08440d12557e90389444950f32d3605300"
+  },
+  {
+    "path": "noise/grasp-student-2.f32",
+    "parts": [
+      "noise/grasp-student-2.f32"
+    ],
+    "size": 673280,
+    "sha256": "9e8746580f192c7bc7beeb7dcfed75f9d09f2b75bda2e65d8a13f383401acb86"
+  },
+  {
+    "path": "noise/grasp-student-3.f32",
+    "parts": [
+      "noise/grasp-student-3.f32"
+    ],
+    "size": 673280,
+    "sha256": "6a6670a4c50e1bd029b4cdb350fec62081d835db32d0648a360a3c3169b440b7"
+  },
+  {
+    "path": "noise/grasp-student-4.f32",
+    "parts": [
+      "noise/grasp-student-4.f32"
+    ],
+    "size": 673280,
+    "sha256": "b88f0a57dee6afcc301044f8a152341f878805a65393229c80607649dbffda33"
+  },
+  {
+    "path": "noise/grasp-student-5.f32",
+    "parts": [
+      "noise/grasp-student-5.f32"
+    ],
+    "size": 673280,
+    "sha256": "3fe699a1fcbf2719d69ae0665dd309f323ca390ab06447a5c1f8e2cfb27de0f6"
+  },
+  {
+    "path": "noise/grasp-student-6.f32",
+    "parts": [
+      "noise/grasp-student-6.f32"
+    ],
+    "size": 673280,
+    "sha256": "820d44987a81b8b47c8beb9c0921fcba966890f8076dd0a8b783c236e368a1c1"
+  },
+  {
+    "path": "noise/grasp-student-7.f32",
+    "parts": [
+      "noise/grasp-student-7.f32"
+    ],
+    "size": 673280,
+    "sha256": "5f75179464445962b86b36f8377044258bfc5e0c32088ad3128c2b43afe9bacb"
+  },
+  {
+    "path": "noise/grasp-student-8.f32",
+    "parts": [
+      "noise/grasp-student-8.f32"
+    ],
+    "size": 673280,
+    "sha256": "0d194db9b25a3fd6e00be58a70c4507b9f1cb8d175355643f9d99c9962e0fd06"
+  },
+  {
+    "path": "noise/grasp.f32",
+    "parts": [
+      "noise/grasp.f32"
+    ],
+    "size": 2104000,
+    "sha256": "698fb621fe6111ff4f7c7563329b6b594b65a82a48747851a5239da1f021335b"
+  },
+  {
+    "path": "noise/meta.json",
+    "parts": [
+      "noise/meta.json"
+    ],
+    "size": 228,
+    "sha256": "f83277def41daabb878d5ec2a98ad23d7dcea6ee113f874a26539aef5cd890fc"
+  },
+  {
+    "path": "noise/pickup.f32",
+    "parts": [
+      "noise/pickup.f32"
+    ],
+    "size": 2104000,
+    "sha256": "fedab206dec5a9a38e837de7b79315bdd40eaa7c5140da594ea53c06a152568f"
+  },
+  {
+    "path": "scenes/door/assets/head_link.STL",
+    "parts": [
+      "scenes/door/assets/head_link.STL"
+    ],
+    "size": 932784,
+    "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+  },
+  {
+    "path": "scenes/door/assets/left_ankle_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/left_ankle_pitch_link.STL"
+    ],
+    "size": 71184,
+    "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+  },
+  {
+    "path": "scenes/door/assets/left_ankle_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/left_ankle_roll_link.STL"
+    ],
+    "size": 653384,
+    "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+  },
+  {
+    "path": "scenes/door/assets/left_elbow_link.STL",
+    "parts": [
+      "scenes/door/assets/left_elbow_link.STL"
+    ],
+    "size": 88784,
+    "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_index_0_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_index_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "efaabe6a8c850f628c55ab5ed8402757d5263262e8c32943f9bfbec4329d9a8a"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_index_1_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_index_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "926e5fc790ddbabf222e7b7ee5b790a45b090d27a4a87e558a5ba57516b6a805"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_middle_0_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_middle_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "efaabe6a8c850f628c55ab5ed8402757d5263262e8c32943f9bfbec4329d9a8a"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_middle_1_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_middle_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "926e5fc790ddbabf222e7b7ee5b790a45b090d27a4a87e558a5ba57516b6a805"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_palm_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_palm_link.STL"
+    ],
+    "size": 556084,
+    "sha256": "d48b0b1dbd2def01867de0840ed643e6ae8f4882fe81368540830448e2fba58f"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_thumb_0_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_thumb_0_link.STL"
+    ],
+    "size": 71384,
+    "sha256": "c63f6a2e8d700940c172cfa8a5fab2d8c2785abc43bc258d3adf315ceb1fa653"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_thumb_1_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_thumb_1_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "ba3d13e21e8ed1e4885bdbf562326abdae41964c0fee63eceeebebdcf5fff935"
+  },
+  {
+    "path": "scenes/door/assets/left_hand_thumb_2_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hand_thumb_2_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "9985783981720896e54347dbcf9d8cbfb991a264ac4fa44cfc017dae1b83fdcd"
+  },
+  {
+    "path": "scenes/door/assets/left_hip_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hip_pitch_link.STL"
+    ],
+    "size": 181684,
+    "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+  },
+  {
+    "path": "scenes/door/assets/left_hip_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hip_roll_link.STL"
+    ],
+    "size": 192184,
+    "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+  },
+  {
+    "path": "scenes/door/assets/left_hip_yaw_link.STL",
+    "parts": [
+      "scenes/door/assets/left_hip_yaw_link.STL"
+    ],
+    "size": 296284,
+    "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+  },
+  {
+    "path": "scenes/door/assets/left_knee_link.STL",
+    "parts": [
+      "scenes/door/assets/left_knee_link.STL"
+    ],
+    "size": 854884,
+    "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+  },
+  {
+    "path": "scenes/door/assets/left_rubber_hand.STL",
+    "parts": [
+      "scenes/door/assets/left_rubber_hand.STL"
+    ],
+    "size": 2287484,
+    "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+  },
+  {
+    "path": "scenes/door/assets/left_shoulder_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/left_shoulder_pitch_link.STL"
+    ],
+    "size": 176784,
+    "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+  },
+  {
+    "path": "scenes/door/assets/left_shoulder_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/left_shoulder_roll_link.STL"
+    ],
+    "size": 400284,
+    "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+  },
+  {
+    "path": "scenes/door/assets/left_shoulder_yaw_link.STL",
+    "parts": [
+      "scenes/door/assets/left_shoulder_yaw_link.STL"
+    ],
+    "size": 249184,
+    "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+  },
+  {
+    "path": "scenes/door/assets/left_wrist_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/left_wrist_pitch_link.STL"
+    ],
+    "size": 85984,
+    "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+  },
+  {
+    "path": "scenes/door/assets/left_wrist_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/left_wrist_roll_link.STL"
+    ],
+    "size": 356184,
+    "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+  },
+  {
+    "path": "scenes/door/assets/left_wrist_yaw_link.STL",
+    "parts": [
+      "scenes/door/assets/left_wrist_yaw_link.STL"
+    ],
+    "size": 318684,
+    "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+  },
+  {
+    "path": "scenes/door/assets/logo_link.STL",
+    "parts": [
+      "scenes/door/assets/logo_link.STL"
+    ],
+    "size": 243384,
+    "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+  },
+  {
+    "path": "scenes/door/assets/pelvis.STL",
+    "parts": [
+      "scenes/door/assets/pelvis.STL"
+    ],
+    "size": 1060884,
+    "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+  },
+  {
+    "path": "scenes/door/assets/pelvis_contour_link.STL",
+    "parts": [
+      "scenes/door/assets/pelvis_contour_link.STL"
+    ],
+    "size": 1805184,
+    "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+  },
+  {
+    "path": "scenes/door/assets/right_ankle_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/right_ankle_pitch_link.STL"
+    ],
+    "size": 71184,
+    "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+  },
+  {
+    "path": "scenes/door/assets/right_ankle_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/right_ankle_roll_link.STL"
+    ],
+    "size": 653784,
+    "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+  },
+  {
+    "path": "scenes/door/assets/right_elbow_link.STL",
+    "parts": [
+      "scenes/door/assets/right_elbow_link.STL"
+    ],
+    "size": 88784,
+    "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_index_0_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_index_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "8bac717a5ff4c5a6f4ca839091ad935392859795a68a5a547bc5ecb3f196f40d"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_index_1_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_index_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "06a5f46b5705a1e54205fc01ed437d475e194a205b72ba78d00c8f26481237bb"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_middle_0_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_middle_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "a02dd3c5b6747e76016f3a1cab27173fa218b0eb271570847be64d8a390022d1"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_middle_1_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_middle_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "60ca1810b7b1371733556660e9e2167790355a83cad9ba55dbd236f2020a228a"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_palm_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_palm_link.STL"
+    ],
+    "size": 556084,
+    "sha256": "5e95f19c4daa3ed7f765d465ba763153d7a76e4c02cbe6d8c567cd67f89f1c1b"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_thumb_0_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_thumb_0_link.STL"
+    ],
+    "size": 71384,
+    "sha256": "30f91ca9cccda42065c98cbe635ff87cd1e004b82d38888fd7e741cf0998d01d"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_thumb_1_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_thumb_1_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "acdd00f613ea4253229461e1367be5331e6631df49e1d40fe283c2bd4c66469f"
+  },
+  {
+    "path": "scenes/door/assets/right_hand_thumb_2_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hand_thumb_2_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "36256d0253ae42e0652fbe3e3992b6ac9b5aefd839694ad39b4af143d4efa85f"
+  },
+  {
+    "path": "scenes/door/assets/right_hip_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hip_pitch_link.STL"
+    ],
+    "size": 181284,
+    "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+  },
+  {
+    "path": "scenes/door/assets/right_hip_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hip_roll_link.STL"
+    ],
+    "size": 192684,
+    "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+  },
+  {
+    "path": "scenes/door/assets/right_hip_yaw_link.STL",
+    "parts": [
+      "scenes/door/assets/right_hip_yaw_link.STL"
+    ],
+    "size": 296284,
+    "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+  },
+  {
+    "path": "scenes/door/assets/right_knee_link.STL",
+    "parts": [
+      "scenes/door/assets/right_knee_link.STL"
+    ],
+    "size": 852284,
+    "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+  },
+  {
+    "path": "scenes/door/assets/right_rubber_hand.STL",
+    "parts": [
+      "scenes/door/assets/right_rubber_hand.STL"
+    ],
+    "size": 2192684,
+    "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+  },
+  {
+    "path": "scenes/door/assets/right_shoulder_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/right_shoulder_pitch_link.STL"
+    ],
+    "size": 176784,
+    "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+  },
+  {
+    "path": "scenes/door/assets/right_shoulder_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/right_shoulder_roll_link.STL"
+    ],
+    "size": 401884,
+    "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+  },
+  {
+    "path": "scenes/door/assets/right_shoulder_yaw_link.STL",
+    "parts": [
+      "scenes/door/assets/right_shoulder_yaw_link.STL"
+    ],
+    "size": 249984,
+    "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+  },
+  {
+    "path": "scenes/door/assets/right_wrist_pitch_link.STL",
+    "parts": [
+      "scenes/door/assets/right_wrist_pitch_link.STL"
+    ],
+    "size": 79584,
+    "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+  },
+  {
+    "path": "scenes/door/assets/right_wrist_roll_link.STL",
+    "parts": [
+      "scenes/door/assets/right_wrist_roll_link.STL"
+    ],
+    "size": 356084,
+    "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+  },
+  {
+    "path": "scenes/door/assets/right_wrist_yaw_link.STL",
+    "parts": [
+      "scenes/door/assets/right_wrist_yaw_link.STL"
+    ],
+    "size": 341484,
+    "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+  },
+  {
+    "path": "scenes/door/assets/torso_link_rev_1_0.STL",
+    "parts": [
+      "scenes/door/assets/torso_link_rev_1_0.STL"
+    ],
+    "size": 2570584,
+    "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+  },
+  {
+    "path": "scenes/door/assets/waist_roll_link_rev_1_0.STL",
+    "parts": [
+      "scenes/door/assets/waist_roll_link_rev_1_0.STL"
+    ],
+    "size": 85884,
+    "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+  },
+  {
+    "path": "scenes/door/assets/waist_yaw_link_rev_1_0.STL",
+    "parts": [
+      "scenes/door/assets/waist_yaw_link_rev_1_0.STL"
+    ],
+    "size": 619984,
+    "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+  },
+  {
+    "path": "scenes/door/scene.json",
+    "parts": [
+      "scenes/door/scene.json"
+    ],
+    "size": 34798,
+    "sha256": "e2daee1d036938e3b8c9199d01c1c462d240049c74eeb9cf3d745cfcaead0ad5"
+  },
+  {
+    "path": "scenes/door/scene.xml",
+    "parts": [
+      "scenes/door/scene.xml"
+    ],
+    "size": 36102,
+    "sha256": "14764250683afe7aa5abed9a84fd679d5e9b83ca4d8ebb4a76a0c06a90ff6d42"
+  },
+  {
+    "path": "scenes/grasp/assets/cup.obj",
+    "parts": [
+      "scenes/grasp/assets/cup.obj"
+    ],
+    "size": 130895,
+    "sha256": "a5e596806c1d5254ef3714cfda32bd2f6fe02418a613d5d2773292c0623786a7"
+  },
+  {
+    "path": "scenes/grasp/assets/cup6.obj",
+    "parts": [
+      "scenes/grasp/assets/cup6.obj"
+    ],
+    "size": 5072557,
+    "sha256": "9c77f7ec8c72d59c8f6d1c56869b41603dd43fa2a9706425344f764391259cc7"
+  },
+  {
+    "path": "scenes/grasp/assets/grasp_object.obj",
+    "parts": [
+      "scenes/grasp/assets/grasp_object.obj"
+    ],
+    "size": 429056,
+    "sha256": "8c11fef477808d1d8ba779baa8af89674007a8ebd1f2c60c5668444843e4c78b"
+  },
+  {
+    "path": "scenes/grasp/assets/head_link.STL",
+    "parts": [
+      "scenes/grasp/assets/head_link.STL"
+    ],
+    "size": 932784,
+    "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+  },
+  {
+    "path": "scenes/grasp/assets/left_ankle_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_ankle_pitch_link.STL"
+    ],
+    "size": 71184,
+    "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+  },
+  {
+    "path": "scenes/grasp/assets/left_ankle_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_ankle_roll_link.STL"
+    ],
+    "size": 653384,
+    "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+  },
+  {
+    "path": "scenes/grasp/assets/left_elbow_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_elbow_link.STL"
+    ],
+    "size": 88784,
+    "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_index_0_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_index_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "efaabe6a8c850f628c55ab5ed8402757d5263262e8c32943f9bfbec4329d9a8a"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_index_1_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_index_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "926e5fc790ddbabf222e7b7ee5b790a45b090d27a4a87e558a5ba57516b6a805"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_middle_0_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_middle_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "efaabe6a8c850f628c55ab5ed8402757d5263262e8c32943f9bfbec4329d9a8a"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_middle_1_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_middle_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "926e5fc790ddbabf222e7b7ee5b790a45b090d27a4a87e558a5ba57516b6a805"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_palm_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_palm_link.STL"
+    ],
+    "size": 556084,
+    "sha256": "d48b0b1dbd2def01867de0840ed643e6ae8f4882fe81368540830448e2fba58f"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_thumb_0_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_thumb_0_link.STL"
+    ],
+    "size": 71384,
+    "sha256": "c63f6a2e8d700940c172cfa8a5fab2d8c2785abc43bc258d3adf315ceb1fa653"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_thumb_1_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_thumb_1_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "ba3d13e21e8ed1e4885bdbf562326abdae41964c0fee63eceeebebdcf5fff935"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hand_thumb_2_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hand_thumb_2_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "9985783981720896e54347dbcf9d8cbfb991a264ac4fa44cfc017dae1b83fdcd"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hip_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hip_pitch_link.STL"
+    ],
+    "size": 181684,
+    "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hip_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hip_roll_link.STL"
+    ],
+    "size": 192184,
+    "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+  },
+  {
+    "path": "scenes/grasp/assets/left_hip_yaw_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_hip_yaw_link.STL"
+    ],
+    "size": 296284,
+    "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+  },
+  {
+    "path": "scenes/grasp/assets/left_knee_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_knee_link.STL"
+    ],
+    "size": 854884,
+    "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+  },
+  {
+    "path": "scenes/grasp/assets/left_rubber_hand.STL",
+    "parts": [
+      "scenes/grasp/assets/left_rubber_hand.STL"
+    ],
+    "size": 2287484,
+    "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+  },
+  {
+    "path": "scenes/grasp/assets/left_shoulder_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_shoulder_pitch_link.STL"
+    ],
+    "size": 176784,
+    "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+  },
+  {
+    "path": "scenes/grasp/assets/left_shoulder_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_shoulder_roll_link.STL"
+    ],
+    "size": 400284,
+    "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+  },
+  {
+    "path": "scenes/grasp/assets/left_shoulder_yaw_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_shoulder_yaw_link.STL"
+    ],
+    "size": 249184,
+    "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+  },
+  {
+    "path": "scenes/grasp/assets/left_wrist_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_wrist_pitch_link.STL"
+    ],
+    "size": 85984,
+    "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+  },
+  {
+    "path": "scenes/grasp/assets/left_wrist_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_wrist_roll_link.STL"
+    ],
+    "size": 356184,
+    "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+  },
+  {
+    "path": "scenes/grasp/assets/left_wrist_yaw_link.STL",
+    "parts": [
+      "scenes/grasp/assets/left_wrist_yaw_link.STL"
+    ],
+    "size": 318684,
+    "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+  },
+  {
+    "path": "scenes/grasp/assets/logo_link.STL",
+    "parts": [
+      "scenes/grasp/assets/logo_link.STL"
+    ],
+    "size": 243384,
+    "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+  },
+  {
+    "path": "scenes/grasp/assets/pelvis.STL",
+    "parts": [
+      "scenes/grasp/assets/pelvis.STL"
+    ],
+    "size": 1060884,
+    "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+  },
+  {
+    "path": "scenes/grasp/assets/pelvis_contour_link.STL",
+    "parts": [
+      "scenes/grasp/assets/pelvis_contour_link.STL"
+    ],
+    "size": 1805184,
+    "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+  },
+  {
+    "path": "scenes/grasp/assets/right_ankle_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_ankle_pitch_link.STL"
+    ],
+    "size": 71184,
+    "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+  },
+  {
+    "path": "scenes/grasp/assets/right_ankle_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_ankle_roll_link.STL"
+    ],
+    "size": 653784,
+    "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+  },
+  {
+    "path": "scenes/grasp/assets/right_elbow_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_elbow_link.STL"
+    ],
+    "size": 88784,
+    "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_index_0_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_index_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "8bac717a5ff4c5a6f4ca839091ad935392859795a68a5a547bc5ecb3f196f40d"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_index_1_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_index_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "06a5f46b5705a1e54205fc01ed437d475e194a205b72ba78d00c8f26481237bb"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_middle_0_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_middle_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "a02dd3c5b6747e76016f3a1cab27173fa218b0eb271570847be64d8a390022d1"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_middle_1_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_middle_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "60ca1810b7b1371733556660e9e2167790355a83cad9ba55dbd236f2020a228a"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_palm_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_palm_link.STL"
+    ],
+    "size": 556084,
+    "sha256": "5e95f19c4daa3ed7f765d465ba763153d7a76e4c02cbe6d8c567cd67f89f1c1b"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_thumb_0_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_thumb_0_link.STL"
+    ],
+    "size": 71384,
+    "sha256": "30f91ca9cccda42065c98cbe635ff87cd1e004b82d38888fd7e741cf0998d01d"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_thumb_1_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_thumb_1_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "acdd00f613ea4253229461e1367be5331e6631df49e1d40fe283c2bd4c66469f"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hand_thumb_2_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hand_thumb_2_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "36256d0253ae42e0652fbe3e3992b6ac9b5aefd839694ad39b4af143d4efa85f"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hip_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hip_pitch_link.STL"
+    ],
+    "size": 181284,
+    "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hip_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hip_roll_link.STL"
+    ],
+    "size": 192684,
+    "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+  },
+  {
+    "path": "scenes/grasp/assets/right_hip_yaw_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_hip_yaw_link.STL"
+    ],
+    "size": 296284,
+    "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+  },
+  {
+    "path": "scenes/grasp/assets/right_knee_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_knee_link.STL"
+    ],
+    "size": 852284,
+    "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+  },
+  {
+    "path": "scenes/grasp/assets/right_rubber_hand.STL",
+    "parts": [
+      "scenes/grasp/assets/right_rubber_hand.STL"
+    ],
+    "size": 2192684,
+    "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+  },
+  {
+    "path": "scenes/grasp/assets/right_shoulder_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_shoulder_pitch_link.STL"
+    ],
+    "size": 176784,
+    "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+  },
+  {
+    "path": "scenes/grasp/assets/right_shoulder_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_shoulder_roll_link.STL"
+    ],
+    "size": 401884,
+    "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+  },
+  {
+    "path": "scenes/grasp/assets/right_shoulder_yaw_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_shoulder_yaw_link.STL"
+    ],
+    "size": 249984,
+    "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+  },
+  {
+    "path": "scenes/grasp/assets/right_wrist_pitch_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_wrist_pitch_link.STL"
+    ],
+    "size": 79584,
+    "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+  },
+  {
+    "path": "scenes/grasp/assets/right_wrist_roll_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_wrist_roll_link.STL"
+    ],
+    "size": 356084,
+    "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+  },
+  {
+    "path": "scenes/grasp/assets/right_wrist_yaw_link.STL",
+    "parts": [
+      "scenes/grasp/assets/right_wrist_yaw_link.STL"
+    ],
+    "size": 341484,
+    "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+  },
+  {
+    "path": "scenes/grasp/assets/tangerine.obj",
+    "parts": [
+      "scenes/grasp/assets/tangerine.obj"
+    ],
+    "size": 429056,
+    "sha256": "8c11fef477808d1d8ba779baa8af89674007a8ebd1f2c60c5668444843e4c78b"
+  },
+  {
+    "path": "scenes/grasp/assets/torso_link_rev_1_0.STL",
+    "parts": [
+      "scenes/grasp/assets/torso_link_rev_1_0.STL"
+    ],
+    "size": 2570584,
+    "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+  },
+  {
+    "path": "scenes/grasp/assets/waist_roll_link_rev_1_0.STL",
+    "parts": [
+      "scenes/grasp/assets/waist_roll_link_rev_1_0.STL"
+    ],
+    "size": 85884,
+    "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+  },
+  {
+    "path": "scenes/grasp/assets/waist_yaw_link_rev_1_0.STL",
+    "parts": [
+      "scenes/grasp/assets/waist_yaw_link_rev_1_0.STL"
+    ],
+    "size": 619984,
+    "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+  },
+  {
+    "path": "scenes/grasp/assets/water-bottle.obj",
+    "parts": [
+      "scenes/grasp/assets/water-bottle.obj"
+    ],
+    "size": 3210118,
+    "sha256": "8c1884d8e9a685cb59274acb949a1824e397a563373f89384ae125b320579be1"
+  },
+  {
+    "path": "scenes/grasp/candidate-bottle.json",
+    "parts": [
+      "scenes/grasp/candidate-bottle.json"
+    ],
+    "size": 36279,
+    "sha256": "eb0c70eec44ccfda1239eceac3a8c13ca050b7580669f7a960cfcd5a6aa44837"
+  },
+  {
+    "path": "scenes/grasp/candidate-bottle.xml",
+    "parts": [
+      "scenes/grasp/candidate-bottle.xml"
+    ],
+    "size": 41458,
+    "sha256": "d38e809ec342186da8ff392d1d0246751ccecc98a2bc891346e81f94d5ef8c42"
+  },
+  {
+    "path": "scenes/grasp/candidate-cup-convex.xml",
+    "parts": [
+      "scenes/grasp/candidate-cup-convex.xml"
+    ],
+    "size": 41474,
+    "sha256": "5a143a4e1f15179e4788dba06d5b0eceded9f3209a44170f16057b56cfd80c55"
+  },
+  {
+    "path": "scenes/grasp/candidate-cup-low.json",
+    "parts": [
+      "scenes/grasp/candidate-cup-low.json"
+    ],
+    "size": 34698,
+    "sha256": "1133db3b9d35b82a2a83a04e3ad8b29e4053ffdf40e24edde7ad36a521e1291e"
+  },
+  {
+    "path": "scenes/grasp/candidate-cup.json",
+    "parts": [
+      "scenes/grasp/candidate-cup.json"
+    ],
+    "size": 35096,
+    "sha256": "96e08bf3baefbb3b7243a2a4428dcc79d83db89cabc2992a9d78f52761ba2c34"
+  },
+  {
+    "path": "scenes/grasp/candidate-cup.xml",
+    "parts": [
+      "scenes/grasp/candidate-cup.xml"
+    ],
+    "size": 41635,
+    "sha256": "5517f90fd96e652723f50edb53dfa2e164a8e56737b3ee13ad92a7430be510cf"
+  },
+  {
+    "path": "scenes/grasp/candidate-cup6.json",
+    "parts": [
+      "scenes/grasp/candidate-cup6.json"
+    ],
+    "size": 34613,
+    "sha256": "2773e0fb109c938f4d0a418f89e62a25d302a4d45fa8736a557126872c84854d"
+  },
+  {
+    "path": "scenes/grasp/candidate-cup6.xml",
+    "parts": [
+      "scenes/grasp/candidate-cup6.xml"
+    ],
+    "size": 41457,
+    "sha256": "8cfa01efc8015664bec3e98d4cf5f77ec2af8acd7859d90f37fc74cff009a405"
+  },
+  {
+    "path": "scenes/grasp/candidate-hot-dog.json",
+    "parts": [
+      "scenes/grasp/candidate-hot-dog.json"
+    ],
+    "size": 36306,
+    "sha256": "452d4bf68f724e33ff751c9a1b2ee354cebebe6706970055d7afe3286734e972"
+  },
+  {
+    "path": "scenes/grasp/candidate-hot-dog.xml",
+    "parts": [
+      "scenes/grasp/candidate-hot-dog.xml"
+    ],
+    "size": 41460,
+    "sha256": "71068c2a7745dcb3ec9a6f2d0b1ddcdcc2923e673b73f31264722935e13a0f9b"
+  },
+  {
+    "path": "scenes/grasp/candidate-tangerine.json",
+    "parts": [
+      "scenes/grasp/candidate-tangerine.json"
+    ],
+    "size": 35236,
+    "sha256": "fc506aefb66a484451d346c829eda770c43359019ed200c7b90d54f7fa33fb54"
+  },
+  {
+    "path": "scenes/grasp/candidate-tangerine.xml",
+    "parts": [
+      "scenes/grasp/candidate-tangerine.xml"
+    ],
+    "size": 41622,
+    "sha256": "1710cd5735417c6ca448cccd7e3f20b439c7f820fd434099826412c607e472b8"
+  },
+  {
+    "path": "scenes/grasp/candidate-water-bottle-high.json",
+    "parts": [
+      "scenes/grasp/candidate-water-bottle-high.json"
+    ],
+    "size": 35201,
+    "sha256": "0c6340e72818da347084354b71654a66a779070bc91dc327c44b94ee70fe4d49"
+  },
+  {
+    "path": "scenes/grasp/candidate-water-bottle.json",
+    "parts": [
+      "scenes/grasp/candidate-water-bottle.json"
+    ],
+    "size": 35544,
+    "sha256": "18a6391ed4ab911305b3166f9d2977bf3120c831974cd152957cacdd67ca18fc"
+  },
+  {
+    "path": "scenes/grasp/candidate-water-bottle.xml",
+    "parts": [
+      "scenes/grasp/candidate-water-bottle.xml"
+    ],
+    "size": 41644,
+    "sha256": "d2c7054f871a654d15bfe727d1d7569b6e1257f8ae1b9ba2e019b4e7bf35dd14"
+  },
+  {
+    "path": "scenes/grasp/objects.json",
+    "parts": [
+      "scenes/grasp/objects.json"
+    ],
+    "size": 181,
+    "sha256": "fcf9f3ad47d028b89b35843d4bb1ebd13ee73fe525498e9cd62f9a4a7df13580"
+  },
+  {
+    "path": "scenes/grasp/relaxed-cup.json",
+    "parts": [
+      "scenes/grasp/relaxed-cup.json"
+    ],
+    "size": 34562,
+    "sha256": "218b055d36f3995783de476c02f9c723b2e848de2b3313c51eabf22f1bcd5337"
+  },
+  {
+    "path": "scenes/grasp/relaxed-tangerine.json",
+    "parts": [
+      "scenes/grasp/relaxed-tangerine.json"
+    ],
+    "size": 34573,
+    "sha256": "c12873dbd93ffe3d31f491240708abe59fd3e373d8a910d9acd8991a8af9cd53"
+  },
+  {
+    "path": "scenes/grasp/relaxed-water-bottle.json",
+    "parts": [
+      "scenes/grasp/relaxed-water-bottle.json"
+    ],
+    "size": 34604,
+    "sha256": "072b0a71b71fa6506350889c564c6545259917ccdfa186f83f903c86acdcf0c8"
+  },
+  {
+    "path": "scenes/grasp/scene-ball.json",
+    "parts": [
+      "scenes/grasp/scene-ball.json"
+    ],
+    "size": 34455,
+    "sha256": "153f4f0120d7d5e95ee473d5c9cb473f176f2321ef8c6824b77b129ba2d7abe5"
+  },
+  {
+    "path": "scenes/grasp/scene-ball.xml",
+    "parts": [
+      "scenes/grasp/scene-ball.xml"
+    ],
+    "size": 41439,
+    "sha256": "e66027ebd30b72a81f0574be377b3d686628650eabb55935fdb156207a68149d"
+  },
+  {
+    "path": "scenes/grasp/scene-cube.json",
+    "parts": [
+      "scenes/grasp/scene-cube.json"
+    ],
+    "size": 34458,
+    "sha256": "6ed1aef99fff3dd07d129dacc369a7cec216d830ccacea6796cb0520ccb5f2e1"
+  },
+  {
+    "path": "scenes/grasp/scene-cube.xml",
+    "parts": [
+      "scenes/grasp/scene-cube.xml"
+    ],
+    "size": 41446,
+    "sha256": "48a579f95a5f9dd06112e33189639c9cbd66b2e9d4d96f99eabea330f60b6473"
+  },
+  {
+    "path": "scenes/grasp/scene-objects.xml",
+    "parts": [
+      "scenes/grasp/scene-objects.xml"
+    ],
+    "size": 41981,
+    "sha256": "7b31f9512d8535d813c7d3977dcb6799d0eec776b801cfb91a00029401595423"
+  },
+  {
+    "path": "scenes/grasp/scene-tangerine.json",
+    "parts": [
+      "scenes/grasp/scene-tangerine.json"
+    ],
+    "size": 34566,
+    "sha256": "7ecea2500c323275682d2c6a80dc755f1e9614abe9e432accdb76dd9be154c39"
+  },
+  {
+    "path": "scenes/grasp/scene-tangerine.xml",
+    "parts": [
+      "scenes/grasp/scene-tangerine.xml"
+    ],
+    "size": 41464,
+    "sha256": "cf52b20d5794d520b4397fc516f691da0eefe3cbbefc13ac85725d7c65e413e5"
+  },
+  {
+    "path": "scenes/grasp/scene.json",
+    "parts": [
+      "scenes/grasp/scene.json"
+    ],
+    "size": 35124,
+    "sha256": "e4921b017a979eb47f552017988fa33127bc240b1df3e715c7a3b297414c09d1"
+  },
+  {
+    "path": "scenes/grasp/scene.xml",
+    "parts": [
+      "scenes/grasp/scene.xml"
+    ],
+    "size": 41464,
+    "sha256": "cf52b20d5794d520b4397fc516f691da0eefe3cbbefc13ac85725d7c65e413e5"
+  },
+  {
+    "path": "scenes/pickup/assets/head_link.STL",
+    "parts": [
+      "scenes/pickup/assets/head_link.STL"
+    ],
+    "size": 932784,
+    "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+  },
+  {
+    "path": "scenes/pickup/assets/left_ankle_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_ankle_pitch_link.STL"
+    ],
+    "size": 71184,
+    "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+  },
+  {
+    "path": "scenes/pickup/assets/left_ankle_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_ankle_roll_link.STL"
+    ],
+    "size": 653384,
+    "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+  },
+  {
+    "path": "scenes/pickup/assets/left_elbow_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_elbow_link.STL"
+    ],
+    "size": 88784,
+    "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_index_0_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_index_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "efaabe6a8c850f628c55ab5ed8402757d5263262e8c32943f9bfbec4329d9a8a"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_index_1_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_index_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "926e5fc790ddbabf222e7b7ee5b790a45b090d27a4a87e558a5ba57516b6a805"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_middle_0_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_middle_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "efaabe6a8c850f628c55ab5ed8402757d5263262e8c32943f9bfbec4329d9a8a"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_middle_1_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_middle_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "926e5fc790ddbabf222e7b7ee5b790a45b090d27a4a87e558a5ba57516b6a805"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_palm_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_palm_link.STL"
+    ],
+    "size": 556084,
+    "sha256": "d48b0b1dbd2def01867de0840ed643e6ae8f4882fe81368540830448e2fba58f"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_thumb_0_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_thumb_0_link.STL"
+    ],
+    "size": 71384,
+    "sha256": "c63f6a2e8d700940c172cfa8a5fab2d8c2785abc43bc258d3adf315ceb1fa653"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_thumb_1_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_thumb_1_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "ba3d13e21e8ed1e4885bdbf562326abdae41964c0fee63eceeebebdcf5fff935"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hand_thumb_2_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hand_thumb_2_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "9985783981720896e54347dbcf9d8cbfb991a264ac4fa44cfc017dae1b83fdcd"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hip_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hip_pitch_link.STL"
+    ],
+    "size": 181684,
+    "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hip_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hip_roll_link.STL"
+    ],
+    "size": 192184,
+    "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+  },
+  {
+    "path": "scenes/pickup/assets/left_hip_yaw_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_hip_yaw_link.STL"
+    ],
+    "size": 296284,
+    "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+  },
+  {
+    "path": "scenes/pickup/assets/left_knee_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_knee_link.STL"
+    ],
+    "size": 854884,
+    "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+  },
+  {
+    "path": "scenes/pickup/assets/left_rubber_hand.STL",
+    "parts": [
+      "scenes/pickup/assets/left_rubber_hand.STL"
+    ],
+    "size": 2287484,
+    "sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
+  },
+  {
+    "path": "scenes/pickup/assets/left_shoulder_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_shoulder_pitch_link.STL"
+    ],
+    "size": 176784,
+    "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+  },
+  {
+    "path": "scenes/pickup/assets/left_shoulder_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_shoulder_roll_link.STL"
+    ],
+    "size": 400284,
+    "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+  },
+  {
+    "path": "scenes/pickup/assets/left_shoulder_yaw_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_shoulder_yaw_link.STL"
+    ],
+    "size": 249184,
+    "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+  },
+  {
+    "path": "scenes/pickup/assets/left_wrist_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_wrist_pitch_link.STL"
+    ],
+    "size": 85984,
+    "sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
+  },
+  {
+    "path": "scenes/pickup/assets/left_wrist_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_wrist_roll_link.STL"
+    ],
+    "size": 356184,
+    "sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
+  },
+  {
+    "path": "scenes/pickup/assets/left_wrist_yaw_link.STL",
+    "parts": [
+      "scenes/pickup/assets/left_wrist_yaw_link.STL"
+    ],
+    "size": 318684,
+    "sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
+  },
+  {
+    "path": "scenes/pickup/assets/logo_link.STL",
+    "parts": [
+      "scenes/pickup/assets/logo_link.STL"
+    ],
+    "size": 243384,
+    "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+  },
+  {
+    "path": "scenes/pickup/assets/pelvis.STL",
+    "parts": [
+      "scenes/pickup/assets/pelvis.STL"
+    ],
+    "size": 1060884,
+    "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+  },
+  {
+    "path": "scenes/pickup/assets/pelvis_contour_link.STL",
+    "parts": [
+      "scenes/pickup/assets/pelvis_contour_link.STL"
+    ],
+    "size": 1805184,
+    "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+  },
+  {
+    "path": "scenes/pickup/assets/right_ankle_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_ankle_pitch_link.STL"
+    ],
+    "size": 71184,
+    "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+  },
+  {
+    "path": "scenes/pickup/assets/right_ankle_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_ankle_roll_link.STL"
+    ],
+    "size": 653784,
+    "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+  },
+  {
+    "path": "scenes/pickup/assets/right_elbow_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_elbow_link.STL"
+    ],
+    "size": 88784,
+    "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_index_0_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_index_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "8bac717a5ff4c5a6f4ca839091ad935392859795a68a5a547bc5ecb3f196f40d"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_index_1_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_index_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "06a5f46b5705a1e54205fc01ed437d475e194a205b72ba78d00c8f26481237bb"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_middle_0_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_middle_0_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "a02dd3c5b6747e76016f3a1cab27173fa218b0eb271570847be64d8a390022d1"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_middle_1_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_middle_1_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "60ca1810b7b1371733556660e9e2167790355a83cad9ba55dbd236f2020a228a"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_palm_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_palm_link.STL"
+    ],
+    "size": 556084,
+    "sha256": "5e95f19c4daa3ed7f765d465ba763153d7a76e4c02cbe6d8c567cd67f89f1c1b"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_thumb_0_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_thumb_0_link.STL"
+    ],
+    "size": 71384,
+    "sha256": "30f91ca9cccda42065c98cbe635ff87cd1e004b82d38888fd7e741cf0998d01d"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_thumb_1_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_thumb_1_link.STL"
+    ],
+    "size": 189884,
+    "sha256": "acdd00f613ea4253229461e1367be5331e6631df49e1d40fe283c2bd4c66469f"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hand_thumb_2_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hand_thumb_2_link.STL"
+    ],
+    "size": 768684,
+    "sha256": "36256d0253ae42e0652fbe3e3992b6ac9b5aefd839694ad39b4af143d4efa85f"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hip_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hip_pitch_link.STL"
+    ],
+    "size": 181284,
+    "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hip_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hip_roll_link.STL"
+    ],
+    "size": 192684,
+    "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+  },
+  {
+    "path": "scenes/pickup/assets/right_hip_yaw_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_hip_yaw_link.STL"
+    ],
+    "size": 296284,
+    "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+  },
+  {
+    "path": "scenes/pickup/assets/right_knee_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_knee_link.STL"
+    ],
+    "size": 852284,
+    "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+  },
+  {
+    "path": "scenes/pickup/assets/right_rubber_hand.STL",
+    "parts": [
+      "scenes/pickup/assets/right_rubber_hand.STL"
+    ],
+    "size": 2192684,
+    "sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
+  },
+  {
+    "path": "scenes/pickup/assets/right_shoulder_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_shoulder_pitch_link.STL"
+    ],
+    "size": 176784,
+    "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+  },
+  {
+    "path": "scenes/pickup/assets/right_shoulder_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_shoulder_roll_link.STL"
+    ],
+    "size": 401884,
+    "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+  },
+  {
+    "path": "scenes/pickup/assets/right_shoulder_yaw_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_shoulder_yaw_link.STL"
+    ],
+    "size": 249984,
+    "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+  },
+  {
+    "path": "scenes/pickup/assets/right_wrist_pitch_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_wrist_pitch_link.STL"
+    ],
+    "size": 79584,
+    "sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
+  },
+  {
+    "path": "scenes/pickup/assets/right_wrist_roll_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_wrist_roll_link.STL"
+    ],
+    "size": 356084,
+    "sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
+  },
+  {
+    "path": "scenes/pickup/assets/right_wrist_yaw_link.STL",
+    "parts": [
+      "scenes/pickup/assets/right_wrist_yaw_link.STL"
+    ],
+    "size": 341484,
+    "sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
+  },
+  {
+    "path": "scenes/pickup/assets/torso_link_rev_1_0.STL",
+    "parts": [
+      "scenes/pickup/assets/torso_link_rev_1_0.STL"
+    ],
+    "size": 2570584,
+    "sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
+  },
+  {
+    "path": "scenes/pickup/assets/waist_roll_link_rev_1_0.STL",
+    "parts": [
+      "scenes/pickup/assets/waist_roll_link_rev_1_0.STL"
+    ],
+    "size": 85884,
+    "sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
+  },
+  {
+    "path": "scenes/pickup/assets/waist_yaw_link_rev_1_0.STL",
+    "parts": [
+      "scenes/pickup/assets/waist_yaw_link_rev_1_0.STL"
+    ],
+    "size": 619984,
+    "sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
+  },
+  {
+    "path": "scenes/pickup/case-ground-1.json",
+    "parts": [
+      "scenes/pickup/case-ground-1.json"
+    ],
+    "size": 35739,
+    "sha256": "dd059202a954fb699769748bde8cb7131a984c9b59e3213e8ebb1ce3a1ea067b"
+  },
+  {
+    "path": "scenes/pickup/case-ground-1.xml",
+    "parts": [
+      "scenes/pickup/case-ground-1.xml"
+    ],
+    "size": 35251,
+    "sha256": "e85e02bfc2965bc557d60e34baa402679836e78e803f3b9484f74620492add8b"
+  },
+  {
+    "path": "scenes/pickup/case-ground-2.json",
+    "parts": [
+      "scenes/pickup/case-ground-2.json"
+    ],
+    "size": 35748,
+    "sha256": "e031a165fc1a152ca76d2915eeabce98fc2ec89436309872afbed7dafee520b8"
+  },
+  {
+    "path": "scenes/pickup/case-ground-2.xml",
+    "parts": [
+      "scenes/pickup/case-ground-2.xml"
+    ],
+    "size": 35254,
+    "sha256": "96a5d1c4664e1148b4b757fa804642ba3718650ec75dc8b50a6bf24c4a06a6c8"
+  },
+  {
+    "path": "scenes/pickup/case-ground-3.json",
+    "parts": [
+      "scenes/pickup/case-ground-3.json"
+    ],
+    "size": 35736,
+    "sha256": "0fe0fb78cde4e57ec362846ea563294b9e145b272405e944892e03e202b2a2da"
+  },
+  {
+    "path": "scenes/pickup/case-ground-3.xml",
+    "parts": [
+      "scenes/pickup/case-ground-3.xml"
+    ],
+    "size": 35248,
+    "sha256": "4d78ab90985047a3249311b389926b52b4918e5022c09522374ffc7d2774a989"
+  },
+  {
+    "path": "scenes/pickup/case-mixed-1.json",
+    "parts": [
+      "scenes/pickup/case-mixed-1.json"
+    ],
+    "size": 35805,
+    "sha256": "dab28a5e3c5f744911286fca596940df17ad00f68e1cf5fe4e38313f41864091"
+  },
+  {
+    "path": "scenes/pickup/case-mixed-1.xml",
+    "parts": [
+      "scenes/pickup/case-mixed-1.xml"
+    ],
+    "size": 35251,
+    "sha256": "e85e02bfc2965bc557d60e34baa402679836e78e803f3b9484f74620492add8b"
+  },
+  {
+    "path": "scenes/pickup/case-mixed-2.json",
+    "parts": [
+      "scenes/pickup/case-mixed-2.json"
+    ],
+    "size": 35783,
+    "sha256": "809673d561acdaa5f1746851788338868db623f27219307b667fd5d8f392ca9a"
+  },
+  {
+    "path": "scenes/pickup/case-mixed-2.xml",
+    "parts": [
+      "scenes/pickup/case-mixed-2.xml"
+    ],
+    "size": 35254,
+    "sha256": "96a5d1c4664e1148b4b757fa804642ba3718650ec75dc8b50a6bf24c4a06a6c8"
+  },
+  {
+    "path": "scenes/pickup/case-mixed-3.json",
+    "parts": [
+      "scenes/pickup/case-mixed-3.json"
+    ],
+    "size": 35812,
+    "sha256": "cb26287c24890ba64cab6c81935ef8e4f0d012a4a5b43e5682f0fd76da43a310"
+  },
+  {
+    "path": "scenes/pickup/case-mixed-3.xml",
+    "parts": [
+      "scenes/pickup/case-mixed-3.xml"
+    ],
+    "size": 35217,
+    "sha256": "b2a69c1e5126cc7e7b6f5f10b245914dbed8fb06f71ba3788b0be509c02f1af5"
+  },
+  {
+    "path": "scenes/pickup/case-support-1.json",
+    "parts": [
+      "scenes/pickup/case-support-1.json"
+    ],
+    "size": 35811,
+    "sha256": "227afd431b0df75797e30b090f66d8f30ffb31899c4673018d19775b07a0e077"
+  },
+  {
+    "path": "scenes/pickup/case-support-1.xml",
+    "parts": [
+      "scenes/pickup/case-support-1.xml"
+    ],
+    "size": 35251,
+    "sha256": "e85e02bfc2965bc557d60e34baa402679836e78e803f3b9484f74620492add8b"
+  },
+  {
+    "path": "scenes/pickup/case-support-2.json",
+    "parts": [
+      "scenes/pickup/case-support-2.json"
+    ],
+    "size": 35470,
+    "sha256": "48e26806f3cfaaa7d2751cb6cdb870b34614c9d1b157d9295ceb39ab6ae1f938"
+  },
+  {
+    "path": "scenes/pickup/case-support-2.xml",
+    "parts": [
+      "scenes/pickup/case-support-2.xml"
+    ],
+    "size": 35328,
+    "sha256": "b263a2a60731f644709fb3c47b21fa72b9a5971e534f1e9ab337a3c6c05d6e5f"
+  },
+  {
+    "path": "scenes/pickup/case-support-3.json",
+    "parts": [
+      "scenes/pickup/case-support-3.json"
+    ],
+    "size": 35818,
+    "sha256": "c7a452928ea18c1eb6c76a08e995c70ea035fd5bf60390c313023c27666b8c7a"
+  },
+  {
+    "path": "scenes/pickup/case-support-3.xml",
+    "parts": [
+      "scenes/pickup/case-support-3.xml"
+    ],
+    "size": 35217,
+    "sha256": "b2a69c1e5126cc7e7b6f5f10b245914dbed8fb06f71ba3788b0be509c02f1af5"
+  },
+  {
+    "path": "scenes/pickup/cases.json",
+    "parts": [
+      "scenes/pickup/cases.json"
+    ],
+    "size": 1256,
+    "sha256": "ecdb6cc339392a88c5a74ffe252ce6bd85e4dc0188b3395bab1d51941b32e9e8"
+  },
+  {
+    "path": "scenes/pickup/layouts.json",
+    "parts": [
+      "scenes/pickup/layouts.json"
+    ],
+    "size": 109951,
+    "sha256": "1feda28d8ffda5ba6e5edce15f5add40d3e1a79d90b08f847acd493e6fbb4a1d"
+  },
+  {
+    "path": "scenes/pickup/low-bank-14.json",
+    "parts": [
+      "scenes/pickup/low-bank-14.json"
+    ],
+    "size": 35770,
+    "sha256": "d05063501ad307a9cd8c49cacf5dd4deecfa90a95df5b8ae04ab86c660bbace2"
+  },
+  {
+    "path": "scenes/pickup/low-bank-14.xml",
+    "parts": [
+      "scenes/pickup/low-bank-14.xml"
+    ],
+    "size": 35237,
+    "sha256": "b9a3f4dded7980d77f0a00356ada5ccf63bdf3466af22b74d268029b67f59334"
+  },
+  {
+    "path": "scenes/pickup/scene-ground.xml",
+    "parts": [
+      "scenes/pickup/scene-ground.xml"
+    ],
+    "size": 36548,
+    "sha256": "6bb9e12f979c2a5156c55ae70aef96c2e77b4aefab9a906f45e24c79f3249125"
+  },
+  {
+    "path": "scenes/pickup/scene-mixed.xml",
+    "parts": [
+      "scenes/pickup/scene-mixed.xml"
+    ],
+    "size": 36548,
+    "sha256": "6bb9e12f979c2a5156c55ae70aef96c2e77b4aefab9a906f45e24c79f3249125"
+  },
+  {
+    "path": "scenes/pickup/scene-support.xml",
+    "parts": [
+      "scenes/pickup/scene-support.xml"
+    ],
+    "size": 36548,
+    "sha256": "6bb9e12f979c2a5156c55ae70aef96c2e77b4aefab9a906f45e24c79f3249125"
+  },
+  {
+    "path": "scenes/pickup/scene.json",
+    "parts": [
+      "scenes/pickup/scene.json"
+    ],
+    "size": 35226,
+    "sha256": "4514250c8d323d3ff3965304b253d9468fe676ff7daebe2a857b650428b4b93d"
+  },
+  {
+    "path": "scenes/pickup/scene.xml",
+    "parts": [
+      "scenes/pickup/scene.xml"
+    ],
+    "size": 35284,
+    "sha256": "c902d7731ca0809b4b48ffe165a6ba9e5e61244dd453088a36beca129d77c533"
+  },
+  {
+    "path": "v27-distill2000/planner.condition.w8.onnx",
+    "parts": [
+      "v27-distill2000/planner.condition.w8.onnx.part000",
+      "v27-distill2000/planner.condition.w8.onnx.part001"
+    ],
+    "size": 100216962,
+    "sha256": "8e29c62b608c4b341f6b53f55d01dd286811f6bf82e034a76040d88b468735ac"
+  },
+  {
+    "path": "v27-distill2000/planner.step.gpu.w8.onnx",
+    "parts": [
+      "v27-distill2000/planner.step.gpu.w8.onnx.part000",
+      "v27-distill2000/planner.step.gpu.w8.onnx.part001",
+      "v27-distill2000/planner.step.gpu.w8.onnx.part002"
+    ],
+    "size": 267158773,
+    "sha256": "321b94e90837de69e975b16c291470acd5d7d943f69a8998a01ba9a560904c94"
+  },
+  {
+    "path": "v27-distill2000/planner.time.w8.onnx",
+    "parts": [
+      "v27-distill2000/planner.time.w8.onnx.part000",
+      "v27-distill2000/planner.time.w8.onnx.part001"
+    ],
+    "size": 174468086,
+    "sha256": "a7bb9871865dd20a8159893c15b8d758a036a1d40ec765fadc238514d8782c84"
+  },
+  {
+    "path": "v27-distill2000/planner_meta.json",
+    "parts": [
+      "v27-distill2000/planner_meta.json"
+    ],
+    "size": 101211,
+    "sha256": "3f2a078fd826596d2a81e71ab141a65b36a1c3ddc35ee483b3963b5b050494a1"
+  },
+  {
+    "path": "v27-distill2000/split_metrics.json",
+    "parts": [
+      "v27-distill2000/split_metrics.json"
+    ],
+    "size": 115,
+    "sha256": "760ca760f5d89ffcb6e637e841797f4dee2a201a2bcd28bf8220761d43ea0295"
+  }
+]

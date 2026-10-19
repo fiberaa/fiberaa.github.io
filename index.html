@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="title" content="FIBER: Action-Aligned Latent Planning for Versatile Humanoid Loco-Manipulation">
-  <meta name="description" content="FIBER learns versatile humanoid loco-manipulation from heterogeneous experts through offline planning over a frozen behavioral foundation model.">
+  <meta name="description" content="FIBER uses the executable latent space of a frozen behavior foundation model as a shared planning representation, projecting heterogeneous interaction experts into it and learning one perceptive planner entirely offline.">
   <meta name="keywords" content="humanoid robotics, loco-manipulation, latent planning, behavioral foundation model, flow matching">
   <meta name="author" content="Yutang Lin, Guanya Shi, C. Karen Liu">
   <meta name="robots" content="index, follow">
@@ -31,14 +31,14 @@
   <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/index.css?v=13">
+  <link rel="stylesheet" href="static/css/site.css?v=8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  <script defer src="static/js/fiber-overview.js?v=7"></script>
+  <script defer src="static/js/index.js?v=5"></script>
 
   <script type="application/ld+json">
   {
@@ -57,545 +57,439 @@
   </script>
 </head>
 <body>
-  <nav class="outline-panel" aria-label="Page outline">
-    <a href="#top" class="outline-link is-active">Top</a>
-    <a href="#tasks" class="outline-link">Demos</a>
-    <a href="#contributions" class="outline-link">Contributions</a>
-    <a href="#method" class="outline-link">Method</a>
-    <a href="#interactive" class="outline-link">Playground</a>
-    <a href="#results" class="outline-link">Evals</a>
-    <a href="#abstract" class="outline-link">Abstract</a>
-    <a href="#citation" class="outline-link">Citation</a>
-  </nav>
-
+  <a class="skip-link" href="#real">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#top" aria-label="FIBER, back to top">FIBER<i></i></a>
+    <nav class="header-nav" aria-label="Sections">
+      <a href="#video" class="outline-link">Video</a>
+      <a href="#real" class="outline-link">Real world</a>
+      <a href="#method" class="outline-link">Method</a>
+      <a href="#simulation" class="outline-link">Simulation</a>
+      <a href="#results" class="outline-link">Results</a>
+      <a href="#interactive" class="outline-link">Playground</a>
+      <a href="#paper" class="outline-link">Paper</a>
+    </nav>
+  </header>
   <button type="button" class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+  <button type="button" class="playback-toggle" id="playback-toggle" aria-pressed="false">Pause videos</button>
 
-  <main>
-    <section class="hero hero-main" id="top">
-      <div class="fiber-field" aria-hidden="true">
-        <span class="fiber" style="--x:-4%;--y:-8%;--r:18deg;--s:1.2"></span>
-        <span class="fiber" style="--x:13%;--y:-20%;--r:28deg;--s:.72"></span>
-        <span class="fiber" style="--x:34%;--y:-15%;--r:-24deg;--s:1.05"></span>
-        <span class="fiber" style="--x:57%;--y:-14%;--r:22deg;--s:.82"></span>
-        <span class="fiber" style="--x:76%;--y:-17%;--r:-19deg;--s:1.1"></span>
-        <span class="hero-glow"></span>
-      </div>
-
-      <div class="hero-body">
-        <div class="hero-content">
-          <div class="hero-mark" role="img" aria-label="Expert trajectory fibers wrapped around a shared latent sphere">
-            <svg viewBox="0 0 128 128" aria-hidden="true">
-              <circle class="mark-sphere" cx="64" cy="64" r="37"></circle>
-              <ellipse class="mark-orbit" cx="64" cy="64" rx="37" ry="13"></ellipse>
-              <ellipse class="mark-orbit is-tilted" cx="64" cy="64" rx="37" ry="13"></ellipse>
-              <path class="mark-fiber f1" d="M15 69C32 37 52 29 77 39s29 29 38 18"></path>
-              <path class="mark-fiber f2" d="M22 91C39 76 37 48 59 34s38-2 48-16"></path>
-              <path class="mark-fiber f3" d="M13 45C35 52 41 82 65 91s37-9 51 1"></path>
-              <path class="mark-fiber f4" d="M34 112C39 88 61 84 81 67s17-36 33-44"></path>
-              <path class="mark-fiber f5" d="M30 20C43 38 67 31 86 47s13 39 30 47"></path>
-              <circle class="mark-node" cx="22" cy="91" r="2.5"></circle>
-              <circle class="mark-node" cx="107" cy="18" r="2.5"></circle>
-              <circle class="mark-node" cx="116" cy="92" r="2.5"></circle>
-            </svg>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <picture class="hero-poster" aria-hidden="true"><source media="(max-aspect-ratio: 1/1)" srcset="static/videos/hero-wall/wall-mobile.jpg"><img src="static/videos/hero-wall/wall-desktop.jpg" alt=""></picture>
+        <video class="hero-wall" id="hero-wall" muted loop playsinline preload="metadata" aria-hidden="true" data-landscape="static/videos/hero-wall/wall-desktop.mp4" data-portrait="static/videos/hero-wall/wall-mobile.mp4"></video>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-copy page-width">
+          <h1 id="hero-title">FIBER</h1>
+          <p class="hero-subtitle">Action&#8209;Aligned Latent Planning for Versatile Humanoid Loco&#8209;Manipulation</p>
+          <div class="hero-authors">
+            <p class="publication-authors"><a href="https://yutang-lin.github.io/">Yutang Lin</a><sup>1</sup>, <a href="https://www.gshi.me/">Guanya Shi</a><sup>†,1,2</sup>, <a href="https://cs.stanford.edu/~karenliu">C. Karen Liu</a><sup>†,1,3</sup></p>
+            <p class="publication-affiliations"><span><sup>1</sup> Amazon FAR</span><span><sup>2</sup> Carnegie Mellon University</span><span><sup>3</sup> Stanford University</span></p>
+            <p class="publication-note"><sup>†</sup> Amazon FAR Team Co-Lead</p>
           </div>
-          <h1 class="title publication-title">
-            <span class="title-main">FIBER</span>
-            <span class="title-sub">Action&#8209;Aligned Latent Planning for Versatile Humanoid Loco&#8209;Manipulation</span>
-          </h1>
-          <p class="publication-authors"><a href="https://yutang-lin.github.io/">Yutang Lin</a><sup>1</sup>, <a href="https://www.gshi.me/">Guanya Shi</a><sup>†,1,2</sup>, <a href="https://cs.stanford.edu/~karenliu">C. Karen Liu</a><sup>†,1,3</sup></p>
-          <p class="publication-affiliations"><span><sup>1</sup> Amazon FAR</span><span><sup>2</sup> Carnegie Mellon University</span><span><sup>3</sup> Stanford University</span></p>
-          <p class="publication-note"><sup>†</sup> Amazon FAR Team Co-Lead</p>
-          <p class="hero-summary">
-            FIBER converts independently acquired interaction experts into executable latent
-            behaviors and learns one vision-conditioned planner entirely offline over a frozen
-            behavioral foundation model.
-          </p>
-          <div class="publication-links">
-            <button type="button" class="button is-dark" disabled>Paper · soon</button>
-            <button type="button" class="button is-dark" disabled>Code · soon</button>
-            <a class="button is-dark" href="#tasks">Watch demos</a>
-          </div>
-
-          <div class="hero-video-matrix" aria-label="Real-world examples arranged by task">
-            <section class="hero-task-row" aria-labelledby="hero-pickup-label">
-              <div class="hero-task-label">
-                <span>01</span>
-                <h2 id="hero-pickup-label">Pickup</h2>
-                <small>Four examples</small>
-              </div>
-              <div class="hero-task-videos">
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/box_pick_high_01.mp4" data-src-hd="static/videos/hero-hd/box_pick_high_01.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-hero-video aria-label="Pickup example A"></video>
-                  <figcaption>Pickup</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/box_pick_high_04.mp4" data-src-hd="static/videos/hero-hd/box_pick_high_04.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-hero-video aria-label="Pickup example B"></video>
-                  <figcaption>Pickup · B</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/box_throw_pick_01.mp4" data-src-hd="static/videos/hero-hd/box_throw_pick_01.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-hero-video aria-label="Pickup example C"></video>
-                  <figcaption>Pickup · C</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/box_throw_pick_04.mp4" data-src-hd="static/videos/hero-hd/box_throw_pick_04.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-hero-video aria-label="Pickup example D"></video>
-                  <figcaption>Pickup · D</figcaption>
-                </figure>
-              </div>
-            </section>
-
-            <section class="hero-task-row" aria-labelledby="hero-door-label">
-              <div class="hero-task-label">
-                <span>02</span>
-                <h2 id="hero-door-label">Push Door</h2>
-                <small>Four examples</small>
-              </div>
-              <div class="hero-task-videos">
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/door_heavy_01.mp4" data-src-hd="static/videos/hero-hd/door_heavy_01.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-hero-video aria-label="Push door example A"></video>
-                  <figcaption>Push Door</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/door_heavy_02.mp4" data-src-hd="static/videos/hero-hd/door_heavy_02.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-hero-video aria-label="Push door example B"></video>
-                  <figcaption>Push Door · B</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/door_light_01.mp4" data-src-hd="static/videos/hero-hd/door_light_01.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-hero-video aria-label="Push door example C"></video>
-                  <figcaption>Push Door · C</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/door_light_03.mp4" data-src-hd="static/videos/hero-hd/door_light_03.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-hero-video aria-label="Push door example D"></video>
-                  <figcaption>Push Door · D</figcaption>
-                </figure>
-              </div>
-            </section>
-
-            <section class="hero-task-row" aria-labelledby="hero-grasp-label">
-              <div class="hero-task-label">
-                <span>03</span>
-                <h2 id="hero-grasp-label">Grasp</h2>
-                <small>Four examples</small>
-              </div>
-              <div class="hero-task-videos">
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/grasp_table_01.mp4" data-src-hd="static/videos/hero-hd/grasp_table_01.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-hero-video aria-label="Grasp example A"></video>
-                  <figcaption>Grasp</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/grasp_table_03.mp4" data-src-hd="static/videos/hero-hd/grasp_table_03.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-hero-video aria-label="Grasp example B"></video>
-                  <figcaption>Grasp · B</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/grasp_platform_01.mp4" data-src-hd="static/videos/hero-hd/grasp_platform_01.mp4" poster="static/images/poster-grasp-platform.webp" muted loop playsinline preload="none" data-hero-video aria-label="Grasp example C"></video>
-                  <figcaption>Grasp · C</figcaption>
-                </figure>
-                <figure class="hero-video-cell">
-                  <video data-src="static/videos/hero/grasp_platform_03.mp4" data-src-hd="static/videos/hero-hd/grasp_platform_03.mp4" poster="static/images/poster-grasp-platform.webp" muted loop playsinline preload="none" data-hero-video aria-label="Grasp example D"></video>
-                  <figcaption>Grasp · D</figcaption>
-                </figure>
-              </div>
-            </section>
+          <div class="hero-actions">
+            <a class="hero-link" href="static/papers/FIBER.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+            <span class="hero-link is-disabled" aria-disabled="true">Code (soon)</span>
+            <a class="hero-link is-ghost" href="#real">Videos</a>
+            <a class="hero-link is-ghost" href="#interactive">Playground</a>
           </div>
         </div>
+        <div class="hero-veil" aria-hidden="true"></div>
       </div>
-      <div class="scroll-cue">Scroll</div>
     </section>
+    <div class="hero-fade" aria-hidden="true"></div>
 
-    <section class="section" id="contributions">
-      <div class="container is-max-desktop">
-        <div class="has-text-centered reveal">
-          <img
-            class="section-mark"
-            src="static/images/fiber-mark.svg"
-            alt="Expert trajectory fibers wrapped around one shared latent sphere"
-            width="76"
-            height="76"
-          >
-          <p class="section-kicker">Contributions</p>
-          <h2 class="title section-heading">Latent policy projection of heterogeneous experts</h2>
-          <p class="section-intro">
-            FIBER represents independently acquired interaction experts in the shared executable
-            latent space of a frozen BFM and jointly learns their execution with one perceptive planner.
-          </p>
+    <section class="block block--intro" id="video" aria-labelledby="video-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="video-title">Overview</h2></div>
+          <p>What FIBER does, the question it answers, and how it works.</p>
         </div>
 
-        <div class="contribution-grid">
-          <article class="contribution-card reveal">
-            <span class="card-index">01</span>
-            <h3>Modular acquisition and unified control</h3>
-            <p>
-              FIBER represents independently acquired interaction experts in a shared executable
-              latent space of a frozen BFM and jointly learns their execution with a unified
-              perceptive planner.
-            </p>
-          </article>
-          <article class="contribution-card reveal">
-            <span class="card-index">02</span>
-            <h3>Action-aligned latent policy projection</h3>
-            <p>
-              LPP identifies BFM latents by matching their induced actions to an expert's local
-              state-dependent control responses, integrating heterogeneous experts without a
-              unified acquisition procedure.
-            </p>
-          </article>
-          <article class="contribution-card reveal">
-            <span class="card-index">03</span>
-            <h3>Adaptive-horizon BFM and SF-guided expert acquisition</h3>
-            <p>
-              Multi-γ forward-backward learning yields AH-BFM, balancing precise local control with
-              temporally extended behavioral structure, while successor-feature-guided acquisition
-              reuses interaction-preserving behaviors.
-            </p>
-          </article>
+        <figure class="demo-video reveal">
+          <video controls preload="metadata" playsinline poster="static/videos/fiber_demo.jpg" src="static/videos/fiber_demo.mp4" aria-label="FIBER overview video"></video>
+          <figcaption>Overview video, 2:39. Real-world and simulated rollouts are shown at 1× speed.</figcaption>
+        </figure>
+
+        <div class="tldr reveal">
+          <p class="tldr-q">How do we abstract the interface between high-level planning and whole-body control, <span>without abstracting away the physical responses</span> that realize interaction?</p>
+          <div class="tldr-alts">
+            <div><s>Kinematic targets</s><p>feedback only on variables chosen in advance</p></div>
+            <div><s>Contact targets</s><p>feedback only on variables chosen in advance</p></div>
+            <div><s>Low-level actions</s><p>the planner must model high-rate feedback itself</p></div>
+          </div>
+          <p class="tldr-a">Our answer: plan in an <span>action-aligned latent space</span>.</p>
+          <p class="tldr-s">FIBER’s planner outputs latent commands for a frozen behavior foundation model (BFM). Each latent is defined by the actions it applies to the robot, so the BFM keeps closing the loop at 50&nbsp;Hz while the planner replans at 5&nbsp;Hz. One perceptive planner, trained entirely offline, performs box pickup, door opening and object grasping on a real Unitree G1 from onboard depth.</p>
         </div>
+
       </div>
     </section>
 
-    <section class="section is-soft" id="method">
-      <div class="container method-container">
-        <div class="has-text-centered reveal">
-          <p class="section-kicker">Method</p>
-          <h2 class="title section-heading">FIBER overview</h2>
-          <p class="section-intro">
-            Experts are projected independently, collected in a shared executable representation,
-            and merged into one perception-conditioned latent planning dataset.
-          </p>
+    <section class="block" id="real" aria-labelledby="real-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="real-title">Real-world rollouts</h2></div>
+          <p>Box pickup, door opening and object grasping on a Unitree G1, from onboard depth. Experts, latent projectors and the planner are trained entirely in simulation.</p>
         </div>
 
-        <figure class="fiber-overview reveal" id="action-alignment" aria-labelledby="fiber-overview-title">
+<div class="video-reels">
+          <article class="video-reel reveal">
+            <header class="video-reel-header"><div><h3>Grasping objects</h3><p>Walk up, reach, grasp and lift, from onboard depth: three objects on a table and one on a low box.</p></div></header>
+            <div class="video-reel-grid video-reel-grid-four">
+              <figure class="video-tile">
+                <video data-src="static/videos/grasp_table_01.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="On a table"></video>
+                <figcaption><span>On a table</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/grasp_table_02.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="On a table"></video>
+                <figcaption><span>On a table</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/grasp_table_03.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="On a table"></video>
+                <figcaption><span>On a table</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/grasp_platform_03.mp4" poster="static/images/poster-grasp-platform.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="On a low box"></video>
+                <figcaption><span>On a low box</span></figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="video-reel reveal">
+            <header class="video-reel-header"><div><h3>Picking up thrown boxes</h3><p>A person throws the box to a random spot; the robot walks over and picks it up.</p></div></header>
+            <div class="video-reel-grid video-reel-grid-four">
+              <figure class="video-tile">
+                <video data-src="static/videos/box_throw_pick_01.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Throw 1"></video>
+                <figcaption><span>Throw 1</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/box_throw_pick_02.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Throw 2"></video>
+                <figcaption><span>Throw 2</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/box_throw_pick_03.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Throw 3"></video>
+                <figcaption><span>Throw 3</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/box_throw_pick_05.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Throw 4"></video>
+                <figcaption><span>Throw 4</span></figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="video-reel reveal">
+            <header class="video-reel-header"><div><h3>Picking up a box from another box</h3><p>Whole-body pickup of a box resting on a second box, at three placements.</p></div></header>
+            <div class="video-reel-grid video-reel-grid-three">
+              <figure class="video-tile">
+                <video data-src="static/videos/box_pick_high_05.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Placement A"></video>
+                <figcaption><span>Placement A</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/box_pick_high_04.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Placement B"></video>
+                <figcaption><span>Placement B</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/box_pick_high_01.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Placement C"></video>
+                <figcaption><span>Placement C</span></figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="video-reel reveal">
+            <header class="video-reel-header"><div><h3>Opening doors</h3><p>Two heavy doors opened by leaning in with the whole body, and a light door.</p></div></header>
+            <div class="video-reel-grid video-reel-grid-three">
+              <figure class="video-tile">
+                <video data-src="static/videos/door_heavy_01.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Heavy door"></video>
+                <figcaption><span>Heavy door</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/door_heavy_02.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Heavy door"></video>
+                <figcaption><span>Heavy door</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/door_light_03.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Light door"></video>
+                <figcaption><span>Light door</span></figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="video-reel reveal">
+            <header class="video-reel-header"><div><h3>Steering with waypoints</h3><p>Waypoints guide the robot to the box and through whole-body motions while it carries.</p></div></header>
+            <div class="video-reel-grid video-reel-grid-four">
+              <figure class="video-tile">
+                <video data-src="static/videos/waypoint_01.mp4" poster="static/images/poster-waypoint.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Crouching under a beam"></video>
+                <figcaption><span>Crouching under a beam</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/waypoint_pick_crouch_walk.mp4" poster="static/images/poster-waypoint-crouch-walk.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Pick up, then crouch-walk"></video>
+                <figcaption><span>Pick up, then crouch-walk</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/waypoint_pick_extreme_carry.mp4" poster="static/images/poster-waypoint-extreme-carry.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Holding the carry through a stumble"></video>
+                <figcaption><span>Holding the carry through a stumble</span></figcaption>
+              </figure>
+              <figure class="video-tile">
+                <video data-src="static/videos/waypoint_pick_squat.mp4" poster="static/images/poster-waypoint-squat.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Pick up from the floor, then squat"></video>
+                <figcaption><span>Pick up from the floor, then squat</span></figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+        <p class="video-showcase-note">18 real-world rollouts. Videos play while they are on screen.</p>
+      </div>
+    </section>
+
+    <section class="block" id="method" aria-labelledby="method-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="method-title">Method</h2></div>
+          <p>Independently acquired experts are projected into a frozen BFM’s latent space through the actions they induce; one perceptive planner then learns from their latent rollouts, entirely offline.</p>
+        </div>
+
+<figure class="fiber-overview reveal" id="action-alignment" aria-labelledby="fiber-overview-title">
           <header class="fiber-overview-header"><p class="section-kicker">FIBER overview</p>
             <h3 id="fiber-overview-title">What should we plan for humanoid whole-body intelligence?</h3>
             <p class="fiber-overview-answer">Action-aligned latents.</p>
           </header>
-          <div class="fiber-workbench">
-            <div class="fiber-workbench-heading"><span data-fiber-phase>Heterogeneous skill acquisition</span><span class="fiber-schematic-label">Schematic illustration</span></div>
-            <svg data-fiber-world viewBox="0 0 900 380" role="img" aria-label="Humanoid experts perform physical skills. A learned projector produces latent commands whose frozen BFM actions match expert actions at the same state. Collected latent rollouts train a planner for execution."></svg>
-            <p class="fiber-workbench-detail" data-fiber-detail></p>
+          <div class="ov-player">
+            <video class="ov-video" data-src="static/videos/overview/fiber-method.mp4" poster="static/videos/overview/fiber-method.jpg" muted loop playsinline preload="none" data-reel-video data-ov-video tabindex="0" role="button" aria-label="FIBER method animation. Click to play or pause."></video>
+            <span class="video-tile-state">Paused</span>
           </div>
-          <div class="fiber-film-controls"><button type="button" data-fiber-play>Pause</button><input data-fiber-time type="range" min="0" max="1000" value="0" aria-label="Scrub through the FIBER pipeline"><button type="button" data-fiber-replay>Replay</button></div>
-          <div class="fiber-film-chapters" aria-label="Jump to a part of the pipeline">
-            <button data-fiber-jump="0">Experts</button><button data-fiber-jump="1">Action alignment</button><button data-fiber-jump="2">Latent rollouts</button><button data-fiber-jump="3">Offline training</button><button data-fiber-jump="4">Planning</button><button data-fiber-jump="5">Execution</button>
-          </div>
-          <figcaption>Illustration of FIBER. Humanoid artwork, action components, and latent coordinates are illustrative, not recorded model outputs.</figcaption>
+          <div class="ov-chapters" aria-label="Jump to a part of the method"><button type="button" data-ov-seek="0" data-ov-end="13.0">The question</button><button type="button" data-ov-seek="13.0" data-ov-end="21.0">1 · Experts</button><button type="button" data-ov-seek="21.0" data-ov-end="30.0">2 · Projection</button><button type="button" data-ov-seek="30.0" data-ov-end="38.4">3 · Planner</button><button type="button" data-ov-seek="38.4" data-ov-end="55.4">Deployment</button></div>
+          <figcaption>The method, as in the overview video: the question, our answer, and the three training stages, then deployment. Diagrams are schematic; the footage at the end is real and simulated.</figcaption>
         </figure>
+        <ol class="method-steps">
+          <li class="reveal"><span class="ms-n">1</span><div><h3>Experts learn each skill on their own</h3><p>Box pickup, door opening and object grasping each get their own expert, with their own observations, rewards and training. They do not need to share anything.</p></div></li>
+          <li class="reveal"><span class="ms-n">2</span><div><h3>Project each expert into the frozen BFM’s latents</h3><p>Along each expert’s rollouts, find the latent sequence z<sub>1</sub>…z<sub>H</sub> whose BFM actions match the expert’s local response at every visited state. The adaptive-horizon BFM itself stays frozen.</p></div></li>
+          <li class="reveal"><span class="ms-n">3</span><div><h3>Train one perceptive planner, offline</h3><p>Roll out the projected skills to collect latent trajectories, then train a single flow-matching planner on all of them, conditioned on depth, proprioception and the command. The experts are no longer needed.</p></div></li>
+          <li class="reveal"><span class="ms-n">4</span><div><h3>Deploy: slow planning, fast feedback</h3><p>The planner replans latents at 5&nbsp;Hz; the frozen BFM turns them into whole-body actions at 50&nbsp;Hz, reacting to every new state.</p></div></li>
+        </ol>
 
-        <figure class="paper-figure pipeline-figure reveal">
+<figure class="paper-figure pipeline-figure reveal">
           <img src="static/images/pipeline.webp" width="2200" height="1055" alt="FIBER pipeline: heterogeneous expert acquisition, action-aligned latent policy projection, adaptive-horizon BFM, and unified latent planning." loading="lazy">
           <figcaption>
             FIBER separates skill acquisition, executable latent projection, and unified offline
             planning while keeping the behavioral foundation model frozen downstream.
           </figcaption>
         </figure>
+      </div>
+    </section>
 
-        <div class="method-copy-grid">
-          <article class="method-copy reveal">
-            <span class="method-copy-index">A</span>
-            <h3>Heterogeneous skill acquisition</h3>
-            <p>
-              Interaction experts come from motion imitation, task-specific reward shaping, or
-              successor-feature-guided reuse of native whole-body behaviors.
-            </p>
-          </article>
-          <article class="method-copy reveal">
-            <span class="method-copy-index">B</span>
-            <h3>Action-aligned latent policy projection</h3>
-            <p>
-              LPP identifies latent commands through the expert actions they induce over a local
-              horizon, with semantic regularization reducing ambiguity among action-equivalent latents.
-            </p>
-          </article>
-          <article class="method-copy reveal">
-            <span class="method-copy-index">C</span>
-            <h3>Unified latent flow planning</h3>
-            <p>
-              A DiT flow planner predicts future latent trajectories from onboard depth,
-              proprioception, and steering tokens such as language commands or navigation waypoints.
-            </p>
-          </article>
+    <section class="block" id="simulation-block" aria-labelledby="sim-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="sim-title">Simulation</h2></div>
+          <p>The same planner and frozen BFM in MuJoCo, given language and waypoint commands.</p>
         </div>
 
-        <div class="feedback-banner reveal">
-          <strong>Latent planning and high-frequency state feedback.</strong>
-          The planner updates lower-rate latent trajectories from perception, while the frozen BFM
-          maps each latent and live robot state to high-rate actions.
+        <div class="sim-studio" id="simulation">
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:2 / 1"><video data-src="static/videos/sim/fan.mp4" poster="static/videos/sim/fan.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: One start, eight goals"></video></div>
+            <figcaption><div><strong>One start, eight goals</strong><span>A single pickup, branched into eight carries; only the waypoint in the steering command differs. Routes are drawn on the floor.</span></div></figcaption>
+          </figure>
+          <div class="sim-grid sim-grid--5">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/ms-50.mp4" poster="static/videos/sim/ms-50.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Start at −50°"></video></div>
+              <figcaption><strong>Start at −50°</strong><span>Same box, same waypoint</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/ms-25.mp4" poster="static/videos/sim/ms-25.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Start at −25°"></video></div>
+              <figcaption><strong>Start at −25°</strong><span>Same box, same waypoint</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/ms+0.mp4" poster="static/videos/sim/ms+0.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Start at 0°"></video></div>
+              <figcaption><strong>Start at 0°</strong><span>Same box, same waypoint</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/ms+25.mp4" poster="static/videos/sim/ms+25.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Start at +25°"></video></div>
+              <figcaption><strong>Start at +25°</strong><span>Same box, same waypoint</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/ms+50.mp4" poster="static/videos/sim/ms+50.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Start at +50°"></video></div>
+              <figcaption><strong>Start at +50°</strong><span>Same box, same waypoint</span></figcaption>
+            </figure>
+          </div>
+        <div class="sim-pair-caption reveal"><div class="sim-prompt"><span class="sim-pill">“pick up the box”</span><span class="chip-arrow" aria-hidden="true">→</span><span class="sim-pill">“carry the box”</span><span class="sim-pill is-way">+ waypoint</span></div></div>
+          <div class="sub-head reveal">
+            <div><h3>Picking up boxes</h3><div class="sim-prompt"><span class="sim-pill">“pick up the box”</span></div></div>
+            <p>Three box sizes on the floor and three support heights, each approached from 1.2 m away.</p>
+          </div>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:21 / 9"><video data-src="static/videos/sim/lineup-pickup.mp4" poster="static/videos/sim/lineup-pickup.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Six pickups, one planner"></video></div>
+            <figcaption><div><strong>Six pickups, one planner</strong><span>Six independent rollouts shown side by side, from the smallest box on the floor to the highest support.</span></div></figcaption>
+          </figure>
+          <div class="sim-grid sim-grid--3">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/pick-ground-s.mp4" poster="static/videos/sim/pick-ground-s.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Small box"></video></div>
+              <figcaption><strong>Small box</strong><span>Floor · 17 × 16 × 21 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/pick-ground-m.mp4" poster="static/videos/sim/pick-ground-m.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Medium box"></video></div>
+              <figcaption><strong>Medium box</strong><span>Floor · 18 × 27 × 28 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/pick-ground-l.mp4" poster="static/videos/sim/pick-ground-l.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Large box"></video></div>
+              <figcaption><strong>Large box</strong><span>Floor · 24 × 32 × 34 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/pick-support-low.mp4" poster="static/videos/sim/pick-support-low.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Low support"></video></div>
+              <figcaption><strong>Low support</strong><span>Small box · 25 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/pick-support-mid.mp4" poster="static/videos/sim/pick-support-mid.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Mid support"></video></div>
+              <figcaption><strong>Mid support</strong><span>Small box · 44 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/pick-support-high.mp4" poster="static/videos/sim/pick-support-high.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: High support"></video></div>
+              <figcaption><strong>High support</strong><span>Small box · 55 cm</span></figcaption>
+            </figure>
+          </div>
+          <div class="sub-head reveal">
+            <div><h3>Placing and sorting</h3><div class="sim-prompt"><span class="sim-pill">“pick up the box”</span><span class="chip-arrow" aria-hidden="true">→</span><span class="sim-pill">“carry the box”</span><span class="chip-arrow" aria-hidden="true">→</span><span class="sim-pill">“put the box down on the raised platform”</span></div></div>
+            <p>Put-down commands set a box down on the floor, a low step or a raised platform. Chained one after another, they sort several boxes in one continuous rollout.</p>
+          </div>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:2 / 1"><video data-src="static/videos/sim/sort.mp4" poster="static/videos/sim/sort.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Sorting by color, with chained commands"></video></div>
+            <figcaption><div><strong>Sorting by color, with chained commands</strong><span>Three colored boxes to three matching destinations — the clay 42 cm platform, the teal 30 cm step and the blue floor ring — in one continuous rollout. Each box’s destination is set by its waypoint and put-down command; the planner sees only depth.</span></div></figcaption>
+          </figure>
+          <div class="sim-grid sim-grid--3">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/putdown.mp4" poster="static/videos/sim/putdown.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Onto the floor"></video></div>
+              <figcaption><strong>Onto the floor</strong><span>“put the box down on the floor”</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/shelf-mid.mp4" poster="static/videos/sim/shelf-mid.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Onto a 42 cm platform"></video></div>
+              <figcaption><strong>Onto a 42 cm platform</strong><span>“put the box down on the raised platform”</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/shelf-low.mp4" poster="static/videos/sim/shelf-low.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Onto a 30 cm step"></video></div>
+              <figcaption><strong>Onto a 30 cm step</strong><span>“put the box down on the low step”</span></figcaption>
+            </figure>
+          </div>
+          <div class="sub-head reveal">
+            <div><h3>Whole-body carrying</h3><div class="sim-prompt"><span class="sim-pill">“carry the box”</span><span class="sim-pill is-way">+ waypoint</span><span class="sim-pill is-way">+ height</span></div></div>
+            <p>The steering command also carries a body height. Lowered from the default 0.75 m, the planner crouches while it walks, or kneels and stands back up, holding the box throughout.</p>
+          </div>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:2 / 1"><video data-src="static/videos/sim/gantry.mp4" poster="static/videos/sim/gantry.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Under a low beam"></video></div>
+            <figcaption><div><strong>Under a low beam</strong><span>Pick up the box, then crouch-walk under a beam 1.12 m above the floor with the height command at 0.60 m, and stand up again on the far side. Standing, the robot is 1.32 m tall.</span></div></figcaption>
+          </figure>
+          <div class="sim-grid sim-grid--2">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/crouch.mp4" poster="static/videos/sim/crouch.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Crouch-walking"></video></div>
+              <figcaption><strong>Crouch-walking</strong><span>Height command 0.60 m while carrying to the waypoint</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/kneel.mp4" poster="static/videos/sim/kneel.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Kneel and rise"></video></div>
+              <figcaption><strong>Kneel and rise</strong><span>Height command 0.40 m, then back to 0.75 m</span></figcaption>
+            </figure>
+          </div>
+          <div class="sub-head reveal">
+            <div><h3>Grasping objects</h3><div class="sim-prompt"><span class="sim-pill">“pick up the object from the table”</span></div></div>
+            <p>The grasp expert is trained on the GRAIL tabletop library (2,991 demonstrations of 685 objects). The 128 objects of the paper’s grasp evaluation, with their own textures.</p>
+          </div>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:1920 / 680"><video data-src="static/videos/sim/objects-wall.mp4" poster="static/videos/sim/objects-wall.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: The evaluation objects"></video></div>
+            <figcaption><div><strong>The evaluation objects</strong><span>All 128 objects, each turning in place.</span></div></figcaption>
+          </figure>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:21 / 9"><video data-src="static/videos/sim/lineup-grasp.mp4" poster="static/videos/sim/lineup-grasp.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Different objects, same planner"></video></div>
+            <figcaption><div><strong>Different objects, same planner</strong><span>Independent tabletop grasps of eight different objects, shown side by side.</span></div></figcaption>
+          </figure>
+          <div class="sim-grid sim-grid--4">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-apple-11.mp4" poster="static/videos/sim/gl-apple-11.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Apple"></video></div>
+              <figcaption><strong>Apple</strong><span>GRAIL object · 10 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-teapot-14.mp4" poster="static/videos/sim/gl-teapot-14.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Teapot"></video></div>
+              <figcaption><strong>Teapot</strong><span>GRAIL object · 13 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-croissant-9.mp4" poster="static/videos/sim/gl-croissant-9.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Croissant"></video></div>
+              <figcaption><strong>Croissant</strong><span>GRAIL object · 16 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-wine-11.mp4" poster="static/videos/sim/gl-wine-11.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Wine bottle"></video></div>
+              <figcaption><strong>Wine bottle</strong><span>GRAIL object · 24 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-hot-dog-4.mp4" poster="static/videos/sim/gl-hot-dog-4.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Hot dog"></video></div>
+              <figcaption><strong>Hot dog</strong><span>GRAIL object · 19 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-mango-18.mp4" poster="static/videos/sim/gl-mango-18.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Mango"></video></div>
+              <figcaption><strong>Mango</strong><span>GRAIL object · 12 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-kettle-7.mp4" poster="static/videos/sim/gl-kettle-7.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Kettle"></video></div>
+              <figcaption><strong>Kettle</strong><span>GRAIL object · 12 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-carrot-0.mp4" poster="static/videos/sim/gl-carrot-0.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Carrot"></video></div>
+              <figcaption><strong>Carrot</strong><span>GRAIL object · 23 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-shaker-0.mp4" poster="static/videos/sim/gl-shaker-0.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Shaker"></video></div>
+              <figcaption><strong>Shaker</strong><span>GRAIL object · 15 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-canned-food-1.mp4" poster="static/videos/sim/gl-canned-food-1.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Canned food"></video></div>
+              <figcaption><strong>Canned food</strong><span>GRAIL object · 13 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-mushroom-13.mp4" poster="static/videos/sim/gl-mushroom-13.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Mushroom"></video></div>
+              <figcaption><strong>Mushroom</strong><span>GRAIL object · 11 cm</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/gl-beer-15.mp4" poster="static/videos/sim/gl-beer-15.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Beer bottle"></video></div>
+              <figcaption><strong>Beer bottle</strong><span>GRAIL object · 23 cm</span></figcaption>
+            </figure>
+          </div>
+          <div class="sub-head reveal">
+            <div><h3>Doors and skill chains</h3><div class="sim-prompt"><span class="sim-pill">“open the door”</span><span class="chip-arrow" aria-hidden="true">→</span><span class="sim-pill">“walk”</span><span class="chip-arrow" aria-hidden="true">→</span><span class="sim-pill">“pick up the box”</span><span class="chip-arrow" aria-hidden="true">→</span><span class="sim-pill">“carry the box”</span></div></div>
+            <p>A light and a heavy door, and the paper’s skill chain in one rollout.</p>
+          </div>
+          <div class="sim-grid sim-grid--2">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/door-light.mp4" poster="static/videos/sim/door-light.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Light door"></video></div>
+              <figcaption><strong>Light door</strong><span>12 kg panel, hinge damping 1 N·m·s/rad: open in about 5 s</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/door-heavy.mp4" poster="static/videos/sim/door-heavy.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Heavy door"></video></div>
+              <figcaption><strong>Heavy door</strong><span>80 kg panel, hinge damping 30 N·m·s/rad, friction 10 N·m: about 8 s</span></figcaption>
+            </figure>
+          </div>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:2 / 1"><video data-src="static/videos/sim/chain.mp4" poster="static/videos/sim/chain.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Open the door, pick up the box, carry it back"></video></div>
+            <figcaption><div><strong>Open the door, pick up the box, carry it back</strong><span>Three cameras on one rollout. A 3 s settle on the frozen BFM’s stand latent separates crossing and pickup, as in the playground.</span></div></figcaption>
+          </figure>
+          <div class="sub-head reveal">
+            <div><h3>Push recovery</h3><div class="sim-prompt"><span class="sim-pill">“carry the box”</span><span class="sim-pill is-way">+ waypoint</span></div></div>
+            <p>Shoves on the pelvis (red arrows) while carrying, slowed to 0.3× around each push. The translucent blue robot is the same moment without the push.</p>
+          </div>
+          <figure class="sim-wide reveal">
+            <div class="sim-media" style="aspect-ratio:2 / 1"><video data-src="static/videos/sim/push.mp4" poster="static/videos/sim/push.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: Three pushes, one carry"></video></div>
+            <figcaption><div><strong>Three pushes, one carry</strong><span>180 N from the left, 180 N from the right, then 190 N from behind, each for 0.15 s. Between planner updates the frozen BFM reacts at 50 Hz and keeps the box.</span></div></figcaption>
+          </figure>
+          <div class="sim-grid sim-grid--2">
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/push-hard.mp4" poster="static/videos/sim/push-hard.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: A harder shove"></video></div>
+              <figcaption><strong>A harder shove</strong><span>260 N for 0.15 s from the left</span></figcaption>
+            </figure>
+            <figure class="sim-card">
+              <div class="sim-media"><video data-src="static/videos/sim/push-depth.mp4" poster="static/videos/sim/push-depth.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause: What the planner sees"></video></div>
+              <figcaption><strong>What the planner sees</strong><span>Onboard depth (0.12–3 m) during the three pushes, in real time</span></figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section is-soft" id="tasks">
-      <div class="container is-max-desktop">
-        <div class="has-text-centered reveal">
-          <p class="section-kicker">Demonstrations</p>
-          <h2 class="title section-heading">Real world and simulation</h2>
-          <p class="section-intro">
-            Browse skills on the real robot and whole-body skill chaining in MuJoCo.
-          </p>
+    <section class="block" id="results" aria-labelledby="results-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="results-title">Results</h2></div>
+          <p>Box size and placement, door geometry, and grasped objects vary; FIBER is compared with replay, tracking and planning baselines.</p>
         </div>
 
-        <div class="demo-split-heading reveal">
-          <p class="section-kicker">Real world</p>
-          <h3>On-robot skills</h3>
-          <p>Interaction experts, latent projectors, and the unified planner are trained entirely in simulation and deployed with onboard depth perception.</p>
-        </div>
-
-        <div class="single-policy-note reveal">
-          <strong>Unified perceptive planner · onboard depth · conditional steering</strong>
-        </div>
-
-        <div class="video-reels">
-          <article class="video-reel reveal">
-            <header class="video-reel-header">
-              <div>
-                <span class="demo-index">01 · Grasping</span>
-                <h3>Table-height objects</h3>
-                <p>Perception-driven approach, contact, and lift across three configurations.</p>
-              </div>
-              <span class="demo-count">3 examples</span>
-            </header>
-            <div class="video-reel-grid video-reel-grid-three">
-              <figure class="video-tile">
-                <video data-src="static/videos/grasp_table_01.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Table-height grasping, example A"></video>
-                <figcaption><span>Example A</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/grasp_table_02.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Table-height grasping, example B"></video>
-                <figcaption><span>Example B</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/grasp_table_03.mp4" poster="static/images/poster-grasp-table.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Table-height grasping, example C"></video>
-                <figcaption><span>Example C</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="video-reel reveal">
-            <header class="video-reel-header">
-              <div>
-                <span class="demo-index">02 · Grasping</span>
-                <h3>Lower-platform objects</h3>
-                <p>Grasping objects from lower supports.</p>
-              </div>
-              <span class="demo-count">3 examples</span>
-            </header>
-            <div class="video-reel-grid video-reel-grid-three">
-              <figure class="video-tile">
-                <video data-src="static/videos/grasp_platform_01.mp4" poster="static/images/poster-grasp-platform.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Lower-platform grasping, example A"></video>
-                <figcaption><span>Example A</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/grasp_platform_02.mp4" poster="static/images/poster-grasp-platform.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Lower-platform grasping, example B"></video>
-                <figcaption><span>Example B</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/grasp_platform_03.mp4" poster="static/images/poster-grasp-platform.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Lower-platform grasping, example C"></video>
-                <figcaption><span>Example C</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="video-reel reveal">
-            <header class="video-reel-header">
-              <div>
-                <span class="demo-index">03 · Box manipulation</span>
-                <h3>Randomized box pickup</h3>
-                <p>Pickup across object landing poses randomized by human throws.</p>
-              </div>
-              <span class="demo-count">5 examples</span>
-            </header>
-            <div class="video-reel-grid video-reel-grid-five">
-              <figure class="video-tile">
-                <video data-src="static/videos/box_throw_pick_01.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Randomized-landing box pickup, example A"></video>
-                <figcaption><span>Example A</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_throw_pick_02.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Randomized-landing box pickup, example B"></video>
-                <figcaption><span>Example B</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_throw_pick_03.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Randomized-landing box pickup, example C"></video>
-                <figcaption><span>Example C</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_throw_pick_04.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Randomized-landing box pickup, example D"></video>
-                <figcaption><span>Example D</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_throw_pick_05.mp4" poster="static/images/poster-throw-pick.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Randomized-landing box pickup, example E"></video>
-                <figcaption><span>Example E</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="video-reel reveal">
-            <header class="video-reel-header">
-              <div>
-                <span class="demo-index">04 · Box manipulation</span>
-                <h3>Raised-support box pickup</h3>
-                <p>Whole-body pickup from raised supports across five configurations.</p>
-              </div>
-              <span class="demo-count">5 examples</span>
-            </header>
-            <div class="video-reel-grid video-reel-grid-five">
-              <figure class="video-tile">
-                <video data-src="static/videos/box_pick_high_01.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Raised-support box pickup, example A"></video>
-                <figcaption><span>Example A</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_pick_high_02.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Raised-support box pickup, example B"></video>
-                <figcaption><span>Example B</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_pick_high_03.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Raised-support box pickup, example C"></video>
-                <figcaption><span>Example C</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_pick_high_04.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Raised-support box pickup, example D"></video>
-                <figcaption><span>Example D</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/box_pick_high_05.mp4" poster="static/images/poster-pick-high.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Raised-support box pickup, example E"></video>
-                <figcaption><span>Example E</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="video-reel reveal">
-            <header class="video-reel-header">
-              <div>
-                <span class="demo-index">05 · Articulated interaction</span>
-                <h3>Door opening</h3>
-                <p>Light and heavy door interactions under varied approach and contact geometry.</p>
-              </div>
-              <span class="demo-count">6 examples</span>
-            </header>
-            <div class="video-reel-grid video-reel-grid-six">
-              <figure class="video-tile">
-                <video data-src="static/videos/door_heavy_01.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Heavy door opening, example A"></video>
-                <figcaption><span>Heavy A</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/door_heavy_02.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Heavy door opening, example B"></video>
-                <figcaption><span>Heavy B</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/door_light_01.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Light door opening, example A"></video>
-                <figcaption><span>Light A</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/door_light_02.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Light door opening, example B"></video>
-                <figcaption><span>Light B</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/door_light_03.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Light door opening, example C"></video>
-                <figcaption><span>Light C</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/door_light_04.mp4" poster="static/images/poster-door.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Light door opening, example D"></video>
-                <figcaption><span>Light D</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="video-reel reveal">
-            <header class="video-reel-header">
-              <div>
-                <span class="demo-index">06 · Locomotion</span>
-                <h3>Waypoint-conditioned steering</h3>
-                <p>Waypoint-conditioned walking guides the robot to pickup locations before whole-body interaction.</p>
-              </div>
-              <span class="demo-count">4 examples</span>
-            </header>
-            <div class="video-reel-grid video-reel-grid-four">
-              <figure class="video-tile">
-                <video data-src="static/videos/waypoint_01.mp4" poster="static/images/poster-waypoint.webp" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Waypoint-conditioned steering, example A"></video>
-                <figcaption><span>Waypoint steering</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/waypoint_pick_crouch_walk.mp4" poster="static/images/poster-waypoint-crouch-walk.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Waypoint-conditioned pickup and crouch walking"></video>
-                <figcaption><span>Pick up and crouch walking</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/waypoint_pick_extreme_carry.mp4" poster="static/images/poster-waypoint-extreme-carry.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Waypoint-conditioned approach, pickup, and extreme carry"></video>
-                <figcaption><span>Extreme carry</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-              <figure class="video-tile">
-                <video data-src="static/videos/waypoint_pick_squat.mp4" poster="static/images/poster-waypoint-squat.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" aria-label="Waypoint-conditioned approach and squat pickup"></video>
-                <figcaption><span>Pickup and squat</span><span class="video-tile-state">Paused</span></figcaption>
-              </figure>
-            </div>
-          </article>
-        </div>
-
-        <p class="video-showcase-note reveal">26 muted, web-optimized real-world demonstrations · Visible examples play automatically</p>
-
-        <section class="simulation-chains reveal" aria-labelledby="simulation-chains-heading">
-          <div class="simulation-chains-heading">
-            <div>
-              <p class="section-kicker">Simulation · MuJoCo</p>
-              <h3 id="simulation-chains-heading">Skill chaining</h3>
-              <p>Open the door, pick up the box, and carry it back through the doorway. Sky cam with an FPV inset shows each rollout at 2× speed.</p>
-            </div>
-            <span class="demo-count">2 examples · 2× speed</span>
-          </div>
-
-          <div class="chain-examples">
-            <article class="chain-example" aria-labelledby="simulation-chain-1-heading">
-              <h4 id="simulation-chain-1-heading"><span>01</span> Door → pickup → return</h4>
-              <div class="chain-media">
-                <video class="chain-sky" data-src="static/videos/simulation/chain_1_sky_fpv_2x.mp4" poster="static/videos/simulation/chain_1_sky_fpv.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause skill chain one, sky cam with FPV inset"></video>
-                <span class="chain-play-state video-tile-state">Paused</span>
-                <span class="chain-sky-label">Sky cam</span>
-                <span class="chain-fpv-label">FPV</span>
-              </div>
-            </article>
-
-            <article class="chain-example" aria-labelledby="simulation-chain-2-heading">
-              <h4 id="simulation-chain-2-heading"><span>02</span> Door → pickup → return</h4>
-              <div class="chain-media">
-                <video class="chain-sky" data-src="static/videos/simulation/chain_2_sky_fpv_2x.mp4" poster="static/videos/simulation/chain_2_sky_fpv.jpg" muted loop playsinline preload="none" data-reel-video tabindex="0" role="button" aria-label="Play or pause skill chain two, sky cam with FPV inset"></video>
-                <span class="chain-play-state video-tile-state">Paused</span>
-                <span class="chain-sky-label">Sky cam</span>
-                <span class="chain-fpv-label">FPV</span>
-              </div>
-            </article>
-          </div>
-        </section>
-
-      </div>
-    </section>
-
-    <section class="section" id="interactive">
-      <div class="container results-container">
-        <div class="has-text-centered reveal">
-          <p class="section-kicker">Interactive playground</p>
-          <h2 class="title section-heading">Try FIBER in live simulation.</h2>
-          <p class="section-intro">Explore the scene, choose an interaction, and watch FIBER plan and act in a live MuJoCo simulation.</p>
-        </div>
-        <div class="fiber-playground-shell reveal">
-          <iframe id="fiber-playground" title="FIBER interactive MuJoCo playground" allow="fullscreen" allowfullscreen></iframe>
-          <div class="fiber-playground-cover" id="fiber-playground-cover">
-            <span>FIBER · live simulation</span>
-            <h3>Pick up. Carry. Open doors.</h3>
-            <p>Drag to explore · click to set a goal · view the current prompt</p>
-            <button type="button" id="launch-fiber-playground">Launch the playground ↗</button>
-            <small>About 677 MB of inference models load on first launch. Desktop Chrome with WebGPU recommended.</small>
-          </div>
-        </div>
-        <p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
-      </div>
-    </section>
-
-    <section class="section" id="results">
-      <div class="container results-container">
-        <div class="has-text-centered simulation-quant-heading reveal">
-          <p class="section-kicker">Quantitative evaluation</p>
-          <h2 class="title section-heading">FIBER improves simulation success</h2>
-          <p class="section-intro">
-            Across randomized pickup, door opening, and grasping, FIBER is evaluated against
-            replay, tracking, and planning baselines.
-          </p>
-        </div>
-
-        <div class="evaluation-scope reveal">
+<div class="evaluation-scope reveal">
           <strong>128</strong>
           <div>
             <span>variations per task</span>
@@ -708,30 +602,58 @@
             </table>
           </div>
           <p class="table-note">Multi-horizon BFM tracking and behavior embedding performance on 100STYLE.</p>
-        </div>
+
       </div>
     </section>
 
-    <section class="section is-soft" id="abstract">
-      <div class="container is-max-desktop">
-        <div class="has-text-centered reveal">
-          <p class="section-kicker">Paper</p>
-          <h2 class="title section-heading">Abstract</h2>
+    <section class="block" id="interactive" aria-labelledby="play-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="play-title">Interactive playground</h2></div>
+          <p>MuJoCo physics and the planner run in your browser. Pick a task, place a waypoint, and watch it act.</p>
         </div>
-        <p class="abstract-copy reveal">
+
+<div class="fiber-playground-shell reveal">
+          <iframe id="fiber-playground" title="FIBER interactive MuJoCo playground" allow="fullscreen" allowfullscreen></iframe>
+          <div class="fiber-playground-cover" id="fiber-playground-cover">
+            <div class="fiber-playground-cover-copy">
+              <h3>Try FIBER in your browser</h3>
+              <p>Give the latent planner a command and watch the frozen BFM carry it out in MuJoCo physics.</p>
+              <p class="fiber-playground-tasklist">Pick up a box, open a door, grasp an object, walk or carry to a waypoint, or chain door, pickup and return.</p>
+              <button type="button" id="launch-fiber-playground">Launch the playground</button>
+              <small class="fiber-playground-caveat">The web version runs a few-step distilled student planner (3 flow steps, INT8 weights, replanning at 1&nbsp;Hz) instead of the paper's planner (10 Heun steps at 5&nbsp;Hz), so success rates may be lower than reported.</small>
+              <small>About 677 MB of models load on first launch. Desktop Chrome with WebGPU recommended.</small>
+            </div>
+          </div>
+        </div>
+<p class="fiber-playground-links"><span>MuJoCo physics + FIBER ONNX inference in your browser</span><a href="playground/" target="_blank" rel="noopener">Open in a new tab ↗</a></p>
+      </div>
+    </section>
+
+    <section class="block" id="paper" aria-labelledby="paper-title">
+      <div class="page-width">
+        <div class="block-head reveal">
+          <div><h2 id="paper-title">Paper</h2></div>
+          <p>Read the paper and cite FIBER.</p>
+        </div>
+
+        <div class="paper-grid">
+<p class="abstract-copy reveal">
           Learning a single perceptive policy for diverse humanoid loco-manipulation requires
           unifying high-level task decisions without losing the state-dependent physical responses
-          that make each interaction succeed. Existing approaches either abstract physical
-          realization through kinematic or contact targets, rely on offline demonstrations with
-          limited closed-loop coverage, or require on-policy multi-expert distillation that tightly
-          couples skill acquisition and integration. We propose FIBER, a framework that represents
-          heterogeneous interaction experts in the executable latent space of a frozen Behavior
-          Foundation Model (BFM). Our Latent Policy Projection (LPP) identifies latent commands
-          whose induced actions match each expert's local control responses, enabling lower-rate
-          planning while retaining the BFM's high-frequency state feedback. After projection, we
-          aggregate closed-loop latent rollouts from all skills and train a single perceptive flow
-          planner entirely offline. We further introduce AH-BFM, an adaptive-horizon BFM trained
-          with multi-γ forward-backward learning to support both precise control and temporally
+          that make each interaction succeed. This makes the representation between high-level
+          planning and whole-body control critical: kinematic or contact targets provide compact
+          abstractions but do not directly encode interaction-specific control responses, while
+          directly predicting low-level actions requires the planner to model high-frequency
+          closed-loop feedback. We propose FIBER, a framework that uses the executable latent space
+          of a frozen Behavior Foundation Model (BFM) as a shared planning representation for
+          heterogeneous interaction skills. Our Latent Policy Projection (LPP) maps independently
+          acquired task-specific policies into this representation by identifying latent commands
+          whose induced actions match their local control responses, enabling lower-rate planning
+          while retaining the BFM's high-frequency state feedback. After projection, we aggregate
+          closed-loop latent rollouts from all skills and train a single perceptive flow planner
+          entirely offline. We further introduce AH-BFM, an adaptive-horizon BFM trained with
+          multi-γ Forward-Backward (FB) learning to support both precise control and temporally
           extended whole-body behavior. We evaluate FIBER on box pickup, door opening, and object
           grasping in simulation and on a real Unitree G1 humanoid. Across 128 diverse variations
           per task in simulation, FIBER achieves 42.0% mean success, more than tripling projected
@@ -739,17 +661,7 @@
           Real-world experiments further demonstrate sim-to-real transfer, skill chaining, and
           conditional steering through the same unified planner.
         </p>
-      </div>
-    </section>
-
-    <section class="section" id="citation">
-      <div class="container is-max-desktop">
-        <div class="has-text-centered reveal">
-          <p class="section-kicker">Reference</p>
-          <h2 class="title section-heading">Citation</h2>
-          <p class="section-intro">Use the following BibTeX to cite FIBER.</p>
-        </div>
-        <div class="bibtex-shell reveal">
+<div class="bibtex-shell reveal">
           <div class="bibtex-header">
             <span>BibTeX</span>
             <button type="button" class="copy-bibtex" id="copy-bibtex" onclick="copyBibTeX()">Copy</button>
@@ -760,11 +672,12 @@
   year   = {2026}
 }</code></pre>
         </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+<footer class="footer">
     <p>
       FIBER project page. No analytics are collected.
       Page structure adapted from the
