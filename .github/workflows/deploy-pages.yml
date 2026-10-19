@@ -41,7 +41,7 @@ jobs:
           cp index.html _site/index.html
           cp -R static _site/static
           mkdir -p _site/playground
-          rsync -a --exclude=models/ playground/ _site/playground/
+          rsync -a --exclude=models/ --exclude=ort-wasm-simd-threaded.wasm --exclude=ort-wasm-simd-threaded.mjs playground/ _site/playground/
           rm -rf _site/playground/models
           python3 tools/publish/assemble_models.py
           touch _site/.nojekyll
