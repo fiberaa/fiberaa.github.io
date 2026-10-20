@@ -261,7 +261,8 @@ main#main { display: block; }
 .success-chart, .results-table-wrap { box-shadow: none !important; }
 
 /* hero: buttons plainer */
-.hero-link { border-radius: 8px; padding: 12px 18px; gap: 0; }
+.hero-link { border-radius: 8px; padding: 12px 18px; gap: 8px; }
+.hero-link-icon { width: 17px; height: 17px; flex: 0 0 17px; }
 /* clean pass, part 2: keep needed labels, but as plain sentence case */
 .result-eyebrow { display: block !important; text-transform: none !important; letter-spacing: 0 !important; font-size: 14px !important;
   font-weight: 600 !important; color: var(--muted) !important; margin-bottom: 6px; }
